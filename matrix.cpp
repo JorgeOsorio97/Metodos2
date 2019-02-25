@@ -307,30 +307,32 @@ Vector operator * (Matrix& mat, Vector& vec){
 
 
 
-int main(){
-    int tamanio;
-    cout<<"De que tamaño"<<endl;
-    cin>>tamanio;
-    Matrix mat = Matrix(tamanio);
-    mat.user_poblate();
-    mat.print_matrix();
-    //Matrix inv = mat.Jacobi();
-    // Vector vector = Vector(tamanio);
-    // vector.user_poblate();
-    // vector.print_vector();
-    // Vector mult = Vector(tamanio);
-    // //mult = mat * vector;
-    // mat.multiplyByVector(vector, &mult);
-    // cout<<"El resultado de vec * mat = "<<endl;
-    // mult.print_vector();
-    // cout<<"El resultado de vec - vec = "<<endl;
-    // Vector resta = Vector(tamanio);
-    // mult.restByVector(vector, &resta);
-    // resta.print_vector();
-    cout<<mat.get_determinant()<<endl;
-    Matrix inversa = mat.invertir_matriz();
-    inversa.print_matrix();
+// int main(){
+//     int tamanio;
+//     cout<<"De que tamaño"<<endl;
+//     cin>>tamanio;
+//     Matrix mat = Matrix(tamanio);
+//     mat.user_poblate();
+//     mat.print_matrix();
+//     mat.mat[0][0]= 0.01;
+//     //Matrix inv = mat.Jacobi();
+//     Vector vector = Vector(tamanio);
+//     //vector.user_poblate();
+//     vector.print_vector();
+//     vector.vector[0] = 0.01;
+//     Vector mult = Vector(tamanio);
+//     //mult = mat * vector;
+//     mat.multiplyByVector(vector, &mult);
+//     // cout<<"El resultado de vec * mat = "<<endl;
+//     // mult.print_vector();
+//     // cout<<"El resultado de vec - vec = "<<endl;
+//     // Vector resta = Vector(tamanio);
+//     // mult.restByVector(vector, &resta);
+//     // resta.print_vector();
+//     cout<<mat.get_determinant()<<endl;
+//     Matrix inversa = mat.invertir_matriz();
+//     inversa.print_matrix();
 
-    return 0;
-} 
+//     return 0;
+// } 
  
