@@ -57,3 +57,28 @@ Matrix jacobiana2(float x, float y){
     jac2.mat[1][0] = (pow(exp(1.0), -x));
     jac2.mat[1][1] = -1;
 }
+Matrix jacobiana3(float x, float y, float z){
+    Matrix jac3 =  Matrix(3);
+    jac3.mat[0][0] = 4*x - 4;
+    jac3.mat[0][1] = 2*y;
+    jac3.mat[0][2] = 6*z + 6;
+    jac3.mat[1][0] = 2*x;
+    jac3.mat[1][1] = 2*y - 2;
+    jac3.mat[1][2] = 4*z;
+    jac3.mat[2][0] = 6*x - 12;
+    jac3.mat[2][1] = 2*y;
+    jac3.mat[2][2] = 6*z;
+}
+
+Matrix jacobiana4(float x, float y, float z){
+    Matrix jac4 = Matrix (3);
+    jac4.mat[0][0] = 2*x;;
+    jac4.mat[0][1] = 2*y - 4;
+    jac4.mat[0][2] = 0;
+    jac4.mat[1][0] = 2*x - 1;
+    jac4.mat[1][1] = -12;
+    jac4.mat[1][2] = 0;
+    jac4.mat[2][0] = 6*x - 12;
+    jac4.mat[2][1] = 2*y;
+    jac4.mat[2][2] = -6*z;
+}
