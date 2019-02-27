@@ -1,6 +1,6 @@
-#import "libraries.h"
-#import "matrix.cpp"
-#import "jacobiana.cpp"
+#include "libraries.h"
+#include "matrix.cpp"
+#include "jacobiana.cpp"
 
 
 int main(){
@@ -27,12 +27,12 @@ int main(){
 			cin>>x;
 			cout<<"y=";
 			cin>>y;
-			x2.vector[0]=x;
-			x2.vector[1]=y;
+			//x2.vector[0]=x;
+			//x2.vector[1]=y;
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-57=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
-		//	Vector sistEcu1(x,y);
+			sistEcu1(x, y);
 			
 			break;
 		}
