@@ -40,7 +40,7 @@ class Vector{
             this->vector[idx] = newVal;
         }
 
-        Vector operator - (Vector vec1){
+       /* Vector operator - (Vector vec1){
             if( this->size != vec1.size){
                 cout<<"Error: El tamaño de los vectores no es el mismo"<<endl;
                 return NULL;
@@ -50,7 +50,7 @@ class Vector{
                 result.vector[i] = this->vector[i]-vec1.vector[i];
             }
             return result;
-        }
+        }*/
 
         void restByVector(Vector restar, Vector *result){
             if( this->size != restar.get_size()){
@@ -276,7 +276,7 @@ class Matrix {
         }
 };
 
-Vector operator * (Matrix& mat, Vector& vec){
+/*Vector operator * (Matrix& mat, Vector& vec){
             if(mat.get_size() != vec.get_size()){
                 cout<<"Error: Los tamaños no coinciden"<<endl;
                 return NULL;
@@ -298,7 +298,7 @@ Vector operator * (Matrix& mat, Vector& vec){
             result.print_vector();
             return result;
         }
-
+*/
 
 
 
