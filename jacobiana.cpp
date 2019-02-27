@@ -21,7 +21,7 @@ Vector sistEcu1(float x, float y){
 Vector sistEcu2(float x, float y){
     Vector vec2 = Vector(2);
     vec2.vector[0] = 4 -(x*x) - (y*y);
-    vec2.vector[1] = 1 - (pow(exp(1.0), -x)) - y;
+    vec2.vector[1] = 1 - (pow(-exp(1.0), x)) - y;
     return vec2;
 }
 
@@ -39,6 +39,7 @@ Vector sistEcu4(float x, float y, float z){
     vec4.vector[0] = (x*x) - (4*y) + (y*y);
     vec4.vector[1] = (x*x) - x -(12*y) + 1;
     vec4.vector[2] = (3*x*x) - (12*x) + (y*y) + (3*z*z) + 8;
+    return vec4;
 }
 
 Matrix jacobiana1(float x, float y){
@@ -56,6 +57,7 @@ Matrix jacobiana2(float x, float y){
     jac2.mat[0][1] = -2*y;
     jac2.mat[1][0] = (pow(exp(1.0), -x));
     jac2.mat[1][1] = -1;
+    return jac2;
 }
 Matrix jacobiana3(float x, float y, float z){
     Matrix jac3 =  Matrix(3);
@@ -68,6 +70,7 @@ Matrix jacobiana3(float x, float y, float z){
     jac3.mat[2][0] = 6*x - 12;
     jac3.mat[2][1] = 2*y;
     jac3.mat[2][2] = 6*z;
+    return jac3;
 }
 
 Matrix jacobiana4(float x, float y, float z){
@@ -81,4 +84,5 @@ Matrix jacobiana4(float x, float y, float z){
     jac4.mat[2][0] = 6*x - 12;
     jac4.mat[2][1] = 2*y;
     jac4.mat[2][2] = -6*z;
+    return jac4;
 }
