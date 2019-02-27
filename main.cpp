@@ -1,5 +1,4 @@
 #include "libraries.h"
-//#include "matrix.cpp"
 #include "jacobiana.cpp"
 
 
@@ -32,7 +31,7 @@ int main(){
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-57=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
-			sistEcu1(x, y);
+			//sistEcu1(x, y);
 			
 			break;
 		}
