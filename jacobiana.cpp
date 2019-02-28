@@ -4,7 +4,7 @@
 void sistEcu1(float x, float y, Vector &vec){
     vec.vector[0] = (x*x) + (x*y) - 10;
     vec.vector[1] = y + (3*x*y*y) - 50;
-    vec.print_vector();
+    
 }
 
 void sistEcu2(float x, float y, Vector &vec){
@@ -66,9 +66,9 @@ void jacobiana4(float x, float y, float z, Matrix &jac){
 }
 
 
-// int main (){
-//     Vector x =  Vector(2);
-//     sistEcu1(2,1, x);
-//     x.print_vector();
+/* int main (){
+     Vector x =  Vector(2);
+	 sistEcu1(2,1, x);
+	 x.print_vector();
         
-// }
+}*/
