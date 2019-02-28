@@ -9,10 +9,10 @@ int main(){
 	Vector x3=Vector(3);
 	Vector s1=Vector(2);
 	cout<<"Seleccione el sistema de ecuaciones que desea resolver: (digite el numero que le corresponda)"<<endl<<endl;
-	cout<<"1. f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-57=0 "<<endl<<endl;
-	cout<<"2. f_1(x,y)=4-x^2-y^2=0 ; f_2(x,y)=1-e^x-y=0 "<<endl<<endl;
-	cout<<"3. f_1(x,y,z)=2x^2-4x+y^2+3z^2+6z+2=0 ; f_2(x,y,z)=x^2+y^2-2y+2z^2-5=0 ; f_3(x,y,z)=3x^2-12x+y^2+3z^2+8=0"<<endl<<endl;
-	cout<<"4. f_1(x,y,z)=x^2-4x+y^2=0 ; f_2(x,y,z)=x^2-x-12y+1=0 ; f_3(x,y,z)=3x^2-12x-3z^2+8=0"<<endl<<endl;
+	cout<<"1. f_1(x,y)=x²+xy-10=0 ; f_2(x,y)= y+3xy²-57=0 "<<endl<<endl;
+	cout<<"2. f_1(x,y)=4-x²-y²=0 ; f_2(x,y)=1-e^x-y=0 "<<endl<<endl;
+	cout<<"3. f_1(x,y,z)=2x²-4x+y²+3z²+6z+2=0 ; f_2(x,y,z)=x²+y²-2y+2z²-5=0 ; f_3(x,y,z)=3x²-12x+y²+3z²+8=0"<<endl<<endl;
+	cout<<"4. f_1(x,y,z)=x²-4x+y²=0 ; f_2(x,y,z)=x²-x-12y+1=0 ; f_3(x,y,z)=3x²-12x-3z²+8=0"<<endl<<endl;
 	cin>>ecu;
 	cout<<"Tolerancia de eror: (en caso de no tener, pon 0)"<<endl;
 	cin>>tol;
