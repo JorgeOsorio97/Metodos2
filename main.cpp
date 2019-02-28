@@ -13,6 +13,7 @@ int main(){
 	int ecu,ite;
 	int it=0;
 	int to=10;
+	int k=0;
 	float tol,x,y,z;
 	Vector x2=Vector(2);
 	Vector x3=Vector(3);
@@ -59,7 +60,8 @@ int main(){
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
-			while (it<ite){
+			while (it<ite/*&& to>tol*/){
+			cout<<"Iteracion #"<<k<<endl;
 			sistEcu1(x, y,s2); //evaluo la funcion
 			jacobiana1(x,y,j2);//mando a hacer la jacobiana
 			cout<<j2.get_determinant()<<endl;
@@ -74,11 +76,13 @@ int main(){
 			x2.print_vector();
 			cout<<"nuevo punto"<<endl;
 			xn2.print_vector();//de prueba
+			to=Vector::normaEspectral(xn2,x2);
+			cout<<"norma: "<<to<<endl;
 			x2.vector[0]=xn2.vector[0];
 			x2.vector[1]=xn2.vector[1];
 			x=x2.vector[0];
 			y=x2.vector[1];
-			//to=xn2.normaEspectral(x2);//no esta hecha la funcion de norma espectral pero deberia debolver un escalar float no un vector
+			
 			it++;
 			}
 			
