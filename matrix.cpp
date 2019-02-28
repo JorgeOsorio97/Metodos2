@@ -72,8 +72,31 @@ class Vector{
 
         friend Vector operator * (Matrix& mat, Vector& vec);
 
-        Vector normaEspectral(Vector anterior){
-            
+        static float normaEspectral(Vector a0, Vector a1){
+            if(a0.get_size()!=a1.get_size()){
+                cout<<"el tamaño de los vectores no coincide"<<endl;
+                return 0;
+            }
+            //a0.print_vector();
+            //a1.print_vector();
+            Vector result = Vector(a0.get_size());
+            float norma = 1555;
+            a1.restByVector(a0, &result);
+            //result.print_vector();
+            for(int i=0; i<a0.get_size(); i++){
+                float temp=0;
+                if(result.vector[i]<0){
+                    temp = (-1)* result.vector[i];
+                }
+                else{
+                    temp = result.vector[i];
+                }
+                if(temp<norma || norma == 1555){
+                    //cout<<norma<<endl;
+                    norma = temp;
+                }
+            }
+            return norma;
         }
 
         //Esto es un mensaje para DUI
@@ -334,3 +357,11 @@ class Matrix {
 //     return 0;
 // } 
  
+// int main(){
+//     Vector a0= Vector(3);
+//     Vector a1 = Vector(3);
+//     a0.user_poblate(); 
+//     a1.user_poblate();
+//     float result = Vector::normaEspectral(a0,a1);
+//     cout<<result<<endl;
+// }
