@@ -2,8 +2,8 @@
 #include "matrix.cpp"
 
 void sistEcu1(float x, float y, Vector &vec){
-    vec.vector[0] = (x*x) + (x*y) - 10;
-    vec.vector[1] = y + (3*x*y*y) - 50;
+vec.vector[0] = (x*x) + (x*y) - 10;
+vec.vector[1] = y + (3*x*y*y) - 50;
 
 }
 

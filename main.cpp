@@ -55,23 +55,32 @@ int main(){
 			cin>>y;
 			x2.vector[0]=x;
 			x2.vector[1]=y;
+			
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
-			while(it<ite && to>tol){
+			while (it<ite){
 			sistEcu1(x, y,s2); //evaluo la funcion
 			jacobiana1(x,y,j2);//mando a hacer la jacobiana
+			cout<<j2.get_determinant()<<endl;
 			j2i=j2.invertir_matriz();//invierto la jacobiana
+			cout<<"inversa"<<endl;
 			j2i.print_matrix();//es print de prueba pero no me imprime numeros, desde aqui hay problemas
 			j2i.multiplyByVector(s2,&res2);//multiplivco inversa por evaluada
+			cout<<"resta de matriz con vector"<<endl;
+			res2.print_vector();
 			x2.restByVector(res2,&xn2);//resto punto inicial menos la multiplicacion anterior
+			cout<<"punto anterior"<<endl;
+			x2.print_vector();
+			cout<<"nuevo punto"<<endl;
 			xn2.print_vector();//de prueba
+			x2.vector[0]=xn2.vector[0];
+			x2.vector[1]=xn2.vector[1];
+			x=x2.vector[0];
+			y=x2.vector[1];
 			//to=xn2.normaEspectral(x2);//no esta hecha la funcion de norma espectral pero deberia debolver un escalar float no un vector
 			it++;
-			
-			
-			
-		}
+			}
 			
 			break;
 		}
