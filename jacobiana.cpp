@@ -9,7 +9,7 @@ vec.vector[1] = y + (3*x*y*y) - 50;
 
 void sistEcu2(float x, float y, Vector &vec){
     vec.vector[0] = (x*x) + (y*y) - 9;
-    vec.vector[1] = (pow(-exp(1.0), x)) - (2*y) - 3;
+    vec.vector[1] = -exp(x) - (2*y) - 3;
 
 }
 
