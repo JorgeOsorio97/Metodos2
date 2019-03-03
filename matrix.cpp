@@ -109,7 +109,7 @@ class Matrix {
 
     public:
         float **mat;
-        float determinant;
+        float determinant = -2536847;
 
         Matrix(int osize){
             size = osize;
@@ -189,7 +189,8 @@ class Matrix {
         }
 
         float get_determinant(){
-            if(!this->determinant){
+            
+            if(this->determinant != -2536847){
                 return this->determinant;
             }
             Matrix triangled = get_triangle_matrix();
@@ -268,6 +269,7 @@ class Matrix {
             if(!this->determinant){
                 get_determinant();
             }
+            //cout<<"DETERMINANTE: "<<determinant<<endl;
             if(size==2){
                 inversa.mat[0][0] = mat[1][1]/determinant;
                 inversa.mat[0][1] = (-mat[0][1])/determinant;
