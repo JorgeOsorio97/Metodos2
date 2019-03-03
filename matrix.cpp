@@ -72,31 +72,40 @@ class Vector{
 
         friend Vector operator * (Matrix& mat, Vector& vec);
 
-        static float normaEspectral(Vector a0, Vector a1){
+        static void normaEspectral(Vector a0, Vector a1, float *norma){
+            *norma = -1555;
             if(a0.get_size()!=a1.get_size()){
                 cout<<"el tamaño de los vectores no coincide"<<endl;
-                return 0;
             }
             //a0.print_vector();
             //a1.print_vector();
-            Vector result = Vector(a0.get_size());
-            float norma = 1555;
-            a1.restByVector(a0, &result);
-            //result.print_vector();
+            // Vector result = Vector(a0.get_size());
+
+            // a1.restByVector(a0, &result);
+            // cout<<"Vector resultado"<<endl;
+            // result.print_vector();
+
+            float result[a1.get_size()];
+
+            for(int i=0; i<a1.get_size(); i++){
+                result[i] = a1.vector[i] - a0.vector[i];
+            }
+
+
             for(int i=0; i<a0.get_size(); i++){
                 float temp=0;
-                if(result.vector[i]<0){
-                    temp = (-1)* result.vector[i];
+                if(result[i]<0){
+                    temp = (-1)* result[i];
                 }
                 else{
-                    temp = result.vector[i];
+                    temp = result[i];
                 }
-                if(temp<norma || norma == 1555){
-                    //cout<<norma<<endl;
-                    norma = temp;
+                if(temp>*norma || *norma == -1555){
+                    cout<<"Cambio de norma"<<*norma<<endl;
+                    *norma = temp;
+                    cout<<"Cambio de norma"<<*norma<<endl;
                 }
             }
-            return norma;
         }
 
         //Esto es un mensaje para DUI
@@ -190,13 +199,26 @@ class Matrix {
 
         float get_determinant(){
             
-            if(this->determinant != -2536847){
-                return this->determinant;
+            // if(this->determinant != -2536847){
+            //     return this->determinant;
+            // }
+            // Matrix triangled = get_triangle_matrix();
+            // float determinant = 1;
+            // for(int i = 0; i<size; i++){
+            //     determinant *= triangled.mat[i][i];
+            // }
+            float determinant;
+            if(this->size == 2){
+                determinant = this->mat[0][0]*this->mat[1][1]
+                            -this->mat[0][1]*this->mat[1][0];
             }
-            Matrix triangled = get_triangle_matrix();
-            float determinant = 1;
-            for(int i = 0; i<size; i++){
-                determinant *= triangled.mat[i][i];
+            else if(this->get_size() == 3){
+                determinant = this->mat[0][0]*this->mat[1][1]*this->mat[2][2]
+                                + this->mat[0][1]*this->mat[1][2]*this->mat[2][0]
+                                + this->mat[0][2]*this->mat[1][0]*this->mat[2][1]
+                                - this->mat[0][2]*this->mat[1][1]*this->mat[2][0]
+                                - this->mat[0][1]*this->mat[1][0]*this->mat[2][2]
+                                - this->mat[0][0]*this->mat[1][2]*this->mat[2][1];
             }
             this->determinant = determinant;
             return determinant;
@@ -240,8 +262,8 @@ class Matrix {
                 //cout<<result.vector[row]<<endl;
                 //cout<<temp<<endl;
                 result->vector[row] = temp;
-                //cout<<result.vector[row]<<endl;
-            }
+                //cout<<result->vector[row]<<endl;
+            } 
         }
         Matrix cofactores(){
             Matrix cofactores = Matrix(size);

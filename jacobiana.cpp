@@ -38,7 +38,7 @@ void jacobiana1(float x, float y, Matrix &jac){
 void jacobiana2(float x, float y, Matrix &jac){
     jac.mat[0][0] = 2*x;
     jac.mat[0][1] = 2*y;
-    jac.mat[1][0] = (pow(-exp(1.0), x));
+    jac.mat[1][0] = -(exp(x));
     jac.mat[1][1] = -2;
 }
 void jacobiana3(float x, float y, float z, Matrix &jac){

@@ -21,7 +21,7 @@ int main(){
 	t=1;
 	while(t==1){
 	int it=0;
-	int to=10;
+	float to=-1555;
 	int k=0;
 	system("cls");
 	cout<<"Seleccione el sistema de ecuaciones que desea resolver: (digite el numero que le corresponda)"<<endl<<endl;
@@ -39,7 +39,7 @@ int main(){
 	*/
 
 	cin>>ecu;
-	cout<<"Tolerancia de eror: (en caso de no tener, pon 0)"<<endl;
+	cout<<"Tolerancia de error: (en caso de no tener, pon 0)"<<endl;
 	cin>>tol;
 	cout<<"Maximo de iteraciones: (si no lo tienes definido, pon 100)"<<endl;
 	cin>>ite;
@@ -84,9 +84,12 @@ int main(){
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
-			while (it<ite/*&& to>tol*/){
+			bool a = it<ite;
+			//cout<<"result ites: "<<a<<endl;
+			while (a/*&& to>tol*/){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu1(x, y,s2); //evaluo la funcion
+				s2.print_vector();
 				jacobiana1(x,y,j2);//mando a hacer la jacobiana
 				cout<<"jacobiana"<<endl;
 				j2.print_matrix();    //imprime jacobiana
@@ -103,7 +106,7 @@ int main(){
 				x2.print_vector();
 				cout<<"nuevo punto"<<endl;
 				xn2.print_vector();//de prueba
-				to=Vector::normaEspectral(xn2,x2);
+				Vector::normaEspectral(xn2,x2, &to);
 				cout<<"norma: "<<to<<endl;
 				x2.vector[0]=xn2.vector[0];
 				x2.vector[1]=xn2.vector[1];
@@ -111,6 +114,7 @@ int main(){
 				y=x2.vector[1];
 				k++;
 				it++;
+				a = it<ite;
 			}
 			cout<<"La raiz del sistema esta en:"<<endl;
 			x2.print_vector();
@@ -171,9 +175,12 @@ int main(){
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+y^2-9=0 ; f_2(x,y)=-e^x-2y-3=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
-			while (it<ite/*&& to>tol*/){
+			bool a = it<ite;
+			while (a/*&& to>tol*/){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu2(x, y,s2); //evaluo la funcion
+				cout<<"Evaluacion"<<endl;
+				s2.print_vector();
 				jacobiana2(x,y,j2);//mando a hacer la jacobiana
 				cout<<"jacobiana"<<endl;
 				j2.print_matrix();    //imprime jacobiana
@@ -190,7 +197,7 @@ int main(){
 				x2.print_vector();
 				cout<<"nuevo punto"<<endl;
 				xn2.print_vector();//de prueba
-				to=Vector::normaEspectral(xn2,x2);
+				Vector::normaEspectral(xn2,x2, &to);
 				cout<<"norma: "<<to<<endl;
 				x2.vector[0]=xn2.vector[0];
 				x2.vector[1]=xn2.vector[1];
@@ -198,6 +205,7 @@ int main(){
 				y=x2.vector[1];
 				k++;
 				it++;
+				a = it<ite;
 			}
 			cout<<"La raiz del sistema esta en:"<<endl;
 			x2.print_vector();
@@ -266,6 +274,7 @@ int main(){
 					while (it<ite/*&& to>tol*/){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu3(x,y,z, s3); //evaluo la funcion
+				s3.print_vector();
 				jacobiana3(x,y,z, j3);//mando a hacer la jacobiana
 				j3.print_matrix();
 				j3.get_determinant();
@@ -281,7 +290,7 @@ int main(){
 				x3.print_vector();
 				cout<<"nuevo punto"<<endl;
 				xn3.print_vector();//de prueba
-				to=Vector::normaEspectral(xn3,x3);
+				Vector::normaEspectral(xn3,x3, &to);
 				cout<<"norma: "<<to<<endl;
 				x3.vector[0]=xn3.vector[0];
 				x3.vector[1]=xn3.vector[1];
@@ -358,10 +367,12 @@ int main(){
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y,z)=x^2-4x+y^2=0 ; f_2(x,y,z)=x^2-x-12y+1=0 ; f_3(x,y,z)=3x^2-12x+y^2-3z^2+8=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<","<<z<<")"<<endl;
-				while (it<ite/*&& to>tol*/){
+				bool a = it<ite; 
+				while (a/*&& to>tol*/){
 					cout<<"Iteracion #"<<k<<endl;
-					sistEcu3(x,y,z, s3); //evaluo la funcion
-					jacobiana3(x,y,z, j3);//mando a hacer la jacobiana
+					sistEcu4(x,y,z, s3); //evaluo la funcion
+					s3.print_vector();
+					jacobiana4(x,y,z, j3);//mando a hacer la jacobiana
 					j3.print_matrix();
 					j3.get_determinant();
 					cout<<"determinante"<<endl<<j3.get_determinant()<<endl;
@@ -376,7 +387,7 @@ int main(){
 					x3.print_vector();
 					cout<<"nuevo punto"<<endl;
 					xn3.print_vector();//de prueba
-					to=Vector::normaEspectral(xn3,x3);
+					Vector::normaEspectral(xn3,x3, &to);
 					cout<<"norma: "<<to<<endl;
 					x3.vector[0]=xn3.vector[0];
 					x3.vector[1]=xn3.vector[1];
@@ -386,6 +397,7 @@ int main(){
 					z=x3.vector[2];
 					k++;
 					it++;
+					a = it<ite;
 			}
 			cout<<"La raiz del sistema esta en:"<<endl;
 			x3.print_vector();
