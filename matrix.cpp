@@ -88,7 +88,9 @@ class Vector{
             float result[a1.get_size()];
 
             for(int i=0; i<a1.get_size(); i++){
-                result[i] = a1.vector[i] - a0.vector[i];
+                //cout<<a0.vector[i]<<"-"<<a1.vector[i]<<endl;
+                result[i] = a0.vector[i] - a1.vector[i];
+                //cout<<"="<<result[i]<<endl;
             }
 
 
@@ -101,9 +103,9 @@ class Vector{
                     temp = result[i];
                 }
                 if(temp>*norma || *norma == -1555){
-                    cout<<"Cambio de norma"<<*norma<<endl;
+                    //cout<<"Cambio de norma"<<*norma<<endl;
                     *norma = temp;
-                    cout<<"Cambio de norma"<<*norma<<endl;
+                    //cout<<"Cambio de norma"<<*norma<<endl;
                 }
             }
         }
