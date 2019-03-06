@@ -24,6 +24,11 @@ int main(){
 	float to=-1555;
 	int k=0;
 	system("cls");
+	cout<<"Programa por :"<<endl;
+	cout<<"Jorge Aurelio Valdez Osorio"<<endl;
+	cout<<"Baruc Isaac Osorio Davalos"<<endl;
+	cout<<"Ulises Ramirez Calnacasco"<<endl;
+	cout<<"Abraham Hernandez Martinez"<<endl;
 	cout<<"Seleccione el sistema de ecuaciones que desea resolver: (digite el numero que le corresponda)"<<endl<<endl;
 
 	cout<<"1. f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0 "<<endl<<endl;
@@ -86,7 +91,8 @@ int main(){
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
 			bool a = it<ite;
 			//cout<<"result ites: "<<a<<endl;
-			while (a/*&& to>tol*/){
+			cout<<to<<endl;
+			while (a && (to>tol || to == -1555)){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu1(x, y,s2); //evaluo la funcion
 				s2.print_vector();
@@ -176,7 +182,7 @@ int main(){
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+y^2-9=0 ; f_2(x,y)=-e^x-2y-3=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
 			bool a = it<ite;
-			while (a/*&& to>tol*/){
+			while (a &&  (to>tol || to == -1555)){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu2(x, y,s2); //evaluo la funcion
 				cout<<"Evaluacion"<<endl;
@@ -271,7 +277,7 @@ int main(){
 			system("cls");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y,z)=2x^2-4x+y^2+3z^2+6z+2=0 ; f_2(x,y,z)=x^2+y^2-2y+2z^2-5=0 ; f_3(x,y,z)=3x^2-12x+y^2-3z^2+8=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<","<<z<<")"<<endl;
-					while (it<ite/*&& to>tol*/){
+					while (it<ite && (to>tol || to == -1555)){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu3(x,y,z, s3); //evaluo la funcion
 				s3.print_vector();
@@ -368,7 +374,7 @@ int main(){
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y,z)=x^2-4x+y^2=0 ; f_2(x,y,z)=x^2-x-12y+1=0 ; f_3(x,y,z)=3x^2-12x+y^2-3z^2+8=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<","<<z<<")"<<endl;
 				bool a = it<ite; 
-				while (a/*&& to>tol*/){
+				while (a &&  (to>tol || to == -1555)){
 					cout<<"Iteracion #"<<k<<endl;
 					sistEcu4(x,y,z, s3); //evaluo la funcion
 					s3.print_vector();
