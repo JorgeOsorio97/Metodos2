@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "../libraries.h"
 #include "matrix.cpp"
 
 void sistEcu1(float x, float y, Vector &vec){

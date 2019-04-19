@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "../libraries.h"
 using namespace std;
 
 class Matrix;
