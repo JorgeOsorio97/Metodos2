@@ -8,6 +8,7 @@ class NewtonInterpolation{
 
 
     public:
+        /** Constructor */
         NewtonInterpolation(float *ox, float *ofx, int osize){
             size = osize;
             x_values = (float*) malloc(size * sizeof(float));
@@ -24,6 +25,32 @@ class NewtonInterpolation{
         float get_fx_val(int idx){ return fx_values[idx]; }
         void set_x_val(int idx, float newval){ x_values[idx] = newval; }
         void set_fx_val(int idx, float newval){ fx_values[idx] = newval; }
+
+        /**
+         * Encontrar entre que indices se encuentra el valor a buscar
+         * @param values el valor al que le buscamos posicion
+         * @param low_idx index of low 
+         *              si es la primera iteracion usar 0;
+         * @param high_idx index of high
+         *              si es la primer iteracion usar size-1;
+         * @return indice valor inicial del intervalo donde se encuetra
+         *          ojo si es menor a 0 significa que no est en el intervalo
+         */
+        int get_idx_value(float value, int low_idx, int high_idx){
+            if(value < fx_values[low_idx] || value > fx_values[high_idx]){
+                return -1;
+            }
+            if(high_idx-low_idx == 1){
+                return low_idx;
+            }
+            int middle_idx = low_idx + ((high_idx - low_idx) / 2);
+            if(value < fx_values[middle_idx]){
+                return get_idx_value(value, low_idx, middle_idx);
+            }
+            if(value > fx_values[middle_idx]){
+                return get_idx_value(value, middle_idx, high_idx);
+            }
+        }
 
         /** Imprimir en consola los valores */
         void print_values(){
@@ -47,7 +74,6 @@ class NewtonInterpolation{
                 order_values(pi + 1, high); 
             }
         }
-
         int partition ( int low, int high) { 
             int pivot = x_values[high];    // pivot 
             int i = (low - 1);  // Index of smaller element 
@@ -75,6 +101,7 @@ class NewtonInterpolation{
             fx_values[b] = t;
         }
 
+        /** Destructor */
         ~NewtonInterpolation(){
             free(x_values);
             free(fx_values);
@@ -98,14 +125,16 @@ main(){
     //     cout<<"--"<<x[i]<<"\t"<<fx[i]<<"--"<<endl;
     // }
 
-    x[1] = 20;
-    fx[1] = 30;
+    // x[1] = 20;
+    // fx[1] = 30;
 
     NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
 
-    newton.set_x_val(2, 15);
+    // newton.set_x_val(2, 15);
 
     
     newton.print_values();
+
+    cout<<newton.get_idx_value(3.5,0,size-1);
 
 }
