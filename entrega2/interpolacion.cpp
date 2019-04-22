@@ -26,8 +26,7 @@ class NewtonInterpolation{
         void set_x_val(int idx, float newval){ x_values[idx] = newval; }
         void set_fx_val(int idx, float newval){ fx_values[idx] = newval; }
 
-        /**
-         * Encontrar entre que indices se encuentra el valor a buscar
+        /** Encontrar entre que indices se encuentra el valor a buscar
          * @param values el valor al que le buscamos posicion
          * @param low_idx index of low 
          *              si es la primera iteracion usar 0;
@@ -52,11 +51,34 @@ class NewtonInterpolation{
             }
         }
 
+        /** Confirmar que alcancen los puntos para el grado solicitado
+         * 
+         * 
+         */
+        bool check_possible_polynomial_degree(int degree, int init_idx){
+            
+        }
+
+        /** Revisar que los valores esten igualmente espaciados */
+        bool check_equally_spaced(){
+            float separation, previous_separation;
+            for(int i=0; i<(size-1); i++){
+                separation = x_values[i]-x_values[i+1];
+                if(i!=0){
+                    if(separation != previous_separation){
+                        return false;
+                    }
+                }
+                previous_separation = separation;
+            }
+            return true;
+        }
+
         /** Imprimir en consola los valores */
         void print_values(){
-            cout<<"--x\tf(x)--"<<endl;
+            cout<<"x\tf(x)"<<endl;
             for(int i=0; i<size; i++){
-                cout<<"--"<<x_values[i]<<"\t"<<fx_values[i]<<"--"<<endl;
+                cout<<x_values[i]<<"\t"<<fx_values[i]<<endl;
             }
         }
 
@@ -125,7 +147,7 @@ main(){
     //     cout<<"--"<<x[i]<<"\t"<<fx[i]<<"--"<<endl;
     // }
 
-    // x[1] = 20;
+    x[1] = 20;
     // fx[1] = 30;
 
     NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
@@ -135,6 +157,6 @@ main(){
     
     newton.print_values();
 
-    cout<<newton.get_idx_value(3.5,0,size-1);
+    cout<<newton.check_equally_spaced();
 
 }
