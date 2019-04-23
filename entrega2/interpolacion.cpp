@@ -1,5 +1,7 @@
 #include "../libraries.h"
 
+enum Type;
+
 class NewtonInterpolation{
     private:
         float *x_values;
@@ -8,6 +10,15 @@ class NewtonInterpolation{
 
 
     public:
+
+        enum Type{
+            PROGRESIVO,
+            REGRESIVO,
+            ERROR
+        };
+
+        Type type;
+
         /** Constructor */
         NewtonInterpolation(float *ox, float *ofx, int osize){
             size = osize;
@@ -31,16 +42,24 @@ class NewtonInterpolation{
                 return 0;
             }
             int index = get_idx_value(test, 0, size-1);
-            if(index == -1
-                || !check_possible_polynomial_degree(degree, index)){
+            if(index == -1){
                 return 0;
             }
-            float differences_table[size][degree+2];
+            Type type = check_possible_polynomial_degree(degree, index);
+            if(type == NewtonInterpolation::Type::ERROR){
+                return 0;
+            }
+            float differences_table[degree+1][degree+2];
             for(int i=0; i<size; i++){
                 differences_table[i][0] = x_values[i];
                 differences_table[i][1] = fx_values[i];
             }
             
+            for(int col=2; col<degree+2; col++){
+                for(int row=0; row<size-(col-1); row++){
+                    differences_table[row][col] = differences_table[row+1][col-1]-differences_table[row][col-1];
+                }
+            }
             //TODO: generar tabla de diferencias
 
             for(int i=0; i<size; i++){
@@ -77,17 +96,17 @@ class NewtonInterpolation{
         }
 
         /** Confirmar que alcancen los puntos para el grado solicitado */
-        bool check_possible_polynomial_degree(int degree, int init_idx){
+        Type check_possible_polynomial_degree(int degree, int init_idx){
             int progressive = size - init_idx;
             if(progressive>=degree+1){
                 cout<<"Progresivo"<<endl;
-                return true;
+                return NewtonInterpolation::Type::PROGRESIVO;
             }
             if(init_idx+1>=degree+1){
                 cout<<"Regresivo"<<endl;
-                return true;
+                return NewtonInterpolation::Type::REGRESIVO;
             }
-            return false;
+            return NewtonInterpolation::Type::ERROR;
         }
 
         /** Revisar que los valores esten igualmente espaciados */
