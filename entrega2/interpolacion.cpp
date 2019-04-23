@@ -26,6 +26,31 @@ class NewtonInterpolation{
         void set_x_val(int idx, float newval){ x_values[idx] = newval; }
         void set_fx_val(int idx, float newval){ fx_values[idx] = newval; }
 
+        float test_value(float test, int degree){
+            if(!check_equally_spaced()){
+                return 0;
+            }
+            int index = get_idx_value(test, 0, size-1);
+            if(index == -1
+                || !check_possible_polynomial_degree(degree, index)){
+                return 0;
+            }
+            float differences_table[size][degree+2];
+            for(int i=0; i<size; i++){
+                differences_table[i][0] = x_values[i];
+                differences_table[i][1] = fx_values[i];
+            }
+            
+            //TODO: generar tabla de diferencias
+
+            for(int i=0; i<size; i++){
+                for(int j=0; j<degree+2; j++){
+                    cout<<differences_table[i][j]<<" ";
+                }
+                cout<<endl;
+            }
+        }
+
         /** Encontrar entre que indices se encuentra el valor a buscar
          * @param values el valor al que le buscamos posicion
          * @param low_idx index of low 
@@ -51,12 +76,18 @@ class NewtonInterpolation{
             }
         }
 
-        /** Confirmar que alcancen los puntos para el grado solicitado
-         * 
-         * 
-         */
+        /** Confirmar que alcancen los puntos para el grado solicitado */
         bool check_possible_polynomial_degree(int degree, int init_idx){
-            
+            int progressive = size - init_idx;
+            if(progressive>=degree+1){
+                cout<<"Progresivo"<<endl;
+                return true;
+            }
+            if(init_idx+1>=degree+1){
+                cout<<"Regresivo"<<endl;
+                return true;
+            }
+            return false;
         }
 
         /** Revisar que los valores esten igualmente espaciados */
@@ -123,6 +154,15 @@ class NewtonInterpolation{
             fx_values[b] = t;
         }
 
+        /** Invertir los datos para caso de regresivo */
+        void invert_values(){
+            int iterations = size/2;
+            // cout<<iterations<<endl;
+            for(int i=0; i<((int)(size/2)); i++){
+                swap(i,size-i-1);
+            }
+        }
+
         /** Destructor */
         ~NewtonInterpolation(){
             free(x_values);
@@ -143,20 +183,20 @@ main(){
         fx[i] = i;
     }
 
-    // for(int i=0; i<size; i++){
-    //     cout<<"--"<<x[i]<<"\t"<<fx[i]<<"--"<<endl;
-    // }
-
-    x[1] = 20;
+    // x[1] = 20;
     // fx[1] = 30;
 
     NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
-
-    // newton.set_x_val(2, 15);
-
     
-    newton.print_values();
+    // newton.print_values();
 
-    cout<<newton.check_equally_spaced();
+    // int index = newton.get_idx_value(11.5,0,size-1);
+    // cout<<"index = "<<index<<endl;
 
+    // cout<<newton.check_possible_polynomial_degree(10,index);
+
+    // newton.invert_values();
+    // newton.print_values();
+
+    newton.test_value(1.5,2);
 }
