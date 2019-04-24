@@ -92,17 +92,17 @@ class NewtonInterpolation{
          *          ojo si es menor a 0 significa que no est en el intervalo
          */
         int get_idx_value(float value, int low_idx, int high_idx){
-            if(value < fx_values[low_idx] || value > fx_values[high_idx]){
+            if(value < x_values[low_idx] || value > x_values[high_idx]){
                 return -1;
             }
             if(high_idx-low_idx == 1){
                 return low_idx;
             }
             int middle_idx = low_idx + ((high_idx - low_idx) / 2);
-            if(value < fx_values[middle_idx]){
+            if(value < x_values[middle_idx]){
                 return get_idx_value(value, low_idx, middle_idx);
             }
-            if(value > fx_values[middle_idx]){
+            if(value > x_values[middle_idx]){
                 return get_idx_value(value, middle_idx, high_idx);
             }
         }
@@ -229,5 +229,5 @@ main(){
     // newton.invert_values();
     newton.print_values();
 
-    newton.test_value(1.5,3);
+    newton.test_value(3.5,4);
 }
