@@ -1,13 +1,11 @@
 #include "../libraries.h"
 
-enum Type;
 
 class NewtonInterpolation{
     private:
         float *x_values;
         float *fx_values;
         int size;
-
 
     public:
 
@@ -41,28 +39,42 @@ class NewtonInterpolation{
             if(!check_equally_spaced()){
                 return 0;
             }
+            cout<<"Equally spaced"<<endl;
             int index = get_idx_value(test, 0, size-1);
             if(index == -1){
                 return 0;
             }
+            cout<<"index = "<<index<<endl;
             Type type = check_possible_polynomial_degree(degree, index);
             if(type == NewtonInterpolation::Type::ERROR){
                 return 0;
             }
+            
+            if(type == NewtonInterpolation::Type::REGRESIVO){
+                invert_values();
+                index = size-index;
+            }
+            cout<<"grado:"<<degree<<endl;
+
+            //Crear matriz de diferencias
             float differences_table[degree+1][degree+2];
-            for(int i=0; i<size; i++){
-                differences_table[i][0] = x_values[i];
-                differences_table[i][1] = fx_values[i];
+
+            for(int i=0; i<degree+1; i++){
+                differences_table[i][0] = x_values[index + i];
+                differences_table[i][1] = fx_values[index + i];
             }
             
             for(int col=2; col<degree+2; col++){
-                for(int row=0; row<size-(col-1); row++){
+                int row_iterations = (degree+1)-(col-1);
+                for(int row=0; row<row_iterations; row++){
                     differences_table[row][col] = differences_table[row+1][col-1]-differences_table[row][col-1];
                 }
             }
             //TODO: generar tabla de diferencias
 
-            for(int i=0; i<size; i++){
+
+            //imprimir tabla
+            for(int i=0; i<(degree+1); i++){
                 for(int j=0; j<degree+2; j++){
                     cout<<differences_table[i][j]<<" ";
                 }
@@ -199,7 +211,7 @@ main(){
     
     for(int i=0; i<size; i++){
         x[i] = i;
-        fx[i] = i;
+        fx[i] = i*i;
     }
 
     // x[1] = 20;
@@ -215,7 +227,7 @@ main(){
     // cout<<newton.check_possible_polynomial_degree(10,index);
 
     // newton.invert_values();
-    // newton.print_values();
+    newton.print_values();
 
-    newton.test_value(1.5,2);
+    newton.test_value(1.5,3);
 }
