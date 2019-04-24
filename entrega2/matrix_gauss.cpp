@@ -105,14 +105,14 @@ class Matrix {
             for(int i = 0; i<size; i++){
                 determinant *= det.mat[i][i];
             }
-            cout<<"La determinante de la matriz es: "<<determinant<<"\n";
+            //cout<<"La determinante de la matriz es: "<<determinant<<"\n";
             return determinant;
         }
 		
 		
-        void system_solution(Matrix &triangle){
+        float* system_solution(Matrix &triangle){
             //triangle.print_matrix();
-            float result[size];
+            float *result = new float[size];
             for(int row=size-1; row>=0; row--){
                 float sum = triangle.vector[row];
                 for(int col=1; col<size; col++){
@@ -124,9 +124,10 @@ class Matrix {
                 result[row] = sum/triangle.mat[row][row];
                 
             }
-            for(int i=0; i<size; i++){
-                cout<<"X"<<i+1<<"="<<result[i]<<"\n";
-            }
+            // for(int i=0; i<size; i++){
+            //     cout<<"X"<<i+1<<"="<<result[i]<<"\n";
+            // }
+            return result;
         }
         
         void modify_matrix_element(int &row, int &col, float &newval){
@@ -264,14 +265,20 @@ int main(){
     cin>>size;
     Matrix mat = Matrix(size);
     mat.poblate_matrix();
+    mat.mat[0][0]=100;
     mat.poblate_vector();
+    mat.vector[0]=100;
     mat.print_matrix();
-    Matrix triangle = mat.gauss_elimination();
-    cout<<"Matriz triangulada"<<endl;
-    triangle.print_matrix();
-    float determinante = mat.determinant(triangle);
-    cout<<"Determinante = "<< determinante<<endl;
-    mat.system_solution(triangle);
-
+    Matrix triangular = mat.gauss_elimination();
+    // cout<<"Matriz triangulada"<<endl;
+    // triangular.print_matrix();
+    float determinante = mat.determinant(triangular);
+    // cout<<"Determinante = "<< determinante<<endl;
+    float *resultado;
+    resultado = (float *) malloc(size * sizeof(float));
+    for(int i=0; i<size; i++){
+        resultado[i] = mat.system_solution(triangular)[i];
+        // cout<<i<<" ";
+    }
     return 0;
 }

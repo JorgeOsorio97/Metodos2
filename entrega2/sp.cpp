@@ -43,16 +43,23 @@ class Vector{
         }
 
         void dif_h(Vector &vec, Vector &h){
-            for(int i=0; i<this->size-1; i++){
+            for(int i=0; i<this->size; i++){
                 h.vector[i]=vec.vector[i+1]-vec.vector[i];
             }
-            h.vector[size]=0;
+            
         }
 
         void dif_div(Vector &v1, Vector &v2, Vector &vres){ 
-            for (int i=0; i<this->size-1; i++){
+            for (int i=0; i<this->size; i++){
                 vres.vector[i]=(v1.vector[i+1]-v1.vector[i])/v2.vector[i];
             }
+        }
+        
+         void dif_s(Vector &vec, Vector &s){
+            for(int i=0; i<this->size; i++){
+                s.vector[i]=6*(vec.vector[i+1]-vec.vector[i]);
+            }
+            
         }
         
 
@@ -107,22 +114,25 @@ int main ()
     cin>>size;
     Vector x = Vector(size);
     Vector fx = Vector(size);
-    Vector h = Vector(size);
-    Vector dd= Vector(size);
+    Vector h = Vector(size-1);
+    Vector dd= Vector(size-1);
+    Vector ss= Vector(size-2);
     cout<< "Escribe tu columna x"<<endl;
     x.Vector :: user_poblate();
     cout<< "Escribe tu columna fx"<<endl;
     fx.Vector :: user_poblate();
     x.Vector :: dif_h(x,h);
     fx.Vector :: dif_div(fx,h,dd);
-    
-    //cout<< "x________f(x)      "<<endl;
+    dd.Vector :: dif_s(dd,ss);
     x.print_vector();
     cout<<endl;
     fx.print_vector();
+    cout<<endl;
     h.print_vector();
+    cout<<endl;
     dd.print_vector();
-      
+    cout<<endl;
+    ss.print_vector();  
     
 } 
 
