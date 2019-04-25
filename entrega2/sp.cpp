@@ -222,29 +222,31 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     
 } 
 
-// int main (){
-//     int size;
-//     float a,b;
-//     int i=0;
-//     cout<<"Dime tamaño de tus datos"<<endl;
-//     cin>>size;
-//     Vector x = Vector(size);
-//     Vector fx = Vector(size);
-//     //cout<< "Escribe tu columna x"<<endl;
-//     //x.Vector :: user_poblate(x);
-//     //cout<< "Escribe tu columna fx"<<endl;
-//     //fx.Vector :: user_poblate(fx);
-//     //spline(x, fx, size);
-//     Matrix mat = Matrix(size);
+void print_spline(){
+    int size;
+    float a,b;
+    int i=0;
+    cout<<"Dime tamaño de tus datos"<<endl;
+    cin>>size;
+    Vector x = Vector(size);
+    Vector fx = Vector(size);
+    //cout<< "Escribe tu columna x"<<endl;
+    //x.Vector :: user_poblate(x);
+    //cout<< "Escribe tu columna fx"<<endl;
+    //fx.Vector :: user_poblate(fx);
+    //spline(x, fx, size);
+    Matrix mat = Matrix(size);
     
-//     cout<<"Matriz"<<endl;
-//     //pob_mat(mat,  size);
-// for (int j=0; j<size ; j++){
-//     for (int i=0;i<size; i++){
-//         mat.mat[i][j]=1;
-//     }
-// }
+    cout<<"Matriz"<<endl;
+    //pob_mat(mat,  size);
+for (int j=0; j<size ; j++){
+    for (int i=0;i<size; i++){
+        mat.mat[i][j]=1;
+        mat.vector[i]=1;
+    }
+}
 
-//     mat.print_matrix();
-//     return 0;
-// }
+
+    mat.print_matrix();
+    
+}
