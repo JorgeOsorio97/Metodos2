@@ -35,7 +35,7 @@ class Vector{
                     cin>>ve.vector[i];
             }
         }
-        void user_poblate(Vector &ve, float *newton){
+        void conversar(Vector &ve, float *newton){
             for(int i=0; i<size; i++){
                     ve.vector[i]=newton[i];
             }
