@@ -231,36 +231,36 @@ class NewtonInterpolation{
         }
 };
 
-main(){
-    float *x, *fx;
-    int size;
-    cout<<"Dime tamaño de tus datos"<<endl;
-    cin>>size;
-    x = (float*) malloc(size * sizeof(float));
-    fx = (float*) malloc(size * sizeof(float));
+// main(){
+//     float *x, *fx;
+//     int size;
+//     cout<<"Dime tamaño de tus datos"<<endl;
+//     cin>>size;
+//     x = (float*) malloc(size * sizeof(float));
+//     fx = (float*) malloc(size * sizeof(float));
     
-    for(int i=0; i<size; i++){
-        cout<<"Dime x en la posicion: "<<i+1<<endl;
-        cin>>x[i];
-    }
-    for(int i=0; i<size; i++){        
-        cout<<"Dime fx en la posicion: "<<i+1<<endl;
-        cin>>fx[i];
-    }
-    // x[1] = 20;
-    // fx[1] = 30;
+//     for(int i=0; i<size; i++){
+//         cout<<"Dime x en la posicion: "<<i+1<<endl;
+//         cin>>x[i];
+//     }
+//     for(int i=0; i<size; i++){        
+//         cout<<"Dime fx en la posicion: "<<i+1<<endl;
+//         cin>>fx[i];
+//     }
+//     // x[1] = 20;
+//     // fx[1] = 30;
 
-    NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
+//     NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
     
-    // newton.print_values();
+//     // newton.print_values();
 
-    // int index = newton.get_idx_value(11.5,0,size-1);
-    // cout<<"index = "<<index<<endl;
+//     // int index = newton.get_idx_value(11.5,0,size-1);
+//     // cout<<"index = "<<index<<endl;
 
-    // cout<<newton.check_possible_polynomial_degree(10,index);
+//     // cout<<newton.check_possible_polynomial_degree(10,index);
 
-    // newton.invert_values();
-    newton.print_values();
+//     // newton.invert_values();
+//     newton.print_values();
 
-    cout<<"Resultado = "<<newton.test_value(1.1,3)<<endl;
-}
+//     cout<<"Resultado = "<<newton.test_value(1.1,3)<<endl;
+// }
