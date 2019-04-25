@@ -35,7 +35,7 @@ class Vector{
                     cin>>ve.vector[i];
             }
         }
-        void conversar(Vector &ve, float *newton){
+        void conversar(Vector &ve, float *newton, int size){
             for(int i=0; i<size; i++){
                     ve.vector[i]=newton[i];
             }
