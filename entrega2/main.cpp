@@ -1,10 +1,12 @@
 #include "../libraries.h"
 #include "interpolacion.cpp"
-//#include "sp.cpp"
+#include "sp.cpp"
 
 int main(){
     int size, dec1, dec2, dec3, dec4, dec5, degree, pos;
     float *x, *fx, inter_point;
+    Vector xv = Vector [size];
+
 
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;
