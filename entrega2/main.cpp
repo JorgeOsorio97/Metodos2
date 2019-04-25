@@ -4,9 +4,9 @@
 
 int main(){
     int size, dec1, dec2, dec3, dec4, dec5, degree, pos;
-    float *x, *fx, inter_point;
-    Vector xv = Vector [size];
-
+    float *x, *fx, inter_point, new_val;
+    Vector xv = Vector(size);
+    Vector fxv = Vector(size);
 
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;
@@ -37,8 +37,9 @@ int main(){
                                 cin>> pos;
                             }
                         }while(pos>size);
-                        cout<< "Dame el valor de la posicion "<<pos<<":"<<endl;
-                        cin>> x[pos];
+                        cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
+                        cin>> new_val;
+                        vec1.set_x_val(pos, new_val);
                         vec1.print_values();
                         break;
                     
@@ -51,20 +52,44 @@ int main(){
                                 cin>> pos;
                             }
                             }while(pos>size);
-                        cout<< "Dame el valor de la posicion "<<pos<<":"<<endl;
-                        cin>> fx[pos];
+                         cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
+                        cin>> new_val;
+                        vec1.set_fx_val(pos, new_val);
                         vec1.print_values();
                         break;
                 }
             }    
         }while(dec1 == 2);
+
+        xv.conversar(xv,x);
+        fxv.conversar(fxv, fx);
+        cout<<"¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\3.Salir del programa."<<endl;
+        cin>>dec3;
+        switch (dec3){
+            case 1:
+                    cout<< "Dame el punto a interpolar: "<<endl;
+                    cin>> inter_point;
+                    cout<< "Dame el grado del polinomio: "<<endl;
+                    cin>> degree;
+                    if(degree >= size){
+                        cout<< "Grado no valido";
+                        break;
+                    }
+                    vec1.print_values();
+                    vec1.test_value(inter_point, degree);
+                
+                break;
         
-        cout<< "Dame el punto a interpolar: "<<endl;
-        cin>> inter_point;
-        cout<< "Dame el grado del polinomio: "<<endl;
-        cin>> degree;
-        vec1.print_values();
-        vec1.test_value(inter_point, degree);
+            case 2:
+                
+                    spline(xv, fxv, size);
+                break;
+
+            case 3:
+                break;
+
+        }
+        
 
 }
 
