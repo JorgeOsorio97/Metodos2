@@ -115,10 +115,6 @@ class NewtonInterpolation{
          */
         int get_idx_value(float value, int low_idx, int high_idx){
             if(value < x_values[low_idx] || value > x_values[high_idx]){
-<<<<<<< HEAD
-                cout<<"Valor fuera de rango"<<endl;
-=======
->>>>>>> cf9b146c658addac39990af3d5375dc1a14698cc
                 return -1;
             }
             if(high_idx-low_idx == 1){
