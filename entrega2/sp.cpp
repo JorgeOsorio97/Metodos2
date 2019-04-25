@@ -106,7 +106,7 @@ class Vector{
 
 };
  
-void pob_mat(Matrix &m, Vector &h, int size){
+void pob_mat(Matrix &m, Vector &h, Vector &s, int size){
 
 
     m.mat[0][0]=2*(h.vector[0]+h.vector[1]);
@@ -128,7 +128,7 @@ void pob_mat(Matrix &m, Vector &h, int size){
         
         
             m.mat[j][i]=h.vector[i+1];
-            m.mat[j][i+1]=2*(h.vector[i+1]-h.vector[i+2]);
+            m.mat[j][i+1]=2*(h.vector[i+1]+h.vector[i+2]);
             m.mat[j][i+2]=h.vector[i+2];
         
 
@@ -152,7 +152,7 @@ void pob_mat(Matrix &m, Vector &h, int size){
 for (int j=0; j<size ; j++){
     for (int i=0;i<size; i++){
         
-        m.vector[i]=4;
+        m.vector[i]=s.vector[i];
     }
 }
 }
@@ -193,13 +193,13 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     Matrix mat = Matrix(msize);
     
     cout<<"Matriz"<<endl;
-    pob_mat(mat, h, msize);
+    pob_mat(mat, h, ss, msize);
     mat.print_matrix();
 
     
 } 
 void prueba(){
-    int siz=11;
+    int siz=9;
     Matrix mati = Matrix(siz);
     
     Vector h = Vector(10);
@@ -208,12 +208,13 @@ void prueba(){
     h.vector[1]=0.26;
     h.vector[2]=0.78;
     h.vector[3]=0.64;
-    h.vector[4]=1.54;
-    h.vector[5]=2.3;
-    h.vector[6]=2.08;
-    h.vector[7]=1.28;
-    h.vector[8]=-0.839999;
-    h.vector[9]=0;
+    h.vector[4]=0.74;
+    h.vector[5]=1.54;
+    h.vector[6]=2.3;
+    h.vector[7]=2.08;
+    h.vector[8]=1.28;
+    h.vector[9]=-0.839999;
+    
 
     ss.vector[0]=-44.6923;
     ss.vector[1]=9.8416;
@@ -224,7 +225,7 @@ void prueba(){
     ss.vector[6]=-6.41589;
     ss.vector[7]=10.774;
     ss.vector[8]=-18.4197;
-    pob_mat(mati, h, siz);
+    pob_mat(mati, h, ss, siz);
     mati.print_matrix();
 }
 
