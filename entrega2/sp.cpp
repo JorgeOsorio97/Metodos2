@@ -41,9 +41,10 @@ class Vector{
         }
 
         void dif_h(Vector &vec, Vector &h){
-            for(int i=0; i<this->size; i++){
+            for(int i=0; i<this->size-1; i++){
                 h.vector[i]=vec.vector[i+1]-vec.vector[i];
             }
+            h.vector[size]=0;
             
         }
 
@@ -99,7 +100,7 @@ class Vector{
 
 };
  
-void pob_mat(Matrix &m, Vector &h, int siz){
+/**void pob_mat(Matrix &m, Vector &h, int siz){
    //int i=0;
    //int j=0;
    //siz=siz-1;
@@ -108,7 +109,7 @@ void pob_mat(Matrix &m, Vector &h, int siz){
    for (int i=2; i<siz; i++){
        m.mat[i][0]=0;
     }
-    for (int j=1;j<siz-1; j++){
+    for (int j=1; j<siz-1; j++){
         for(int i=0; i<j-1; i++){
             m.mat[i][j]=0;
         }
@@ -133,36 +134,85 @@ void pob_mat(Matrix &m, Vector &h, int siz){
     m.mat[siz-1][siz]=h.vector[siz-1];
     m.mat[siz][siz]=2*(h.vector[siz-1]+h.vector[siz]);
 
-}
+}*/
+void pob_mat(Matrix &m,/* Vector &h,**/ int siz){
+   //int i=0;
+   //int j=0;
+   //siz=siz-1;
+  /* m.mat[0][0]=2;
+   m.mat[0][1]=3;
+   for (int i=2; i<siz; i++){
+       m.mat[i][0]=0;
+    }
+    for (int j=1; j<siz-1; j++){
+        for(int i=0; i<j-1; i++){
+            m.mat[i][j]=0;
+        }
+        for (int i=j-1; i<j+2; i++){
+            m.mat[i][j]=1;
+            m.mat[i][j]=2;
+            m.mat[i][j]=3;
+        }
 
+
+
+
+        for (int i=j+2;i<siz; i++){
+            m.mat[i][j]=0;
+        }
+    }
+
+    for(int i=0; i<siz-2; i++){
+       m.mat[i][siz]=0;
+    }
+    m.mat[siz-1][siz]=1;
+    m.mat[siz][siz]=2;
+    
+
+**/
+//for (int j=0; j<siz ; j++){
+  //  for (int i=0;i<siz; i++){
+    //    m.mat[i][j]=1;
+    //}
+//}
+}
 
 void spline (Vector &vx,Vector &vfx, int sizp)
 {
   //float x, fx;
     
-    Vector h = Vector(sizp-1);
+    Vector h = Vector(sizp);
     Vector dd= Vector(sizp-1);
     Vector ss= Vector(sizp-2);
     
     vx.Vector :: dif_h(vx,h);
     vfx.Vector :: dif_div(vfx,h,dd);
     dd.Vector :: dif_s(dd,ss);
+    cout<<"tabla"<<endl;
+    cout<<"x"<<endl;
     vx.print_vector();
     cout<<endl;
+    cout<<"f(x)"<<endl;
     vfx.print_vector();
     cout<<endl;
+    cout<<"h"<<endl;
     h.print_vector();
     cout<<endl;
+    cout<<"Diferencias divididas"<<endl;
     dd.print_vector();
     cout<<endl;
+    cout<<"S_i resultados del sistema de ecuaciones"<<endl;
     ss.print_vector();  
     cout<<endl;
     cout<<endl;
     cout<<endl;
     int msize=sizp-2;
+
     Matrix mat = Matrix(msize);
-    pob_mat(mat, h, msize);
-    mat.print_matrix();
+    
+    cout<<"Matriz"<<endl;
+    //pob_mat(mat, h, msize);
+    //mat.print_matrix();
 
     
 } 
@@ -175,11 +225,21 @@ int main (){
     cin>>size;
     Vector x = Vector(size);
     Vector fx = Vector(size);
-    cout<< "Escribe tu columna x"<<endl;
-    x.Vector :: user_poblate(x);
-    cout<< "Escribe tu columna fx"<<endl;
-    fx.Vector :: user_poblate(fx);
-    spline(x, fx, size);
+    //cout<< "Escribe tu columna x"<<endl;
+    //x.Vector :: user_poblate(x);
+    //cout<< "Escribe tu columna fx"<<endl;
+    //fx.Vector :: user_poblate(fx);
+    //spline(x, fx, size);
+    Matrix mat = Matrix(size);
+    
+    cout<<"Matriz"<<endl;
+    //pob_mat(mat,  size);
+for (int j=0; j<size ; j++){
+    for (int i=0;i<size; i++){
+        mat.mat[i][j]=1;
+    }
+}
 
+    mat.print_matrix();
     return 0;
 }
