@@ -37,9 +37,10 @@ class NewtonInterpolation{
 
         float test_value(float test, int degree){
             if(!check_equally_spaced()){
+                cout<<"Tus valores no estan igualmente espaciados"<<endl;
                 return 0;
             }
-            cout<<"Equally spaced"<<endl;
+            cout<<"Vector igualmente espaciado"<<endl;
             int index = get_idx_value(test, 0, size-1);
             if(index == -1){
                 return 0;
@@ -201,33 +202,3 @@ class NewtonInterpolation{
         }
 };
 
-main(){
-    float *x, *fx;
-    int size;
-    cout<<"Dime tamaño de tus datos"<<endl;
-    cin>>size;
-    x = (float*) malloc(size * sizeof(float));
-    fx = (float*) malloc(size * sizeof(float));
-    
-    for(int i=0; i<size; i++){
-        x[i] = i;
-        fx[i] = i*i;
-    }
-
-    // x[1] = 20;
-    // fx[1] = 30;
-
-    NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
-    
-    // newton.print_values();
-
-    // int index = newton.get_idx_value(11.5,0,size-1);
-    // cout<<"index = "<<index<<endl;
-
-    // cout<<newton.check_possible_polynomial_degree(10,index);
-
-    // newton.invert_values();
-    newton.print_values();
-
-    newton.test_value(3.5,4);
-}
