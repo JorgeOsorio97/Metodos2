@@ -35,6 +35,11 @@ class Vector{
                     cin>>ve.vector[i];
             }
         }
+        void user_poblate(Vector &ve, float *newton){
+            for(int i=0; i<size; i++){
+                    ve.vector[i]=newton[i];
+            }
+        }
 
         void modify_element(int idx, float newVal){
             this->vector[idx] = newVal;
@@ -235,7 +240,7 @@ int main (){
     cout<<"Matriz"<<endl;
     //pob_mat(mat,  size);
 for (int j=0; j<size ; j++){
-    for (int i=0;i<size; i++){
+    for (int i=0;i<siz; i++){
         mat.mat[i][j]=1;
     }
 }
