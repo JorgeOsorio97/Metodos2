@@ -259,7 +259,8 @@ class Matrix {
 
 };
 
-int main(){
+
+void matriz(){
     int size;
     cout<<"Dime el tamaño de la matriz"<<endl;
     cin>>size;
@@ -280,5 +281,5 @@ int main(){
         resultado[i] = mat.system_solution(triangular)[i];
         // cout<<i<<" ";
     }
-    return 0;
+    
 }

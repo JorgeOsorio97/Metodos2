@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <math.h>
+#include "../libraries.h"
+#include "matrix_gauss.cpp"
 
 
 using namespace std;
@@ -32,9 +30,9 @@ class Vector{
             }
         }
 
-        void user_poblate(){
+        void user_poblate(Vector &ve){
             for(int i=0; i<size; i++){
-                    cin>>vector[i];
+                    cin>>ve.vector[i];
             }
         }
 
@@ -101,12 +99,75 @@ class Vector{
 
 };
  
+void pob_mat(Matrix &m, Vector &h, int siz){
+   //int i=0;
+   //int j=0;
+   //siz=siz-1;
+   m.mat[0][0]=2*(h.vector[0]+h.vector[1]);
+   m.mat[0][1]=h.vector[1];
+   for (int i=2; i<siz; i++){
+       m.mat[i][0]=0;
+    }
+    for (int j=1;j<siz-1; j++){
+        for(int i=0; i<j-1; i++){
+            m.mat[i][j]=0;
+        }
+        for (int i=j-1; i<j+2; i++){
+            m.mat[i][j]=h.vector[j];
+            m.mat[i][j]=2*(h.vector[j]+h.vector[j+1]);
+            m.mat[i][j]=h.vector[j+1];
+        }
 
 
 
-int main ()
+
+        for (int i=j+2;i<siz; i++){
+            m.mat[i][j]=0;
+        }
+    }
+
+
+    for(int i=0; i<siz-2; i++){
+        m.mat[i][siz]=0;
+    }
+    m.mat[siz-1][siz]=h.vector[siz-1];
+    m.mat[siz][siz]=2*(h.vector[siz-1]+h.vector[siz]);
+
+}
+
+
+void spline (Vector &vx,Vector &vfx, int sizp)
 {
   //float x, fx;
+    
+    Vector h = Vector(sizp-1);
+    Vector dd= Vector(sizp-1);
+    Vector ss= Vector(sizp-2);
+    
+    vx.Vector :: dif_h(vx,h);
+    vfx.Vector :: dif_div(vfx,h,dd);
+    dd.Vector :: dif_s(dd,ss);
+    vx.print_vector();
+    cout<<endl;
+    vfx.print_vector();
+    cout<<endl;
+    h.print_vector();
+    cout<<endl;
+    dd.print_vector();
+    cout<<endl;
+    ss.print_vector();  
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    int msize=sizp-2;
+    Matrix mat = Matrix(msize);
+    pob_mat(mat, h, msize);
+    mat.print_matrix();
+
+    
+} 
+
+int main (){
     int size;
     float a,b;
     int i=0;
@@ -114,25 +175,11 @@ int main ()
     cin>>size;
     Vector x = Vector(size);
     Vector fx = Vector(size);
-    Vector h = Vector(size-1);
-    Vector dd= Vector(size-1);
-    Vector ss= Vector(size-2);
     cout<< "Escribe tu columna x"<<endl;
-    x.Vector :: user_poblate();
+    x.Vector :: user_poblate(x);
     cout<< "Escribe tu columna fx"<<endl;
-    fx.Vector :: user_poblate();
-    x.Vector :: dif_h(x,h);
-    fx.Vector :: dif_div(fx,h,dd);
-    dd.Vector :: dif_s(dd,ss);
-    x.print_vector();
-    cout<<endl;
-    fx.print_vector();
-    cout<<endl;
-    h.print_vector();
-    cout<<endl;
-    dd.print_vector();
-    cout<<endl;
-    ss.print_vector();  
-    
-} 
+    fx.Vector :: user_poblate(fx);
+    spline(x, fx, size);
 
+    return 0;
+}
