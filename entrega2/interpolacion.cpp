@@ -70,8 +70,8 @@ class NewtonInterpolation{
                     differences_table[row][col] = differences_table[row+1][col-1]-differences_table[row][col-1];
                 }
             }
-            //TODO: generar tabla de diferencias
-
+            float h = (x_values[1]-x_values[0]);
+            float s = (test - differences_table[0][0])/h;
 
             //imprimir tabla
             for(int i=0; i<(degree+1); i++){
@@ -80,6 +80,27 @@ class NewtonInterpolation{
                 }
                 cout<<endl;
             }
+
+            float result = fx_values[0];
+            for(int i=1; i<=degree; i++){
+                float mult_s = 1;
+                for(int j=0; j<i; j++){
+                    mult_s *= (s-j);
+                }
+                result += (differences_table[0][i+1]/factorial(i))*mult_s;
+            }
+            return result;
+        }
+        
+        /** Calcular el factorial de un entero */
+        float factorial(int fac){
+            //cout<<"FActorial de: "<<fac<<endl;
+            float res = 1;
+            for(int i=1; i<=fac; i++){
+                res *=i;
+            }
+            //cout<<"factorial = "<<res<<endl;
+            return res;
         }
 
         /** Encontrar entre que indices se encuentra el valor a buscar
@@ -92,17 +113,18 @@ class NewtonInterpolation{
          *          ojo si es menor a 0 significa que no est en el intervalo
          */
         int get_idx_value(float value, int low_idx, int high_idx){
-            if(value < fx_values[low_idx] || value > fx_values[high_idx]){
+            if(value < x_values[low_idx] || value > x_values[high_idx]){
+                cout<<"Valor fuera de rango"<<endl;
                 return -1;
             }
             if(high_idx-low_idx == 1){
                 return low_idx;
             }
             int middle_idx = low_idx + ((high_idx - low_idx) / 2);
-            if(value < fx_values[middle_idx]){
+            if(value < x_values[middle_idx]){
                 return get_idx_value(value, low_idx, middle_idx);
             }
-            if(value > fx_values[middle_idx]){
+            if(value > x_values[middle_idx]){
                 return get_idx_value(value, middle_idx, high_idx);
             }
         }
@@ -125,15 +147,23 @@ class NewtonInterpolation{
         bool check_equally_spaced(){
             float separation, previous_separation;
             for(int i=0; i<(size-1); i++){
-                separation = x_values[i]-x_values[i+1];
+                separation = x_values[i+1]-x_values[i];
                 if(i!=0){
-                    if(separation != previous_separation){
+                    if(!isEqual(separation,previous_separation)){
+                        // cout<<"Espaciado no igual en indice: "<<i<<endl;
+                        // cout<<"Previous: "<< previous_separation<<endl;
+                        // cout<<"Current: "<<separation<<endl;
                         return false;
                     }
                 }
                 previous_separation = separation;
             }
             return true;
+        }
+
+        inline bool isEqual(double x, double y){
+        const double epsilon = 1e-5;
+        return std::abs(x - y) <= epsilon * std::abs(x);
         }
 
         /** Imprimir en consola los valores */
@@ -210,10 +240,13 @@ main(){
     fx = (float*) malloc(size * sizeof(float));
     
     for(int i=0; i<size; i++){
-        x[i] = i;
-        fx[i] = i*i;
+        cout<<"Dime x en la posicion: "<<i+1<<endl;
+        cin>>x[i];
     }
-
+    for(int i=0; i<size; i++){        
+        cout<<"Dime fx en la posicion: "<<i+1<<endl;
+        cin>>fx[i];
+    }
     // x[1] = 20;
     // fx[1] = 30;
 
@@ -229,5 +262,5 @@ main(){
     // newton.invert_values();
     newton.print_values();
 
-    newton.test_value(1.5,3);
+    cout<<"Resultado = "<<newton.test_value(1.1,3)<<endl;
 }
