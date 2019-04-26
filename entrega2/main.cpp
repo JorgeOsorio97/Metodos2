@@ -5,7 +5,7 @@
 int main(){
     int size, dec1, dec2, dec3, dec4, dec5, dec6, degree, pos;
     float *x, *fx, inter_point, new_val;
-    Vector xv = NULL;
+     Vector xv = NULL;
     Vector fxv = NULL;
 
     system("cls");
@@ -28,8 +28,6 @@ int main(){
             cout<< "Dame el valor de f(x) en la posicion "<<i<<":"<<endl;
             cin>>fx[i], fxv.vector[i];
         }
-        xv.print_vector();
-        fxv.print_vector();
         NewtonInterpolation vec1 = NewtonInterpolation(x, fx, size);
         vec1.print_values();
         
@@ -53,6 +51,7 @@ int main(){
                         cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
                         cin>> new_val;
                         vec1.set_x_val(pos, new_val);
+                        xv.modify_element(pos, new_val);
                         vec1.print_values();
                         break;
                     
@@ -69,6 +68,7 @@ int main(){
                         cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
                         cin>> new_val;
                         vec1.set_fx_val(pos, new_val);
+                        fxv.modify_element(pos, new_val);
                         vec1.print_values();
                         break;
                 }
@@ -111,6 +111,7 @@ int main(){
                                 goto Etiqueta_1;
                             }
                             else{
+                                vec1.~NewtonInterpolation();
                                 cout<< "Bueno, adios";
                             }
                         }
@@ -135,10 +136,14 @@ int main(){
                         cout<< "¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No.";
                         cin>> dec6;
                         if(dec6==1){
+                            xv.~Vector();
+                            fxv.~Vector();
                             goto Etiqueta_1;
                         }
                         else{
                             cout<< "Bueno, adios";
+                            xv.~Vector();
+                            fxv.~Vector();
                         }
                     }
 
@@ -148,6 +153,5 @@ int main(){
 
         }
         
-
 }
 
