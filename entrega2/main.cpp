@@ -91,7 +91,9 @@ int main(){
                         goto Etiqueta_z;
                     }
                     vec1.test_value(inter_point, degree);
+                    vec1.check_equally_spaced();
                     vec1.print_values();
+
                     cout<< "¿Quieres interpolar otro punto?\n1.Si.\t2.No."<<endl;
                     cin>> dec4;
                     if(dec4==1){
@@ -104,7 +106,7 @@ int main(){
                             goto Etiqueta_2;
                         }
                         else{ 
-                            cout<< "¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No.";
+                            cout<< "¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
                             cin>> dec6;
                             if(dec6==1){
                                 vec1.~NewtonInterpolation();
@@ -123,7 +125,7 @@ int main(){
 
             case 2:
                     if (size < 3){
-                        cout<< "Tienes muy pocos puntos, no es valido para este metodo.\tLlena otra vez tu tabla.";
+                        cout<< "Tienes muy pocos puntos, no es valido para este metodo.\tLlena otra vez tu tabla."<<endl;
                         goto Etiqueta_1;
                     }
                     spline(xv, fxv, size);
@@ -133,7 +135,7 @@ int main(){
                             goto Etiqueta_2;
                     }
                     else{ 
-                        cout<< "¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No.";
+                        cout<< "¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
                         cin>> dec6;
                         if(dec6==1){
                             xv.~Vector();
@@ -141,7 +143,7 @@ int main(){
                             goto Etiqueta_1;
                         }
                         else{
-                            cout<< "Bueno, adios";
+                            cout<< "Bueno, adios"<<endl;
                             xv.~Vector();
                             fxv.~Vector();
                         }
