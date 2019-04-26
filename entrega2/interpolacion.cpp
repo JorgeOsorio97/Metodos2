@@ -85,8 +85,15 @@ class NewtonInterpolation{
             float result = fx_values[0];
             for(int i=1; i<=degree; i++){
                 float mult_s = 1;
-                for(int j=0; j<i; j++){
-                    mult_s *= (s-j);
+                if(type==NewtonInterpolation::Type::PROGRESIVO){
+                    for(int j=0; j<i; j++){
+                        mult_s *= (s-j);
+                    }
+                }
+                else{
+                    for(int j=0; j<i; j++){
+                        mult_s *= (s+j);
+                    }
                 }
                 result += (differences_table[0][i+1]/factorial(i))*mult_s;
             }
@@ -262,5 +269,5 @@ main(){
     // newton.invert_values();
     newton.print_values();
 
-    cout<<"Resultado = "<<newton.test_value(1.1,3)<<endl;
+    cout<<"Resultado = "<<newton.test_value(2,3)<<endl;
 }
