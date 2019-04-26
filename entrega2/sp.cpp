@@ -10,6 +10,7 @@ class Vector{
 
     public: 
         float *vector;
+        float *vec;
 
         Vector(int oSize){
             size = oSize;
@@ -35,7 +36,7 @@ class Vector{
                     cin>>ve.vector[i];
             }
         }
-        void conversar(Vector &ve, float *newton){
+        void conversar(Vector &ve, float *newton, int size){
             for(int i=0; i<size; i++){
                     ve.vector[i]=newton[i];
             }
@@ -105,91 +106,67 @@ class Vector{
 
 };
  
-/**void pob_mat(Matrix &m, Vector &h, int siz){
-   //int i=0;
-   //int j=0;
-   //siz=siz-1;
-   m.mat[0][0]=2*(h.vector[0]+h.vector[1]);
-   m.mat[0][1]=h.vector[1];
-   for (int i=2; i<siz; i++){
-       m.mat[i][0]=0;
+void pob_mat(Matrix &m, Vector &h, Vector &s, int size){
+
+
+    m.mat[0][0]=2*(h.vector[0]+h.vector[1]);
+    m.mat[0][1]=h.vector[1];
+    for (int i=2; i<size; i++){
+       m.mat[0][i]=0;
     }
-    for (int j=1; j<siz-1; j++){
-        for(int i=0; i<j-1; i++){
-            m.mat[i][j]=0;
+    int i;
+    float a,b,c;
+    a=1;
+    b=2;
+    c=3;
+    for (int j=1; j<size-1; j++){
+        i=0;
+    
+        for(i=0; i<j-1; i++){
+            m.mat[j][i]=0;
         }
-        for (int i=j-1; i<j+2; i++){
-            m.mat[i][j]=h.vector[j];
-            m.mat[i][j]=2*(h.vector[j]+h.vector[j+1]);
-            m.mat[i][j]=h.vector[j+1];
-        }
+        
+        
+            m.mat[j][i]=h.vector[i+1];
+            m.mat[j][i+1]=2*(h.vector[i+1]+h.vector[i+2]);
+            m.mat[j][i+2]=h.vector[i+2];
+        
 
 
 
 
-        for (int i=j+2;i<siz; i++){
-            m.mat[i][j]=0;
-        }
-    }
-
-
-    for(int i=0; i<siz-2; i++){
-        m.mat[i][siz]=0;
-    }
-    m.mat[siz-1][siz]=h.vector[siz-1];
-    m.mat[siz][siz]=2*(h.vector[siz-1]+h.vector[siz]);
-
-}*/
-void pob_mat(Matrix &m,/* Vector &h,**/ int siz){
-   //int i=0;
-   //int j=0;
-   //siz=siz-1;
-  /* m.mat[0][0]=2;
-   m.mat[0][1]=3;
-   for (int i=2; i<siz; i++){
-       m.mat[i][0]=0;
-    }
-    for (int j=1; j<siz-1; j++){
-        for(int i=0; i<j-1; i++){
-            m.mat[i][j]=0;
-        }
-        for (int i=j-1; i<j+2; i++){
-            m.mat[i][j]=1;
-            m.mat[i][j]=2;
-            m.mat[i][j]=3;
-        }
-
-
-
-
-        for (int i=j+2;i<siz; i++){
-            m.mat[i][j]=0;
+        for (int i=j+2;i<size; i++){
+            m.mat[j][i]=0;
         }
     }
 
-    for(int i=0; i<siz-2; i++){
-       m.mat[i][siz]=0;
+    for(int i=0; i<size-2; i++){
+       m.mat[size-1][i]=0;
     }
-    m.mat[siz-1][siz]=1;
-    m.mat[siz][siz]=2;
+
+    m.mat[size-1][size-2]=h.vector[size-1];
+    m.mat[size-1][size-1]=2*(h.vector[size-1]+h.vector[size]);
     
 
-**/
-//for (int j=0; j<siz ; j++){
-  //  for (int i=0;i<siz; i++){
-    //    m.mat[i][j]=1;
-    //}
-//}
+
+for (int j=0; j<size ; j++){
+    for (int i=0;i<size; i++){
+        
+        m.vector[i]=s.vector[i];
+    }
+}
 }
 
 void spline (Vector &vx,Vector &vfx, int sizp)
 {
-  //float x, fx;
-    
+
     Vector h = Vector(sizp);
     Vector dd= Vector(sizp-1);
     Vector ss= Vector(sizp-2);
     
+
+
+
     vx.Vector :: dif_h(vx,h);
     vfx.Vector :: dif_div(vfx,h,dd);
     dd.Vector :: dif_s(dd,ss);
@@ -216,35 +193,59 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     Matrix mat = Matrix(msize);
     
     cout<<"Matriz"<<endl;
-    //pob_mat(mat, h, msize);
-    //mat.print_matrix();
+    pob_mat(mat, h, ss, msize);
+    mat.print_matrix();
+    // hasta aqui llena la tabla bien
+
 
     
 } 
-
-int main (){
-    int size;
-    float a,b;
-    int i=0;
-    cout<<"Dime tamaño de tus datos"<<endl;
-    cin>>size;
-    Vector x = Vector(size);
-    Vector fx = Vector(size);
-    //cout<< "Escribe tu columna x"<<endl;
-    //x.Vector :: user_poblate(x);
-    //cout<< "Escribe tu columna fx"<<endl;
-    //fx.Vector :: user_poblate(fx);
-    //spline(x, fx, size);
-    Matrix mat = Matrix(size);
+void prueba(){
+    int siz=9;
+    Matrix mati = Matrix(siz);
     
-    cout<<"Matriz"<<endl;
-    //pob_mat(mat,  size);
-for (int j=0; j<size ; j++){
-    for (int i=0;i<siz; i++){
-        mat.mat[i][j]=1;
+    Vector h = Vector(10);
+    Vector ss= Vector(9);
+    h.vector[0]=0.12;
+    h.vector[1]=0.26;
+    h.vector[2]=0.78;
+    h.vector[3]=0.64;
+    h.vector[4]=0.74;
+    h.vector[5]=1.54;
+    h.vector[6]=2.3;
+    h.vector[7]=2.08;
+    h.vector[8]=1.28;
+    h.vector[9]=-0.839999;
+    
+
+    ss.vector[0]=-44.6923;
+    ss.vector[1]=9.8416;
+    ss.vector[2]=-7.65384;
+    ss.vector[3]=-0.770272;
+    ss.vector[4]=-5.98947;
+    ss.vector[5]=10.7641;
+    ss.vector[6]=-6.41589;
+    ss.vector[7]=10.774;
+    ss.vector[8]=-18.4197;
+    pob_mat(mati, h, ss, siz);
+    mati.print_matrix();
+    //todo apartir de aqui tambien ponlo en spline
+    Matrix triangular = mati.gauss_elimination();
+     cout<<"Matriz triangulada"<<endl;
+     triangular.print_matrix();
+    float determinante = mati.determinant(triangular);
+     cout<<"Determinante = "<< determinante<<endl;
+    float *resultado;
+    resultado = (float *) malloc(siz * sizeof(float));
+    for(int i=0; i<siz; i++){
+        resultado[i] = mati.system_solution(triangular)[i];
+         cout<<i<<endl;
+
+
     }
+    for (int i= 0; i<siz; i++){
+        cout<<resultado[i]<<endl;
+    }
+
 }
 
-    mat.print_matrix();
-    return 0;
-}
