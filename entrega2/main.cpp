@@ -5,8 +5,8 @@
 int main(){
     int size, dec1, dec2, dec3, dec4, dec5, dec6, degree, pos;
     float *x, *fx, inter_point, new_val;
-    Vector xv = Vector(size);
-    Vector fxv = Vector(size);
+    Vector xv = NULL;
+    Vector fxv = NULL;
 
     system("cls");
 	cout<<"Programa por :"<<endl;
@@ -18,6 +18,8 @@ int main(){
         Etiqueta_1:
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;
+        xv = Vector(size);
+        fxv = Vector(size);
         x = (float*) malloc(size * sizeof(float));
         fx = (float*) malloc(size * sizeof(float));
         for(int i=0; i<size; i++){
@@ -26,6 +28,8 @@ int main(){
             cout<< "Dame el valor de f(x) en la posicion "<<i<<":"<<endl;
             cin>>fx[i], fxv.vector[i];
         }
+        xv.print_vector();
+        fxv.print_vector();
         NewtonInterpolation vec1 = NewtonInterpolation(x, fx, size);
         vec1.print_values();
         
