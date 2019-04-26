@@ -115,7 +115,7 @@ int main(){
 
                 
                 break;
-        
+
             case 2:
                     if (size < 3){
                         cout<< "Tienes muy pocos puntos, no es valido para este metodo.\tLlena otra vez tu tabla.";
