@@ -51,10 +51,6 @@ class NewtonInterpolation{
                 return 0;
             }
             
-            if(type == NewtonInterpolation::Type::REGRESIVO){
-                invert_values();
-                index = size-index;
-            }
             cout<<"grado:"<<degree<<endl;
 
             //Crear matriz de diferencias
@@ -64,6 +60,19 @@ class NewtonInterpolation{
                 differences_table[i][0] = x_values[index + i];
                 differences_table[i][1] = fx_values[index + i];
             }
+            if(type == NewtonInterpolation::Type::REGRESIVO){
+                // invert_values();
+                for(int i=0; i<degree+1; i++){
+                    differences_table[i][0] = x_values[index - (degree-1-i)];
+                    differences_table[i][1] = fx_values[index - (degree-1-i)];
+                }
+                index = size-index;
+            }else{
+                for(int i=0; i<degree+1; i++){
+                    differences_table[i][0] = x_values[index + i];
+                    differences_table[i][1] = fx_values[index + i];
+                }
+            }
             
             for(int col=2; col<degree+2; col++){
                 int row_iterations = (degree+1)-(col-1);
@@ -72,7 +81,7 @@ class NewtonInterpolation{
                 }
             }
             float h = (x_values[1]-x_values[0]);
-            float s = (test - differences_table[0][0])/h;
+            float s;
 
             //imprimir tabla
             for(int i=0; i<(degree+1); i++){
@@ -81,21 +90,31 @@ class NewtonInterpolation{
                 }
                 cout<<endl;
             }
-
-            float result = fx_values[0];
+            float result;
+            if(type==NewtonInterpolation::Type::PROGRESIVO){
+                result = differences_table[0][1];
+                s = (test - differences_table[index][0])/h;
+            }else{
+                result = differences_table[degree][1];
+                s = (test - differences_table[index+1][0])/h;
+            }
             for(int i=1; i<=degree; i++){
                 float mult_s = 1;
                 if(type==NewtonInterpolation::Type::PROGRESIVO){
                     for(int j=0; j<i; j++){
                         mult_s *= (s-j);
                     }
+                    result += (differences_table[0][i+1]/factorial(i))*mult_s;
                 }
                 else{
                     for(int j=0; j<i; j++){
                         mult_s *= (s+j);
                     }
+                    int row_iterations = (degree+1)-(i+1);
+                    float val = differences_table[row_iterations][i+1];
+                    result += (val/factorial(i))*mult_s;
                 }
-                result += (differences_table[0][i+1]/factorial(i))*mult_s;
+                
             }
             return result;
         }
@@ -169,8 +188,8 @@ class NewtonInterpolation{
         }
 
         inline bool isEqual(double x, double y){
-        const double epsilon = 1e-5;
-        return std::abs(x - y) <= epsilon * std::abs(x);
+            const double epsilon = 1e-5;
+            return std::abs(x - y) <= epsilon * std::abs(x);
         }
 
         /** Imprimir en consola los valores */
@@ -238,26 +257,26 @@ class NewtonInterpolation{
         }
 };
 
-// main(){
-//     float *x, *fx;
-//     int size;
-//     cout<<"Dime tamaño de tus datos"<<endl;
-//     cin>>size;
-//     x = (float*) malloc(size * sizeof(float));
-//     fx = (float*) malloc(size * sizeof(float));
+main(){
+    float *x, *fx;
+    int size;
+    cout<<"Dime tamaño de tus datos"<<endl;
+    cin>>size;
+    x = (float*) malloc(size * sizeof(float));
+    fx = (float*) malloc(size * sizeof(float));
     
-//     for(int i=0; i<size; i++){
-//         cout<<"Dime x en la posicion: "<<i+1<<endl;
-//         cin>>x[i];
-//     }
-//     for(int i=0; i<size; i++){        
-//         cout<<"Dime fx en la posicion: "<<i+1<<endl;
-//         cin>>fx[i];
-//     }
+    for(int i=0; i<size; i++){
+        cout<<"Dime x en la posicion: "<<i+1<<endl;
+        cin>>x[i];
+    }
+    for(int i=0; i<size; i++){        
+        cout<<"Dime fx en la posicion: "<<i+1<<endl;
+        cin>>fx[i];
+    }
 //     // x[1] = 20;
 //     // fx[1] = 30;
 
-//     NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
+    NewtonInterpolation newton = NewtonInterpolation(x,fx,size);
     
 //     // newton.print_values();
 
@@ -269,5 +288,5 @@ class NewtonInterpolation{
 //     // newton.invert_values();
 //     newton.print_values();
 
-//     cout<<"Resultado = "<<newton.test_value(2,3)<<endl;
-// }
+    cout<<"Resultado = "<<newton.test_value(1.1,3)<<endl;
+}
