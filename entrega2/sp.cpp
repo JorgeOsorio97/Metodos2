@@ -195,6 +195,8 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     cout<<"Matriz"<<endl;
     pob_mat(mat, h, ss, msize);
     mat.print_matrix();
+    // hasta aqui llena la tabla bien
+
 
     
 } 
@@ -227,5 +229,23 @@ void prueba(){
     ss.vector[8]=-18.4197;
     pob_mat(mati, h, ss, siz);
     mati.print_matrix();
+    //todo apartir de aqui tambien ponlo en spline
+    Matrix triangular = mati.gauss_elimination();
+     cout<<"Matriz triangulada"<<endl;
+     triangular.print_matrix();
+    float determinante = mati.determinant(triangular);
+     cout<<"Determinante = "<< determinante<<endl;
+    float *resultado;
+    resultado = (float *) malloc(siz * sizeof(float));
+    for(int i=0; i<siz; i++){
+        resultado[i] = mati.system_solution(triangular)[i];
+         cout<<i<<endl;
+
+
+    }
+    for (int i= 0; i<siz; i++){
+        cout<<resultado[i]<<endl;
+    }
+
 }
 
