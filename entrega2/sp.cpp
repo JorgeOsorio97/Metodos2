@@ -17,9 +17,9 @@ class Vector{
             vector =(float *) malloc(size * sizeof(float));
         }
 
-        // ~Vector(){
-        //     free(vector);
-        // }
+         ~Vector(){
+             free(vector);
+        }
 
         int get_size(){
             return size;
@@ -36,11 +36,8 @@ class Vector{
                     cin>>ve.vector[i];
             }
         }
-        void conversar(Vector &ve, float *newton, int size){
-            for(int i=0; i<size; i++){
-                    ve.vector[i]=newton[i];
-            }
-        }
+        
+        
 
         void modify_element(int idx, float newVal){
             this->vector[idx] = newVal;
@@ -55,9 +52,10 @@ class Vector{
         }
 
         void dif_div(Vector &v1, Vector &v2, Vector &vres){ 
-            for (int i=0; i<this->size; i++){
+            for (int i=0; i<this->size-1; i++){
                 vres.vector[i]=(v1.vector[i+1]-v1.vector[i])/v2.vector[i];
             }
+            vres.vector[size-1]=0;
         }
         
          void dif_s(Vector &vec, Vector &s){
@@ -114,13 +112,9 @@ void pob_mat(Matrix &m, Vector &h, Vector &s, int size){
     for (int i=2; i<size; i++){
        m.mat[0][i]=0;
     }
-    int i;
-    float a,b,c;
-    a=1;
-    b=2;
-    c=3;
+   
     for (int j=1; j<size-1; j++){
-        i=0;
+        int i= 0;
     
         for(i=0; i<j-1; i++){
             m.mat[j][i]=0;
@@ -161,7 +155,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
 {
 
     Vector h = Vector(sizp);
-    Vector dd= Vector(sizp-1);
+    Vector dd= Vector(sizp);
     Vector ss= Vector(sizp-2);
     
 
@@ -196,56 +190,43 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     pob_mat(mat, h, ss, msize);
     mat.print_matrix();
     // hasta aqui llena la tabla bien
-
-
-    
-} 
-void prueba(){
-    int siz=9;
-    Matrix mati = Matrix(siz);
-    
-    Vector h = Vector(10);
-    Vector ss= Vector(9);
-    h.vector[0]=0.12;
-    h.vector[1]=0.26;
-    h.vector[2]=0.78;
-    h.vector[3]=0.64;
-    h.vector[4]=0.74;
-    h.vector[5]=1.54;
-    h.vector[6]=2.3;
-    h.vector[7]=2.08;
-    h.vector[8]=1.28;
-    h.vector[9]=-0.839999;
-    
-
-    ss.vector[0]=-44.6923;
-    ss.vector[1]=9.8416;
-    ss.vector[2]=-7.65384;
-    ss.vector[3]=-0.770272;
-    ss.vector[4]=-5.98947;
-    ss.vector[5]=10.7641;
-    ss.vector[6]=-6.41589;
-    ss.vector[7]=10.774;
-    ss.vector[8]=-18.4197;
-    pob_mat(mati, h, ss, siz);
-    mati.print_matrix();
-    //todo apartir de aqui tambien ponlo en spline
-    Matrix triangular = mati.gauss_elimination();
+   /* Matrix triangular = mat.gauss_elimination();
      cout<<"Matriz triangulada"<<endl;
      triangular.print_matrix();
-    float determinante = mati.determinant(triangular);
+    float determinante = mat.determinant(triangular);
      cout<<"Determinante = "<< determinante<<endl;
-    float *resultado;
-    resultado = (float *) malloc(siz * sizeof(float));
-    for(int i=0; i<siz; i++){
-        resultado[i] = mati.system_solution(triangular)[i];
+    Vector res= Vector(sizp);
+    Vector a= Vector(sizp);
+    Vector b= Vector(sizp);
+    Vector c= Vector(sizp);
+    Vector d= Vector(sizp);
+
+   /* for(int i=0; i<sizp; i++){
+        res.vector[i] = mat.system_solution(triangular)[i];
          cout<<i<<endl;
 
 
     }
-    for (int i= 0; i<siz; i++){
-        cout<<resultado[i]<<endl;
+    
+        res.print_vector();
+/*
+    for (int i=0; i<sizp; i++){
+        a.vector[i]=(res.vector[i+1]-res.vector[i])/(6*h.vector[i]);
+        b.vector[i]=(res.vector[i])/(2);
+        c.vector[i]=dd.vector[i]-((res.vector[i+1]+2*res.vector[i])/(6))*(h.vector[i]);
+        d.vector[i]=vfx.vector[i];
     }
+    cout<<"a"<<endl;
+    a.print_vector();
+    cout<<"b"<<endl;
+    b.print_vector();
+    cout<<"c"<<endl;
+    c.print_vector();
+    cout<<"d"<<endl;
+    d.print_vector();
+*/
 
-}
+    
+} 
+
 
