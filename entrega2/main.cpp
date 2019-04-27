@@ -76,15 +76,7 @@ int main(){
             }    
         }while(dec1 == 2);
 
-        if(!vec1.check_equally_spaced()){
-                cout<<"Tus valores no estan igualmente espaciados"<<endl;
-                cout<<"¿Quieres volver a llenar tu tabla?\nRecuerda que el método de Newton requiere que los valores esten igualmente espaciados.\n\n1.Si.\t2.No.";
-                cin>> decx;
-                if(decx = 1){
-                    goto Etiqueta_table;
-                }
-            }
-            cout<<"Vector igualmente espaciado"<<endl;
+        
 
         Etiqueta_2:
         cout<<"¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t3.Salir del programa."<<endl;
@@ -93,8 +85,14 @@ int main(){
             case 1:{
                     Etiqueta_3: 
                     if(!vec1.check_equally_spaced()){
-                        cout<<"Tus valores no estan espaciados correctamente"<<endl;
+                            cout<<"Tus valores no estan igualmente espaciados"<<endl;
+                            cout<<"¿Quieres volver a llenar tu tabla?\nRecuerda que el método de Newton requiere que los valores esten igualmente espaciados.\n\n1.Si.\t2.No.";
+                            cin>> decx;
+                            if(decx = 1){
+                                goto Etiqueta_table;
+                            }
                     }
+                    cout<<"Vector igualmente espaciado"<<endl;
                     cout<< "Dame el punto a interpolar: "<<endl;
                     cin>> inter_point;
                     int index = vec1.get_idx_value(inter_point, 0, size-1);
