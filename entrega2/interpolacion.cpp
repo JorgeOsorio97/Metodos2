@@ -10,9 +10,9 @@ class NewtonInterpolation{
     public:
 
         enum Type{
-            PROGRESIVO,
-            REGRESIVO,
-            ERROR
+            PROGRESIVO = 0,
+            REGRESIVO = 1,
+            ERROR = 2
         };
 
         Type type;
@@ -47,7 +47,7 @@ class NewtonInterpolation{
             }
             cout<<"index = "<<index<<endl;
             Type type = check_possible_polynomial_degree(degree, index);
-            if(type == ERROR){
+            if(type == 2){
                 return 0;
             }
             
