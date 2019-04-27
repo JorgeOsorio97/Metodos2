@@ -3,7 +3,7 @@
 #include "sp.cpp"
 
 int main(){
-    int size, dec1, dec2, dec3, dec4, dec5, dec6, degree, pos;
+    int size, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos;
     float *x, *fx, inter_point, new_val;
      Vector xv = NULL;
     Vector fxv = NULL;
@@ -22,6 +22,7 @@ int main(){
         fxv = Vector(size);
         x = (float*) malloc(size * sizeof(float));
         fx = (float*) malloc(size * sizeof(float));
+        Etiqueta_table:
         for(int i=0; i<size; i++){
             cout<< "Dame el valor de x en la posicion "<<i<<":"<<endl;
             cin>>x[i], xv.vector[i];
@@ -75,6 +76,16 @@ int main(){
             }    
         }while(dec1 == 2);
 
+        if(!vec1.check_equally_spaced()){
+                cout<<"Tus valores no estan igualmente espaciados"<<endl;
+                cout<<"¿Quieres volver a llenar tu tabla?\nRecuerda que el método de Newton requiere que los valores esten igualmente espaciados.\n\n1.Si.\t2.No.";
+                cin>> decx;
+                if(decx = 1){
+                    goto Etiqueta_table;
+                }
+            }
+            cout<<"Vector igualmente espaciado"<<endl;
+
         Etiqueta_2:
         cout<<"¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t3.Salir del programa."<<endl;
         cin>>dec3;
@@ -83,11 +94,18 @@ int main(){
                     Etiqueta_3: 
                     cout<< "Dame el punto a interpolar: "<<endl;
                     cin>> inter_point;
+                    int index = vec1.get_idx_value(inter_point, 0, size-1);
+                    if(index == -1){
+                        cout<< "Tu punto esta fuera de la tabla, por favor ingresa un punto valido: "<<endl;
                     cout<< "Dame el grado del polinomio: "<<endl;
                     Etiqueta_z:
                     cin>> degree;
-                    if(degree >= size){
-                        cout<< "No se puede generar un polinomio de ese grado.\n\nDame un grado valido: ";
+                       goto Etiqueta_3;
+                    }
+                    cout<<"index = "<<index<<endl;
+                    Type type = vec1.check_possible_polynomial_degree(degree, index);
+                    if(type == NewtonInterpolation::Type::ERROR){
+                        cout << "El grado que quieres es mayor al tamaño de tu tabla y no hay suficientes puntos.\nPor favor ingresa un grado menor: "<<endl;
                         goto Etiqueta_z;
                     }
                     vec1.test_value(inter_point, degree);

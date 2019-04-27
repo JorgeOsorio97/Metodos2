@@ -37,10 +37,10 @@ class NewtonInterpolation{
 
         float test_value(float test, int degree){
             if(!check_equally_spaced()){
-                cout<<"Tus valores no estan igualmente espaciados"<<endl;
+                //cout<<"Tus valores no estan igualmente espaciados"<<endl;
                 return 0;
             }
-            cout<<"Vector igualmente espaciado"<<endl;
+            //cout<<"Vector igualmente espaciado"<<endl;
             int index = get_idx_value(test, 0, size-1);
             if(index == -1){
                 return 0;
@@ -51,7 +51,7 @@ class NewtonInterpolation{
                 return 0;
             }
             
-            cout<<"grado:"<<degree<<endl;
+            //cout<<"grado:"<<degree<<endl;
 
             //Crear matriz de diferencias
             float differences_table[degree+1][degree+2];
