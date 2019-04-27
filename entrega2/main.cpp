@@ -105,7 +105,7 @@ int main(){
                     Etiqueta_z:
                     cin>> degree;
                     NewtonInterpolation::Type type = vec1.check_possible_polynomial_degree(degree, index);
-                    if(type == NewtonInterpolation::Type::ERROR){
+                    if(type == NewtonInterpolation::ERROR){
                         cout << "El grado que quieres es mayor al tamaño de tu tabla y no hay suficientes puntos.\nPor favor ingresa un grado menor: "<<endl;
                         goto Etiqueta_z;
                     }
