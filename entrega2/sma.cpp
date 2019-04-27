@@ -39,10 +39,10 @@ int main (){
     Vector x = Vector(size);
     Vector fx = Vector(size);
     llenar(x,fx);
-    /*cout<<"llena tu vector x"<<endl;
+    cout<<"llena tu vector x"<<endl;
     x.user_poblate(x);
     cout<<"llena tu vector f(x)"<<endl;
-    fx.user_poblate(fx);*/
+    fx.user_poblate(fx);
     spline (x,fx,size);
 
 }

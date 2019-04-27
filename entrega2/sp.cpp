@@ -47,7 +47,7 @@ class Vector{
             for(int i=0; i<this->size-1; i++){
                 h.vector[i]=vec.vector[i+1]-vec.vector[i];
             }
-            h.vector[size]=0;
+            h.vector[size-1]=0;
             
         }
 
@@ -58,8 +58,8 @@ class Vector{
             vres.vector[size-1]=0;
         }
         
-         void dif_s(Vector &vec, Vector &s){
-            for(int i=0; i<this->size; i++){
+         void dif_s(Vector &vec, Vector &s, int size){
+            for(int i=0; i<size; i++){
                 s.vector[i]=6*(vec.vector[i+1]-vec.vector[i]);
             }
             
@@ -163,7 +163,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
 
     vx.Vector :: dif_h(vx,h);
     vfx.Vector :: dif_div(vfx,h,dd);
-    dd.Vector :: dif_s(dd,ss);
+    dd.Vector :: dif_s(dd,ss, sizp-2);
     cout<<"tabla"<<endl;
     cout<<"x"<<endl;
     vx.print_vector();
@@ -177,6 +177,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     cout<<"Diferencias divididas"<<endl;
     dd.print_vector();
     cout<<endl;
+    cout<<"hola"<<endl;
     cout<<"S_i resultados del sistema de ecuaciones"<<endl;
     ss.print_vector();  
     cout<<endl;
@@ -190,7 +191,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     pob_mat(mat, h, ss, msize);
     mat.print_matrix();
     // hasta aqui llena la tabla bien
-   /* Matrix triangular = mat.gauss_elimination();
+    Matrix triangular = mat.gauss_elimination();
      cout<<"Matriz triangulada"<<endl;
      triangular.print_matrix();
     float determinante = mat.determinant(triangular);
@@ -200,22 +201,24 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     Vector b= Vector(sizp);
     Vector c= Vector(sizp);
     Vector d= Vector(sizp);
-
-   /* for(int i=0; i<sizp; i++){
-        res.vector[i] = mat.system_solution(triangular)[i];
+    res.vector[0]=0;
+    res.vector[sizp-1]=0;
+    for(int i=0; i<sizp-1; i++){
+        res.vector[i+1] = mat.system_solution(triangular)[i];
          cout<<i<<endl;
 
 
     }
     
         res.print_vector();
-/*
+
     for (int i=0; i<sizp; i++){
         a.vector[i]=(res.vector[i+1]-res.vector[i])/(6*h.vector[i]);
         b.vector[i]=(res.vector[i])/(2);
         c.vector[i]=dd.vector[i]-((res.vector[i+1]+2*res.vector[i])/(6))*(h.vector[i]);
         d.vector[i]=vfx.vector[i];
     }
+    a.vector[sizp-1]=0;
     cout<<"a"<<endl;
     a.print_vector();
     cout<<"b"<<endl;
@@ -224,8 +227,11 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     c.print_vector();
     cout<<"d"<<endl;
     d.print_vector();
-*/
-
+for (int i=0; i<sizp-1;i++){
+    cout<<"g"<<i<<"(x) =  ("<<a.vector[i]<<")(x-xi)³+("<<b.vector[i]<<")(x-xi)²+("<<c.vector[i]<<")(x-xi)+("<<d.vector[i]<<")              "<<vx.vector[i]<<" ≤ x < "<<vx.vector[i+1];
+    cout<<endl;
+    cout<<endl;
+}
     
 } 
 
