@@ -90,27 +90,30 @@ int main(){
         cout<<"¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t3.Salir del programa."<<endl;
         cin>>dec3;
         switch (dec3){
-            case 1:
+            case 1:{
                     Etiqueta_3: 
+                    if(!vec1.check_equally_spaced()){
+                        cout<<"Tus valores no estan espaciados correctamente"<<endl;
+                    }
                     cout<< "Dame el punto a interpolar: "<<endl;
                     cin>> inter_point;
                     int index = vec1.get_idx_value(inter_point, 0, size-1);
                     if(index == -1){
                         cout<< "Tu punto esta fuera de la tabla, por favor ingresa un punto valido: "<<endl;
-                    cout<< "Dame el grado del polinomio: "<<endl;
-                    Etiqueta_z:
-                    cin>> degree;
                        goto Etiqueta_3;
                     }
                     cout<<"index = "<<index<<endl;
-                    Type type = vec1.check_possible_polynomial_degree(degree, index);
+                    cout<< "Dame el grado del polinomio: "<<endl;
+                    Etiqueta_z:
+                    cin>> degree;
+                    NewtonInterpolation::Type type = vec1.check_possible_polynomial_degree(degree, index);
                     if(type == NewtonInterpolation::Type::ERROR){
                         cout << "El grado que quieres es mayor al tamaño de tu tabla y no hay suficientes puntos.\nPor favor ingresa un grado menor: "<<endl;
                         goto Etiqueta_z;
                     }
-                    vec1.test_value(inter_point, degree);
-                    vec1.check_equally_spaced();
-                    vec1.print_values();
+                    float result = vec1.test_value(inter_point, degree);
+                    cout<<"El valor de fx("<<inter_point<<") = "<<result<<endl;
+                    //vec1.print_values();
 
                     cout<< "¿Quieres interpolar otro punto?\n1.Si.\t2.No."<<endl;
                     cin>> dec4;
@@ -140,8 +143,9 @@ int main(){
 
                 
                 break;
+            }
 
-            case 2:
+            case 2:{
                     if (size < 3){
                         cout<< "Tienes muy pocos puntos, no es valido para este metodo.\tLlena otra vez tu tabla."<<endl;
                         goto Etiqueta_1;
@@ -168,6 +172,7 @@ int main(){
                     }
 
                 break;
+            }
             case 3:
                 break;
 
