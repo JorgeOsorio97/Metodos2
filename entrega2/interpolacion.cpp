@@ -60,7 +60,7 @@ class NewtonInterpolation{
                 differences_table[i][0] = x_values[index + i];
                 differences_table[i][1] = fx_values[index + i];
             }
-            if(type == NewtonInterpolation::Type::REGRESIVO){
+            if(type == REGRESIVO){
                 // invert_values();
                 for(int i=0; i<degree+1; i++){
                     differences_table[i][0] = x_values[index - (degree-1-i)];
@@ -91,7 +91,7 @@ class NewtonInterpolation{
                 cout<<endl;
             }
             float result;
-            if(type==NewtonInterpolation::Type::PROGRESIVO){
+            if(type==PROGRESIVO){
                 result = differences_table[0][1];
                 s = (test - differences_table[index][0])/h;
             }else{
@@ -100,7 +100,7 @@ class NewtonInterpolation{
             }
             for(int i=1; i<=degree; i++){
                 float mult_s = 1;
-                if(type==NewtonInterpolation::Type::PROGRESIVO){
+                if(type==PROGRESIVO){
                     for(int j=0; j<i; j++){
                         mult_s *= (s-j);
                     }
@@ -160,13 +160,13 @@ class NewtonInterpolation{
             int progressive = size - init_idx;
             if(progressive>=degree+1){
                 cout<<"Progresivo"<<endl;
-                return NewtonInterpolation::Type::PROGRESIVO;
+                return PROGRESIVO;
             }
             if(init_idx+1>=degree+1){
                 cout<<"Regresivo"<<endl;
-                return NewtonInterpolation::Type::REGRESIVO;
+                return REGRESIVO;
             }
-            return NewtonInterpolation::Type::ERROR;
+            return ERROR;
         }
 
         /** Revisar que los valores esten igualmente espaciados */
