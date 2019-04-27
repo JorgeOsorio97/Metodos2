@@ -47,7 +47,7 @@ class NewtonInterpolation{
             }
             cout<<"index = "<<index<<endl;
             Type type = check_possible_polynomial_degree(degree, index);
-            if(type == NewtonInterpolation::Type::ERROR){
+            if(type == Type::ERROR){
                 return 0;
             }
             
