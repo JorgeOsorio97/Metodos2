@@ -3,7 +3,7 @@
 #include "sp.cpp"
 
 int main(){
-    int size, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos;
+    int size, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *x, *fx, inter_point, new_val;
      Vector xv = NULL;
     Vector fxv = NULL;
@@ -94,7 +94,7 @@ int main(){
                     Etiqueta_3: 
                     cout<< "Dame el punto a interpolar: "<<endl;
                     cin>> inter_point;
-                    int index = vec1.get_idx_value(inter_point, 0, size-1);
+                    index = vec1.get_idx_value(inter_point, 0, size-1);
                     if(index == -1){
                         cout<< "Tu punto esta fuera de la tabla, por favor ingresa un punto valido: "<<endl;
                     cout<< "Dame el grado del polinomio: "<<endl;
@@ -110,7 +110,7 @@ int main(){
                     }
                     vec1.test_value(inter_point, degree);
                     vec1.check_equally_spaced();
-                    vec1.print_values();
+                    //vec1.print_values();
 
                     cout<< "¿Quieres interpolar otro punto?\n1.Si.\t2.No."<<endl;
                     cin>> dec4;
