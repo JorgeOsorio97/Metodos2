@@ -189,7 +189,7 @@ class NewtonInterpolation{
 
         inline bool isEqual(double x, double y){
             const double epsilon = 1e-5;
-            return std::abs(x - y) <= epsilon * std::abs(x);
+            return abs(x - y) <= epsilon * abs(x);
         }
 
         /** Imprimir en consola los valores */
