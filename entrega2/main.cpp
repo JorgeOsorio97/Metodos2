@@ -87,7 +87,7 @@ int main(){
             cout<<"Vector igualmente espaciado"<<endl;
 
         Etiqueta_2:
-        cout<<"¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t3.Salir del programa."<<endl;
+        cout<<"¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t"<<endl;
         cin>>dec3;
         switch (dec3){
             case 1:{
@@ -173,12 +173,6 @@ int main(){
 
                 break;
             }
-            case 3:
-                vec1.~NewtonInterpolation();
-                xv.~Vector();
-                fxv.~Vector();
-                break;
-
         }
         
 }
