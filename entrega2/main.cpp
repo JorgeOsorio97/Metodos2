@@ -3,7 +3,7 @@
 #include "sp.cpp"
 
 int main(){
-    int size, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos;
+    int size, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *x, *fx, inter_point, new_val;
      Vector xv = NULL;
     Vector fxv = NULL;
@@ -95,7 +95,7 @@ int main(){
                     cout<<"Vector igualmente espaciado"<<endl;
                     cout<< "Dame el punto a interpolar: "<<endl;
                     cin>> inter_point;
-                    int index = vec1.get_idx_value(inter_point, 0, size-1);
+                    index = vec1.get_idx_value(inter_point, 0, size-1);
                     if(index == -1){
                         cout<< "Tu punto esta fuera de la tabla, por favor ingresa un punto valido: "<<endl;
                        goto Etiqueta_3;
@@ -172,6 +172,9 @@ int main(){
                 break;
             }
             case 3:
+                vec1.~NewtonInterpolation();
+                xv.~Vector();
+                fxv.~Vector();
                 break;
 
         }
