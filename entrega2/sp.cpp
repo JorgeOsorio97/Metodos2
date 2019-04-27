@@ -228,7 +228,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     cout<<"d"<<endl;
     d.print_vector();
 for (int i=0; i<sizp-1;i++){
-    cout<<"g"<<i<<"(x) =  ("<<a.vector[i]<<")(x-xi)³+("<<b.vector[i]<<")(x-xi)²+("<<c.vector[i]<<")(x-xi)+("<<d.vector[i]<<")              "<<vx.vector[i]<<" ≤ x < "<<vx.vector[i+1];
+    cout<<"g"<<i<<"(x) =  ("<<a.vector[i]<<")(x-xi)^3+("<<b.vector[i]<<")(x-xi)^2+("<<c.vector[i]<<")(x-xi)+("<<d.vector[i]<<")              "<<vx.vector[i]<<" <=  x < "<<vx.vector[i+1];
     cout<<endl;
     cout<<endl;
 }
