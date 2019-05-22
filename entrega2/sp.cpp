@@ -10,7 +10,7 @@ class Vector{
 
     public: 
         float *vector;
-        float *vec;
+        // float *vec;
 
         Vector(int oSize){
             size = oSize;
