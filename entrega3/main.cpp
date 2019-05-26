@@ -60,13 +60,31 @@ int main(){
                             }while(pos>size);
                         cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
                         cin>> new_val;
-                        
                         fxv.modify_element(pos, new_val);
                         
                         break;
                  }
               
         }while(dec1 == 2);
+
+    Etiqueta_2:
+        cout<<"Â¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t"<<endl;
+        cin>>dec3;
+        switch(dec3){
+
+        case 1:
+
+        break;
+
+        case 2: 
+
+        break;
+
+        }
+
+
+
+
 
  }
  
