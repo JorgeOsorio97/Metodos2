@@ -1,0 +1,604 @@
+[33mcommit 09ca92679aa9f2aa33557af37d2873b19b81a891[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: = <=>
+Date:   Sun May 26 14:46:40 2019 -0500
+
+    i need change all
+
+[33mcommit 6ff29808a4ca2c33f75814a7d1a9ac4309cde182[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sun May 26 14:26:46 2019 -0500
+
+    comentar main diferenciacion
+
+[33mcommit 847b79446787318053f3d5b6994aaa4e3663cd70[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Sun May 26 14:20:32 2019 -0500
+
+    Metodo Jorge
+
+[33mcommit c70b8c98f72808a09ee947d7051ca32dfc863ee7[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Sun May 26 13:06:33 2019 -0500
+
+    Integracion por Simpson
+
+[33mcommit b2175eddc90a7e6838972f3b75c6e75d2d5c1819[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Sun May 26 06:50:16 2019 -0500
+
+    Integracion por Simpson
+
+[33mcommit 275f7931d0ed1901089bce857eb264ee2e41e91b[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Tue May 21 23:05:19 2019 -0500
+
+    funcion 2 para crear vector I
+
+[33mcommit 7f2bef6aff4e47a408c02f3a74a8a242614662f7[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Tue May 21 12:33:53 2019 -0500
+
+    funcion diferenciacion centrada
+
+[33mcommit 4f44ddd75433ce51963127a21b349b3d4a13be6e[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Sat Apr 27 13:40:08 2019 -0500
+
+    Ya queda perfecto y corre bien en windows, N. progresivo regresivo y spline cubico :D
+
+[33mcommit c587edee773c7dbabdce19bd3d8d54929f780909[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 27 13:15:24 2019 -0500
+
+    coreccion de uso de enums en main
+
+[33mcommit 7a998a9fe1e9841c1917a519a0192ebdff7657ac[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 27 13:09:40 2019 -0500
+
+    coreccion en interpolacion
+
+[33mcommit cfecdbc43048e99823d7d4249e9831a19cb0935a[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 27 13:07:24 2019 -0500
+
+    coreccion en type en interpolacion
+
+[33mcommit ff4bb990da83359288c5458374246b8a0979e0b5[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 27 12:52:49 2019 -0500
+
+    coreccion en type en interpolacion
+
+[33mcommit 0bcc8ca44147c86681c7b17fa5ecffa69a61b9ee[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 27 12:45:53 2019 -0500
+
+    coreccion en type en interpolacion
+
+[33mcommit efa76c82cb020f1d7b27fbdc39c41a005d7464e5[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 27 12:32:35 2019 -0500
+
+    coreccion en type en interpolacion
+
+[33mcommit 9232012ecf594686edb3de9c2891cb92bc9244fc[m
+Merge: 26ea2fa e3d5f03
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 22:23:36 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit 26ea2faf60c5227efa546c190abcc363482eff26[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 22:23:30 2019 -0500
+
+    m
+
+[33mcommit e3d5f034733090261ebb5245d0bf3c24cad15de8[m
+Merge: 1cfc5aa f53f2ea
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Fri Apr 26 22:19:01 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit 1cfc5aa84b62a64908700119b0855bcb6c2ed8cb[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Fri Apr 26 22:18:54 2019 -0500
+
+    coreccion de ubicacion de equally spaced
+
+[33mcommit f53f2eaf17886f6fec86c50cb469e39ab9a35c43[m
+Merge: 70a3373 1a83332
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 22:17:03 2019 -0500
+
+    core error
+
+[33mcommit 70a33732eb1d2919816cf275bfffc85ce3b72aec[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 22:12:02 2019 -0500
+
+    small changes
+
+[33mcommit 1a833329e8a816229e9094c12f8f1a4877340f04[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Fri Apr 26 22:05:08 2019 -0500
+
+    corecciones en main para proceso de interpolacion
+
+[33mcommit b3e032403ae992d83555dae4818675bd0ee34040[m
+Merge: e2f7adb bbd1735
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 20:29:48 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit e2f7adbb43de1bf2e175533ff0469ad751770ac5[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 20:27:26 2019 -0500
+
+    spline cubico terminado, imprime cada paso y los polinomios resultantes con sus intervalos donde son validos
+
+[33mcommit bbd17358ba934fc7206acaaf5a543fe9d7462f27[m
+Merge: a313746 ee7d435
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 20:07:47 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit a3137462603a3fb544d50e4c8f34bc4547953644[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 20:06:59 2019 -0500
+
+    Seguimiento main
+
+[33mcommit ee7d435f08d568d4cc59d3e31bbade939848ee43[m
+Merge: cc93435 fe79c67
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 19:33:38 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit cc934350d68ff3bb3d3d2a20629639a598ba8b22[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 19:32:49 2019 -0500
+
+    espero si se haga el push
+
+[33mcommit fe79c678f6484ac14abda08c3f2b91c87178eee5[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 18:50:38 2019 -0500
+
+    Prueba main
+
+[33mcommit 17bdbf91b86fe8ca021c8dbcdc7b2f951fb74c94[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 18:29:03 2019 -0500
+
+    Problema de core
+
+[33mcommit 54baf2f24a7bfbaabc41cb62e936b6ebe8160cff[m
+Merge: 0d08b33 c8013c9
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 17:19:11 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit c8013c9a868052d994cd139b1e55977470ec8649[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 17:18:26 2019 -0500
+
+    llena bien todos los vectores incluyendo a,b,c,d pero manda mensajes de free()y un core
+
+[33mcommit 0d08b33cdd1f390c729f33ca0ad91ae803cf5bc7[m
+Merge: 5f60c5d efa7780
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 16:17:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit 5f60c5de269171c4de13315c0f57c9ec22c0ee4a[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Apr 26 16:17:38 2019 -0500
+
+    Test
+
+[33mcommit efa77800217fa2229a99558e06b2d43001da84ac[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 10:09:54 2019 -0500
+
+    Ya llena el tipo vector y el float al mismo tiempo solo era una declaracion de variable en una posicion incorrecta
+
+[33mcommit 8336cda6e7d1740f64b381bc630c557d0d637d1b[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Fri Apr 26 09:51:22 2019 -0500
+
+    regresivo ya funcional
+
+[33mcommit ddc2c4d4d103c4078401a89eb3080c63e8260e27[m
+Merge: 80da08d 40c022d
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Fri Apr 26 09:03:57 2019 -0500
+
+    resolver conflicto en merge
+
+[33mcommit 80da08d73f1b6d9b29d150e1e8a6d47ecbaa8aae[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Fri Apr 26 09:02:55 2019 -0500
+
+    avances para interpolacion regresiva
+
+[33mcommit 40c022debfa496b18e3a514a4a575ad13293aecc[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 19:16:01 2019 -0500
+
+    Ya resuelve el sistema solo falta crear los polinomios pero vamos a comer
+
+[33mcommit 6f2407d1d71ba85ed1a137a652b8a6f5cd477088[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 18:59:37 2019 -0500
+
+    sistema lleno
+
+[33mcommit e0ea64a3304946617d0ae5f78ba3b228d540ba8b[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Apr 25 18:47:44 2019 -0500
+
+    Chinga tu madre Jorge
+
+[33mcommit dfa6303eff1afe76bf5ba6bd56d53841440b4030[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 18:16:56 2019 -0500
+
+    ya hace el sistema solo falta que lo resuelba y cacular a, b, c
+
+[33mcommit 9672fcd53c58df1ffffcef820d12e13f9ac3c11e[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 17:41:40 2019 -0500
+
+    correccion de la funcion para convertir un puntero a tipo vector
+
+[33mcommit f2314c679ce2b371e072eb349424c9e2037b7936[m
+Merge: b21f0c7 e2a830a
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 17:39:01 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit b21f0c7f832370797df33bfef4e76ba0280b35ea[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 17:37:35 2019 -0500
+
+    correccion de la funcion para convertir un puntero a tipo vector
+
+[33mcommit e2a830aadc7a9ee8e787849ec11ed255b4ee05f5[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Apr 25 16:06:55 2019 -0500
+
+    Cambios main.cpp
+
+[33mcommit b7d9ddca488708ecab7add309fade6dc641926b5[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 15:20:29 2019 -0500
+
+    spline sin funcion main para que baruc pueda trabajar, mi main estara en sma
+
+[33mcommit 96b18868b8bab6a8f1cc7b9a601cb034bf98f219[m
+Merge: 13d47cb 75d077e
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Apr 25 12:59:34 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit 13d47cbe816641c217821d6d48e3a76675c245f6[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Apr 25 12:59:06 2019 -0500
+
+    cambios
+
+[33mcommit 75d077e535f8ceaa3d76068bdd9a89ba9e2e0d2f[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Thu Apr 25 12:57:22 2019 -0500
+
+    solucion merge
+
+[33mcommit 3653c08c3c562d035c9908f86ff2c425596258ce[m
+Merge: de932ab cf9b146
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Thu Apr 25 12:55:06 2019 -0500
+
+    merge con cambios INECESARIOS de baruc
+
+[33mcommit de932ab255dd3907bc4b0fb74c1f7f432ed3350d[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Thu Apr 25 12:53:52 2019 -0500
+
+    funcionamiento final newton
+
+[33mcommit cf9b146c658addac39990af3d5375dc1a14698cc[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 12:49:18 2019 -0500
+
+    patadas de ahogado para guardar las tablas 0.3
+
+[33mcommit f62319c04830936ed76adf0143a01b716dd7ce09[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 12:47:38 2019 -0500
+
+    patadas de ahogado para guardar las tablas 0.2
+
+[33mcommit aa04c092cfb60cc0266793fa30196bcb6657f515[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 12:44:28 2019 -0500
+
+    patadas de ahogado para guardar las tablas
+
+[33mcommit a667499e8349faea3125b0250a3d368a037d5dc4[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Thu Apr 25 11:14:48 2019 -0500
+
+    Llenado de la matriz para generar el sistema de ecuaciones
+
+[33mcommit d2829b09c33b23789e29cea4aed6df4fe14ab206[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Apr 25 00:34:49 2019 -0500
+
+    Parte de main.cpp
+
+[33mcommit 1f76ae4614737bcb4971f71c11c5ce12a718322d[m
+Merge: 5c03e57 00806d6
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Wed Apr 24 14:07:10 2019 -0500
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit 5c03e571d21699030c1bc64ffb32ab6e1b4568ad[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Wed Apr 24 14:06:15 2019 -0500
+
+    cambios en matrix
+
+[33mcommit 00806d6857019ecf7e5f610e6370111464024916[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Wed Apr 24 14:05:20 2019 -0500
+
+    Arreglos
+
+[33mcommit dadc0ca16baa9ca88174615b2d40e7d6aff8a95a[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Tue Apr 23 22:47:57 2019 -0500
+
+    copiar clase matriz de primer semestre a nuevo archivo
+
+[33mcommit 9ad7b286cf4039d02f1a83296e80c17b753997e1[m
+Merge: 4608310 268bbad
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Tue Apr 23 19:55:08 2019 -0500
+
+    Merge branch 'master' of github.com:JorgeOsorio97/Metodos2
+
+[33mcommit 4608310fcf61aa696c5c2ff2da8ac75742a2e4fc[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Tue Apr 23 19:48:34 2019 -0500
+
+    coreccion en calculo de tablas de difs divididas
+
+[33mcommit 268bbadf1bb674c004a63816954ecb94e563b323[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Tue Apr 23 13:10:56 2019 -0500
+
+    spline cubico columna h y columna de diferencias divididas
+
+[33mcommit a38ef46476a50cb3eb8547599fd68a9680cfe84c[m
+Author: ulises6416 <liracestovv.piamer16@gmail.com>
+Date:   Tue Apr 23 12:43:57 2019 -0500
+
+    spline cubico llenado de tabla, columna h, columna de diferencias divididas
+
+[33mcommit 67c18d503c6eb603454221b60990bf04cd3f210d[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Mon Apr 22 23:16:47 2019 -0500
+
+    enum para tipo de interpolacion
+
+[33mcommit 4e76471d926da170f2525221bf4a0738403a2318[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Mon Apr 22 22:17:09 2019 -0500
+
+    principos de creacion de tabla de diferencias
+
+[33mcommit 7d6e25929c2063dddc841cf8611db2854406581d[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sun Apr 21 19:16:50 2019 -0500
+
+    funcion para checar igualmente espaciados y mejora en impresion
+
+[33mcommit 01468e8661ea14d41b496138ac32f0b1f2b2df0f[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 20 10:13:53 2019 -0500
+
+    agregar busqueda binaria para el indice del valor buscado
+
+[33mcommit 0e794e0ae4ec5a0fd9acfbea29a9af0c2d134cd4[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Apr 20 09:36:42 2019 -0500
+
+    Metodo de ordenamiento de valore y getters and setters en newton
+
+[33mcommit b1e0223f1450552e32a72f95cdcadcbae5634f82[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Fri Apr 19 08:31:42 2019 -0500
+
+    racomodo de archivos para entrega 2 y agregar en gitignore los archivos generados (.exe, .out
+
+[33mcommit aee781047d17ff6a1db0d384e159d1abee991443[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Wed Mar 6 10:22:26 2019 -0600
+
+    agregar nombres a main
+
+[33mcommit 6408809e5bfce0569d5070c771fb28d6cb9ebd1b[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sun Mar 3 19:33:59 2019 -0600
+
+    revision de error en norma resultante en convergencia mas alta
+
+[33mcommit 5d67671b9f69d10711ccac69fd08e09e50c03de3[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sun Mar 3 16:11:18 2019 -0600
+
+    ya lo ultimo antes de la peda
+
+[33mcommit 2c3b65d4b3e182e1aa8dd54f4bf23a1a276b4d9b[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sat Mar 2 18:10:17 2019 -0600
+
+    pruevbas de main.cpp con javo
+
+[33mcommit 05cff35af47d33c117a52bd7d078253884745469[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Fri Mar 1 19:24:33 2019 -0600
+
+    funcion exp
+
+[33mcommit 5e63fe45d7ab76d5a2ed8effad7f5a40a65db922[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 21:27:38 2019 -0600
+
+    Iteraciones en los 4 sistemas, preguntasi el vector inical es el correcto y permite cambiarlo, al acabar un sistema pregunta si desea resolver otro, parece que la interfas esta completa pero aun hay errores desde inversa
+
+[33mcommit d54f2fa2bf144c9010cd50a6432d2d2443f492e4[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Feb 28 19:11:55 2019 -0600
+
+    Arreglo de e^x y estilo de ecuaciones
+
+[33mcommit 9cde042961a4a8ccca904fa3c99db4344a6f1f43[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 16:24:26 2019 -0600
+
+    no hace bien la segunda iteracion de la jacobiana del sistema 2, no hace bien determinantes en matrices 3x3 sitema 1 funciona bien
+
+[33mcommit ffb905fac658e510b8c0863d5ad72405b33a2bd9[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 15:30:29 2019 -0600
+
+    iteraciones con tolerancia, no funciona la funcion norma espectral
+
+[33mcommit fdcf566f1b923f977b04c4088d67f6d9453cea25[m
+Merge: c1c0873 239f110
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 12:44:12 2019 -0600
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit c1c0873df41efc2a87b4dc27a4ceafcdc4b19948[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 12:43:28 2019 -0600
+
+    hice iterativo el calculo del punto, solo esta en el primer sistema de ecuaciones, sin norma espectral
+
+[33mcommit 239f1109c568f0f778a6e651e74810eca44a8983[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Thu Feb 28 12:32:23 2019 -0600
+
+    agregar funcion estatica en vector para norma espectral
+
+[33mcommit b3349efb2775c4b4a2ddea6f76a9ee2d734913d2[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 11:52:06 2019 -0600
+
+    Juntamos cambios de baruc con los de dui
+
+[33mcommit 6ee9b848205e484f4da3260be0b73db628314685[m
+Merge: aaee932 3b366ad
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 11:39:53 2019 -0600
+
+    MERGE: juntamos los cambios de baruc y dui
+
+[33mcommit aaee9325ee876c25f6f1ebc99e77988783f1e0ba[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Thu Feb 28 11:29:15 2019 -0600
+
+    jorge
+
+[33mcommit 3b366adbb5837f4662ee8bc3ff3e8f69b5d8b2d9[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Thu Feb 28 10:31:38 2019 -0600
+
+    Estilo
+
+[33mcommit b137851a3a5ec0004e9dcdd307f132b8167fea11[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Wed Feb 27 17:51:51 2019 -0600
+
+    Arreglo de jacobiana.cpp
+
+[33mcommit 1880cc05abc82301e519d1b850b1b40bb60cf7c9[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Wed Feb 27 16:29:10 2019 -0600
+
+    problema main
+
+[33mcommit f4b7a464b347f38352536d0a5d13988fa29c5ff9[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Wed Feb 27 16:08:33 2019 -0600
+
+    b
+
+[33mcommit cc0e08fc23ed5ff5fde0b3222cfeb04402297b6d[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Wed Feb 27 15:40:55 2019 -0600
+
+    Jacobiana cambiada
+
+[33mcommit 68163c0b896a6a465153d8df9fcaf37f1aac41e1[m
+Author: Ulises Ramírez Calnacasco <liracestovv.piamer16@gmail.com>
+Date:   Wed Feb 27 15:17:32 2019 -0600
+
+    main.cpp
+
+[33mcommit bac396a7cd4cfde06a108d864adca62b5538da29[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Tue Feb 26 12:11:57 2019 -0600
+
+    jacobianas terminadas
+
+[33mcommit a19fce492dc7f0de9f7737d11bec5c7dca08924c[m
+Merge: ec0d4ec 39fcbff
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Tue Feb 26 00:13:33 2019 -0600
+
+    Merge branch 'master' of https://github.com/JorgeOsorio97/Metodos2
+
+[33mcommit ec0d4ec8d5f59849031ad15a683ffec21356c990[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Tue Feb 26 00:10:33 2019 -0600
+
+    Funciones normales y jacobianas
+
+[33mcommit e726c38a0e168690b0bf6a5b844b75faaaee23db[m
+Author: ThereminB <barucisaac@gmail.com>
+Date:   Mon Feb 25 19:59:20 2019 -0600
+
+    Jacobiana y funciones
+
+[33mcommit 39fcbffddf03ed4b30e1ff80bd4e5f5189ff0a78[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Mon Feb 25 09:18:31 2019 -0600
+
+    pruebas dui
+
+[33mcommit 7c943aa401ac6d85584793c4b475f7a6a914e146[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Mon Feb 25 09:13:12 2019 -0600
+
+    comentar main
+
+[33mcommit 95191d0fbcd4f79e275c90a365176cb28126a43d[m
+Author: JorgeOsorio97 <jorge.valdez.osorio@gmail.com>
+Date:   Sun Feb 24 18:30:14 2019 -0600
+
+    crear clases vector y matriz funcionales

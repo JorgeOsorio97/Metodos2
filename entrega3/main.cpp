@@ -25,13 +25,45 @@ int main(){
         
         step=(lastp-firstp)/suba;
         
-        for(int i=firstp; i<lastp; i+=step){
         
-        	size+=i;
-        	xv = Vector(size);
-        	fxv = Vector(size);
-		}
-		
-        x = (float*) malloc(size * sizeof(float));
-        fx = (float*) malloc(size * sizeof(float));
+
+      
+     Vector x = generarVectorIE(firstp,lastp, step);
+     xv.print_vector();
+     Vector fx = Vector(xv.get_size());
+    fxv.user_poblate(fxv);
+     float res = diferenciaCentrada(xv,fxv,1);
+     if(res == NULL){
+         cout<<"No se puede dividir el rango como se desea";
+     }else{
+         cout<<"Dif:"<<res<<endl;
+     }
+
+ }
  
+
+
+ /*do{
+            cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
+            cin>>dec1;
+            if  (dec1 == 2){
+                
+                        cout<< "Â¿Que posicion quieres cambiar?"<<endl;
+                        Etiqueta_y:
+                        cin>> pos;
+                        do{
+                            if(pos >= size){
+                                cout<<"Esa posicion no existe\nIngresa una posicion valida: "<<endl;
+                                goto Etiqueta_y;
+                            }
+                            }while(pos>size);
+                        cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
+                        cin>> new_val;
+                        vec1.set_fx_val(pos, new_val);
+                        fxv.modify_element(pos, new_val);
+                        vec1.print_values();
+                        break;
+                 }
+              
+        }while(dec1 == 2);*/
+
