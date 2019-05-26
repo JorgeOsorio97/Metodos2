@@ -5,7 +5,7 @@
 int main(){
     int size, firstp, lastp, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *xp, *fxp, inter_point, new_val;
-     Vector xv = NULL;
+    Vector xv = NULL;
     Vector fxv = NULL;
 
     system("cls");
@@ -26,12 +26,15 @@ int main(){
         step=(lastp-firstp)/suba;
         
         
-
       
      xv = generarVectorIE(firstp,lastp, step);
      xv.print_vector();
      fxv = Vector(xv.get_size());
-    fxv.user_poblate(fxv);
+    //fxv.user_poblate(fxv);
+    for(int i=0; i=x.get_size;i++){
+            fxv.vector[i]=5;
+    }
+    
      float res = diferenciaCentrada(xv,fxv,1);
      if(res == NULL){
          cout<<"No se puede dividir el rango como se desea";
