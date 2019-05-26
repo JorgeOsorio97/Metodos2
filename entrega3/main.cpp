@@ -27,11 +27,11 @@ int main(){
         
         
       
-     xv = generarVectorIE(firstp,lastp, step);
+     xv=generarVectorIE(firstp,lastp, step);
      xv.print_vector();
      fxv = Vector(xv.get_size());
     //fxv.user_poblate(fxv);
-    for(int i=0; i=xv.get_size;i++){
+    for(int i=0; i=xv.get_size();i++){
             cout<<"Dame el valor en la posicion "<<i<<":"<<endl;
             cin>>fxv.vector[i];
             
@@ -43,12 +43,8 @@ int main(){
      }else{
          cout<<"Dif:"<<res<<endl;
      }
-
- }
- 
-
-
- /*do{
+/*
+      do{
             cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
             cin>>dec1;
             if  (dec1 == 2){
@@ -72,3 +68,6 @@ int main(){
               
         }while(dec1 == 2);*/
 
+ }
+ 
+   
