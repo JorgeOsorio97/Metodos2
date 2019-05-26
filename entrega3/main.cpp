@@ -62,11 +62,11 @@ int main(){
                         cin>> new_val;
                         vec1.set_fx_val(pos, new_val);
                         fxv.modify_element(pos, new_val);
-                        vec1.print_values();
+                        
                         break;
                  }
               
-        }while(dec1 == 2);*/
+        }while(dec1 == 2);
 
  }
  
