@@ -43,7 +43,7 @@ int main(){
      }else{
          cout<<"Dif:"<<res<<endl;
      }
-/*
+
       do{
             cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
             cin>>dec1;
@@ -53,7 +53,7 @@ int main(){
                         Etiqueta_y:
                         cin>> pos;
                         do{
-                            if(pos >= size){
+                            if(pos >= xv.get_size()){
                                 cout<<"Esa posicion no existe\nIngresa una posicion valida: "<<endl;
                                 goto Etiqueta_y;
                             }
