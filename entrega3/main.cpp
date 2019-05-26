@@ -15,7 +15,7 @@ int main(){
 	cout<<"Ulises Ramirez Calnacasco"<<endl;
 	cout<<"Abraham Hernandez Martinez"<<endl<<endl;
 
-        Etiqueta_1:
+        Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;
         cout<<"Dame el punto final de tu tabla: "<<endl;
@@ -43,7 +43,9 @@ int main(){
      }else{
          cout<<"Dif:"<<res<<endl;
      }
+  
 
+    Etiqueta_1:
       do{
             cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
             cin>>dec1;
@@ -74,10 +76,62 @@ int main(){
 
         case 1:
 
+
+
+
+         cout<< "Â¿Quieres hacer otro metodo con la misma tabla de valores?\n1.Si.\t2.No."<<endl;
+                    cin>> dec4;
+                    if(dec4==1){
+                            goto Etiqueta_2;
+                    }
+                    else{ 
+                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
+                        if (dec7==1){
+                            goto Etiqueta_1;
+                        }else{
+                        cout<< "Â¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
+                        cin>> dec6;
+                        if(dec6==1){
+                            xv.~Vector();
+                            fxv.~Vector();
+                            goto Etiqueta_x;
+                        }
+                        else{
+                            cout<< "Bueno, adios"<<endl;
+                            xv.~Vector();
+                            fxv.~Vector();
+                            }
+                        }
+                    }
         break;
 
         case 2: 
 
+
+            cout<< "Â¿Quieres hacer otro metodo con la misma tabla de valores?\n1.Si.\t2.No."<<endl;
+                    cin>> dec4;
+                    if(dec4==1){
+                            goto Etiqueta_2;
+                    }
+                    else{ 
+                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
+                        if (dec7==1){
+                            goto Etiqueta_1;
+                        }else{
+                        cout<< "Â¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
+                        cin>> dec6;
+                        if(dec6==1){
+                            xv.~Vector();
+                            fxv.~Vector();
+                            goto Etiqueta_x;
+                        }
+                        else{
+                            cout<< "Bueno, adios"<<endl;
+                            xv.~Vector();
+                            fxv.~Vector();
+                            }
+                        }
+                    }
         break;
 
         }
