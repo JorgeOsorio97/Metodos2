@@ -60,7 +60,7 @@ int main(){
                             }while(pos>size);
                         cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
                         cin>> new_val;
-                        vec1.set_fx_val(pos, new_val);
+                        
                         fxv.modify_element(pos, new_val);
                         
                         break;
