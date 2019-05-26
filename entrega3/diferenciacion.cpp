@@ -12,6 +12,16 @@ inline bool isEqual(double x, double y){
             const double epsilon = 1e-5;
             return abs(x - y) <= epsilon * abs(x);
         }
+        
+Vector generarVectorIE(float init, float end, float step){
+    int size = (end-init)/step+1;
+    cout<<"Size: "<<size<<endl;
+    Vector res = Vector(size);
+     for(int i=0; i<size; i++){
+        res.vector[i]=init+(i*step);
+    }
+    return res;
+}
 
 Vector generarVectorIE2(float init, float end, float step){
     int size = (end-init)/step+1;
