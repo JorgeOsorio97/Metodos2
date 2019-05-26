@@ -4,7 +4,7 @@
 
 int main(){
     int size, firstp, lastp, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
-    float *x, *fx, inter_point, new_val;
+    float *xp, *fxp, inter_point, new_val;
      Vector xv = NULL;
     Vector fxv = NULL;
 
@@ -28,9 +28,9 @@ int main(){
         
 
       
-     Vector x = generarVectorIE(firstp,lastp, step);
+     xv = generarVectorIE(firstp,lastp, step);
      xv.print_vector();
-     Vector fx = Vector(xv.get_size());
+     fxv = Vector(xv.get_size());
     fxv.user_poblate(fxv);
      float res = diferenciaCentrada(xv,fxv,1);
      if(res == NULL){
