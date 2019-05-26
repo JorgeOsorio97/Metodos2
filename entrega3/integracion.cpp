@@ -38,21 +38,8 @@ float simpson_octavo(float paso, Vector fxv, float fx[], int size){
     return y;     //Se regresa y solo para hacer pruebas
 }
 
-float last_value(int x[]) {
-  return x[sizeof(x) -1];
+float last_value(Vector x) {
+  return sizeof(x) -1;
 }
 
 
-int main (){
-    Vector fxv = NULL;
-    float *fx;
-    int size = 6;
-    fxv = Vector(size);
-    fx = (float*) malloc(size * sizeof(float));        
-        for(int i=0; i<size; i++){
-            //cout<< "Dame el valor de x en la posicion "<<i<<":"<<endl;
-            cout<< "Dame el valor de f(x) en la posicion "<<i<<":"<<endl;
-            cin>>fxv.vector[i];
-        }
-    cout<<simpson_tercio(.3, fxv, fx, size)<<endl;
-}
