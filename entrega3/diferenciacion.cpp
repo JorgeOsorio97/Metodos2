@@ -41,16 +41,16 @@ Vector generarVectorIE2(float init, float end, float step){
 
 
 
-main(){
-    Vector x = generarVectorIE2(4,4.5,0.1);
-    x.print_vector();
-    Vector fx = Vector(x.get_size());
-    fx.user_poblate(fx);
-    float res = diferenciaCentrada(x,fx,1);
-    if(res == NULL){
-        cout<<"No se puede dividir el rango como se desea";
-    }else{
-        cout<<"Dif:"<<res<<endl;
-    }
+// main(){
+//     Vector x = generarVectorIE(4,4.5,0.1);
+//     x.print_vector();
+//     Vector fx = Vector(x.get_size());
+//     fx.user_poblate(fx);
+//     float res = diferenciaCentrada(x,fx,1);
+//     if(res == NULL){
+//         cout<<"No se puede dividir el rango como se desea";
+//     }else{
+//         cout<<"Dif:"<<res<<endl;
+//     }
 
-}
+// }
