@@ -1,45 +1,36 @@
 #include "../libraries.h"
-#include "../entrega2/sp.cpp"
+#include "../Vector.h"
 
+float simpson_tercio(float h, Vector fxv, int size){                                      //Vector auxiliar que contendra los valores multiplicados
+    double res, sum = 0;
+    float a = fxv.vector[0];
+    float b = fxv.vector[fxv.get_size()-1];
+    for (int i = 1; i < size - 1; i += 2){
+        sum = sum+(4*fxv.vector[i]);
+    }
+    for (int i = 2; i < size - 2; i += 2){
+        sum = sum+(2*fxv.vector[i]);
+    }
+    res = (h/3)*(a+b+sum);
+    return res;
+}
 
-
-float simpson_tercio(float paso, Vector fxv, float fx[], int size){
-    fx[size] = {};                                    //Vector auxiliar que contendra los valores multiplicados
-    float res;
-    float mult = 0;
-    for (int i = 1; i < (size - 1); i++){     //Iniciamos en 1 para tomar la segunda posicion y terminar en la penultima
-        if (i%2 != 0){
-            fx[i-1]= fxv.vector[i]*2;         //Se resta 1 para que lo vaya guardando desde la posicion 0 en el vector auxiliar
+float simpson_octavo(float h, Vector fxv, int size){
+    double res, sum = 0;
+    float a = fxv.vector[0];
+    float b = fxv.vector[fxv.get_size()-1];
+    for (int i = 1; i < size - 1; i++){
+        if(i%3 == 0){
+            sum = sum + (2*fxv.vector[i]);
         }
         else{
-            fx[i] = fxv.vector[i]*4;
+            sum = sum+(3*fxv.vector[i]);
         }
-    mult = mult + fx[i];   //Suma de los valores centrados
     }
-    int y = mult + fxv.vector[0]+ fxv.vector[sizeof(fxv.vector)- 1];  //Suma total
-    res = y*(paso/3);
-    return y;     //Se regresa y solo para hacer pruebas
-}
-float simpson_octavo(float paso, Vector fxv, float fx[], int size){
-    fx[size] = {};                                    //Vector auxiliar que contendra los valores multiplicados
-    float res;
-    float mult = 0;
-    for (int i = 1; i < (size - 1); i++){     //Iniciamos en 1 para tomar la segunda posicion y terminar en la penultima
-        if (i%2 != 0){
-            fx[i-1]= fxv.vector[i]*2;         //Se resta 1 para que lo vaya guardando desde la posicion 0 en el vector auxiliar
-        }
-        else{
-            fx[i] = fxv.vector[i]*4;
-        }
-    mult = mult + fx[i];   //Suma de los valores centrados
-    }
-    int y = mult + fxv.vector[0]+ fxv.vector[sizeof(fxv.vector)- 1];  //Suma total
-    res = y*(paso/3);
-    return y;     //Se regresa y solo para hacer pruebas
+ 
+    res = 3*h/8*(a+b+sum);
+    return res;   //Se regresa y solo para hacer pruebas
 }
 
-float last_value(Vector x) {
-  return sizeof(x) -1;
-}
 
 
