@@ -1,4 +1,5 @@
 #include "../libraries.h"
+#include "../Vector.h"
 #include "../entrega2/sp.cpp"
 
 float diferenciaCentrada(Vector x, Vector fx, int idx){
