@@ -23,13 +23,11 @@ Vector generarVectorIE2(float init, float end, float step){
     return res;
 }
 
-Vector generarVectorIE(float init, int size, float step){
-    Vector res = Vector(size);
+void generarVectorIE(float init, int size, float step, Vector &res){
     for(int i=0; i<size; i++){
         res.vector[i]=init+(i*step);
     }
-
-    return res;
+    res.print_vector();
 }
 
 

@@ -3,8 +3,8 @@
 #include "integracion.cpp"
 
 int main(){
-    int size, firstp, size, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
-    float *xp, *fxp, inter_point, new_val;
+    int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
+    float *xp, *fxp, inter_point, new_val, step;
     Vector xv = NULL;
     Vector fxv = NULL;
 
@@ -18,18 +18,18 @@ int main(){
         Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;
-        cout<<"Dame el punto tamaño de tu tabla: "<<endl;
-        cin>>size;
-        cout<<"Dime el numero de datos en la tabla?: "<<endl;
+        cout<<"Dame el tamaño de paso: "<<endl;
         cin>>step;
+        cout<<"Dime el numero de datos en la tabla?: "<<endl;
+        cin>>size;
         
         
-      
-     xv=generarVectorIE(firstp,lastp, step);
+    xv = Vector(size);
+    generarVectorIE(firstp,size, step, xv);
      xv.print_vector();
      fxv = Vector(xv.get_size());
     //fxv.user_poblate(fxv);
-    for(int i=0; i=xv.get_size();i++){
+    for(int i=0; i<=xv.get_size();i++){
             cout<<"Dame el valor en la posicion "<<i<<":"<<endl;
             cin>>fxv.vector[i];
             
