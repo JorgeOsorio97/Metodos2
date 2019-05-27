@@ -68,7 +68,7 @@ int main(){
 
         case 1:
 
-            simpson_tercio(size, fxv);
+            simpson_tercio(step, fxv);
 
 
          cout<< "Â¿Quieres hacer otro metodo con la misma tabla de valores?\n1.Si.\t2.No."<<endl;
