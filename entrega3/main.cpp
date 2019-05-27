@@ -20,10 +20,8 @@ int main(){
         cin>>firstp;
         cout<<"Dame el punto final de tu tabla: "<<endl;
         cin>>lastp;
-        cout<<"Cuantas sub areas tendra la tabla?: "<<endl;
-        cin>>suba;
-        
-        step=(lastp-firstp)/suba;
+        cout<<"De cuanto sera el valor de paso?: "<<endl;
+        cin>>step;
         
         
       
