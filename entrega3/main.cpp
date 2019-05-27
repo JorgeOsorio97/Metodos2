@@ -3,7 +3,7 @@
 #include "integracion.cpp"
 
 int main(){
-    int size, firstp, lastp, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
+    int size, firstp, size, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *xp, *fxp, inter_point, new_val;
     Vector xv = NULL;
     Vector fxv = NULL;
@@ -18,9 +18,9 @@ int main(){
         Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;
-        cout<<"Dame el punto final de tu tabla: "<<endl;
-        cin>>lastp;
-        cout<<"De cuanto sera el valor de paso?: "<<endl;
+        cout<<"Dame el punto tamaño de tu tabla: "<<endl;
+        cin>>size;
+        cout<<"Dime el numero de datos en la tabla?: "<<endl;
         cin>>step;
         
         
@@ -83,8 +83,8 @@ int main(){
                             goto Etiqueta_2;
                     }
                     else{ 
-                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
-                        if (dec7==1){
+                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<endl;
+                        if (dec5==1){
                             goto Etiqueta_1;
                         }else{
                         cout<< "Â¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
@@ -112,7 +112,7 @@ int main(){
                             goto Etiqueta_2;
                     }
                     else{ 
-                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
+                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<endl;
                         if (dec5==1){
                             goto Etiqueta_1;
                         }else{
