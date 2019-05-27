@@ -1,5 +1,4 @@
 #include "../libraries.h"
-#include "diferenciacion.cpp"
 #include "integracion.cpp"
 
 int main(){
