@@ -13,7 +13,7 @@ inline bool isEqual(double x, double y){
             return abs(x - y) <= epsilon * abs(x);
         }
         
-Vector generarVectorIE(float init, float end, float step){
+Vector generarVectorIE2(float init, float end, float step){
     int size = (end-init)/step+1;
     cout<<"Size: "<<size<<endl;
     Vector res = Vector(size);
@@ -23,20 +23,11 @@ Vector generarVectorIE(float init, float end, float step){
     return res;
 }
 
-Vector generarVectorIE2(float init, float end, float step){
-    int size = (end-init)/step+1;
-    cout<<"Size: "<<size<<endl;
-    Vector res = Vector(size);
-    int i = 0;
-    while(init+(i*step)<=end){
+void generarVectorIE(float init, int size, float step, Vector &res){
+    for(int i=0; i<size; i++){
         res.vector[i]=init+(i*step);
-        i++;
     }
-    if(!isEqual((init+((i-1)*step)),end)){
-        return NULL;
-    }
-
-    return res;
+    //res.print_vector();
 }
 
 

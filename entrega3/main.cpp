@@ -3,7 +3,7 @@
 #include "integracion.cpp"
 
 int main(){
-    int size, firstp, lastp, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
+    int size, firstp, size, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *xp, *fxp, inter_point, new_val;
     Vector xv = NULL;
     Vector fxv = NULL;
@@ -18,12 +18,10 @@ int main(){
         Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;
-        cout<<"Dame el punto final de tu tabla: "<<endl;
-        cin>>lastp;
-        cout<<"Cuantas sub areas tendra la tabla?: "<<endl;
-        cin>>suba;
-        
-        step=(lastp-firstp)/suba;
+        cout<<"Dame el punto tamaño de tu tabla: "<<endl;
+        cin>>;
+        cout<<"Dime el numero de datos en la tabla?: "<<endl;
+        cin>>step;
         
         
       
@@ -44,7 +42,7 @@ int main(){
          cout<<"Dif:"<<res<<endl;
      }
   
-
+ cout<<"El valor del vector x es: "<<xv.print_vector()<<endl;
     Etiqueta_1:
       do{
             cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
@@ -70,7 +68,7 @@ int main(){
         }while(dec1 == 2);
 
     Etiqueta_2:
-        cout<<"Â¿Que quieres hacer?\n1.Interpolacion.\t2.Ajuste de Curvas.\t"<<endl;
+        cout<<"Â¿Que quieres hacer?\n1.Integracion.\t2.Diferenciacion.\t"<<endl;
         cin>>dec3;
         switch(dec3){
 
@@ -85,8 +83,8 @@ int main(){
                             goto Etiqueta_2;
                     }
                     else{ 
-                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
-                        if (dec7==1){
+                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<endl;
+                        if (dec5==1){
                             goto Etiqueta_1;
                         }else{
                         cout<< "Â¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
@@ -114,7 +112,7 @@ int main(){
                             goto Etiqueta_2;
                     }
                     else{ 
-                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
+                        cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<endl;
                         if (dec5==1){
                             goto Etiqueta_1;
                         }else{
@@ -142,4 +140,5 @@ int main(){
 
  }
  
+   
    

@@ -1,4 +1,7 @@
-#include "libraries.h"
+#ifndef FLAG
+    #define FLAG "flag"
+    #include "libraries.h"
+
 
 class Vector{
     private:
@@ -99,3 +102,5 @@ class Vector{
         
 
 };
+
+#endif
