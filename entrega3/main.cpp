@@ -4,8 +4,6 @@
 int main(){
     int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *xp, *fxp, inter_point, new_val, step;
-    Vector xv = NULL;
-    Vector fxv = NULL;
 
     system("cls");
 	cout<<"Programa por :"<<endl;
@@ -23,10 +21,10 @@ int main(){
         cin>>size;
         
         
-    xv = Vector(size);
+    Vector xv = Vector(size);
     generarVectorIE(firstp,size, step, xv);
     xv.print_vector();
-    fxv = Vector(size);
+    Vector fxv = Vector(size);
     fxv.print_vector();
     //fxv.user_poblate(fxv);
     for(int i=0; i<size;i++){
