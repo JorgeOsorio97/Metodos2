@@ -29,7 +29,7 @@ int main(){
      xv.print_vector();
      fxv = Vector(xv.get_size());
     //fxv.user_poblate(fxv);
-    for(int i=0; i<=xv.get_size();i++){
+    for(int i=0; i<xv.get_size();i++){
             cout<<"Dame el valor en la posicion "<<i<<":"<<endl;
             cin>>fxv.vector[i];
             

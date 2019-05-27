@@ -27,7 +27,7 @@ void generarVectorIE(float init, int size, float step, Vector &res){
     for(int i=0; i<size; i++){
         res.vector[i]=init+(i*step);
     }
-    res.print_vector();
+    //res.print_vector();
 }
 
 
