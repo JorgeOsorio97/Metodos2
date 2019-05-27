@@ -140,7 +140,11 @@ void simpson_tercio(float h, Vector fxv){
             }
             res = (h/3)*(a+b+sum);    
         }
-        simpson_octavo(h, fxv.vector[fxv.get_size() - 4]);
+        Vector temp = Vector(fxv.get_size()-4);
+        for(int i=0; i<4; i++){
+            temp.vector[i] = fxv.vector[fxv.get_size() - 4+1];
+        }
+        simpson_octavo(h, temp);
         
     }
 
