@@ -3,8 +3,8 @@
 #include "integracion.cpp"
 
 int main(){
-    int size, firstp, size, suba, step, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
-    float *xp, *fxp, inter_point, new_val;
+    int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
+    float *xp, *fxp, inter_point, new_val, step;
     Vector xv = NULL;
     Vector fxv = NULL;
 
@@ -18,31 +18,28 @@ int main(){
         Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;
-        cout<<"Dame el punto tamaño de tu tabla: "<<endl;
-        cin>>;
-        cout<<"Dime el numero de datos en la tabla?: "<<endl;
+        cout<<"Dame el tamaño de paso: "<<endl;
         cin>>step;
+        cout<<"Dime el numero de datos en la tabla?: "<<endl;
+        cin>>size;
         
         
-      
-     xv=generarVectorIE(firstp,lastp, step);
-     xv.print_vector();
-     fxv = Vector(xv.get_size());
+    xv = Vector(size);
+    generarVectorIE(firstp,size, step, xv);
+    xv.print_vector();
+    fxv = Vector(size);
+    fxv.print_vector();
     //fxv.user_poblate(fxv);
-    for(int i=0; i=xv.get_size();i++){
+    for(int i=0; i<size;i++){
             cout<<"Dame el valor en la posicion "<<i<<":"<<endl;
             cin>>fxv.vector[i];
             
     }
-    
-     float res = diferenciaCentrada(xv,fxv,1);
-     if(res == NULL){
-         cout<<"No se puede dividir el rango como se desea";
-     }else{
-         cout<<"Dif:"<<res<<endl;
-     }
   
- cout<<"El valor del vector x es: "<<xv.print_vector()<<endl;
+    cout<<"El valor del vector x es: "<<endl;
+    xv.print_vector();
+    cout<<"El valor del vector fx es: "<<endl;
+    fxv.print_vector();
     Etiqueta_1:
       do{
             cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
