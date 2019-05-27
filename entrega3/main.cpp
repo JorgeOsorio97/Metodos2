@@ -115,7 +115,7 @@ int main(){
                     }
                     else{ 
                         cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<end1;
-                        if (dec7==1){
+                        if (dec5==1){
                             goto Etiqueta_1;
                         }else{
                         cout<< "Â¿Quieres volver al principio y llenar una nueva tabla?\n1.Si.\t2.No."<<endl;
