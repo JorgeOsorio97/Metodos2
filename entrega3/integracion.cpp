@@ -179,3 +179,13 @@ void generarVectorIE(float init, int size, float step, Vector &res){
 
 
 
+float diferenciaCentrada(Vector &x, Vector &fx, int idxi, int idxf){
+    int size = idxf-idxi+1;
+    cout<<"Las derivadas solicitadas son"<<endl;
+    cout<<"x \t f(x) \t f'(x)"<<endl;
+    for(int i=0; i<size; i++){
+        int pos = idxi+i;
+        float der = diferenciaCentrada(x,fx,idxi+i);
+        cout<<x.vector[idxi+i]<<" \t "<<fx.vector[idxi+i]<<" \t "<<der<<endl;
+    }
+}
