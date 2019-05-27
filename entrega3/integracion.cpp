@@ -100,7 +100,7 @@ class Vector{
 
 };
 
-void simpson_octavo(float h, Vector fxv){
+float simpson_octavo(float h, Vector fxv){
     int size = fxv.get_size();  
     double res, sum = 0;
     float a = fxv.vector[0];
@@ -116,6 +116,7 @@ void simpson_octavo(float h, Vector fxv){
  
     res = 3*h/8*(a+b+sum);
     cout << "Complementando con regla de 3/8: "<<res<<endl;   //Se regresa y solo para hacer pruebas
+    return res;
 }
 void simpson_tercio(float h, Vector fxv){    
     int size = fxv.get_size();                                  //Vector auxiliar que contendra los valores multiplicados
@@ -123,6 +124,7 @@ void simpson_tercio(float h, Vector fxv){
     float a = fxv.vector[0];
     float b = fxv.vector[fxv.get_size()-1];
     if((fxv.get_size() - 1 )%2 == 0){
+        cout << "Numero de paneles par, se aplica regla de 1/3 normal: "<<endl;
         for (int i = 1; i < size - 1; i += 2){
         sum = sum+(4*fxv.vector[i]);
         }
@@ -132,19 +134,23 @@ void simpson_tercio(float h, Vector fxv){
         res = (h/3)*(a+b+sum);
         cout << "Resultado de la integral con regla de 1/3: "<<res <<endl;
     }else{
+            cout << "El numero de paneles es impar, se complementa con regla de 3/8."<<endl;
             for (int j = 1; j < size - 4; j += 2){
             sum = sum+(4*fxv.vector[j]);
             }
             for (int j = 2; j < size - 4; j += 2){
                 sum = sum+(2*fxv.vector[j]);
             }
-            res = (h/3)*(a+b+sum);    
+            res = (h/3)*(a+b+sum);  
+            Vector temp = Vector(fxv.get_size()-4);
+            for(int i=0; i<4; i++){
+                temp.vector[i] = fxv.vector[fxv.get_size() - 4+1];
+            }
+            cout << "Resultado de regla 1/3: "<< res <<endl;
+            float res_final = simpson_octavo(h, temp) + res;  
+            cout << "Aproximacion aplicando las dos reglas: "<<res_final<<endl;
         }
-        Vector temp = Vector(fxv.get_size()-4);
-        for(int i=0; i<4; i++){
-            temp.vector[i] = fxv.vector[fxv.get_size() - 4+1];
-        }
-        simpson_octavo(h, temp);
+        
         
     }
 
