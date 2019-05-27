@@ -33,11 +33,10 @@ void simpson_tercio(float h, Vector fxv){
         res = (h/3)*(a+b+sum);
         cout << "Resultado de la integral con regla de 1/3: "<<res <<endl;
     }else{
-        for(int i = 0; i < size - 4; i++){
-            for (int j = 1; j < size - 1; j += 2){
+            for (int j = 1; j < size - 4; j += 2){
             sum = sum+(4*fxv.vector[j]);
             }
-            for (int j = 2; j < size - 2; j += 2){
+            for (int j = 2; j < size - 4; j += 2){
                 sum = sum+(2*fxv.vector[j]);
             }
             res = (h/3)*(a+b+sum);    
@@ -46,8 +45,6 @@ void simpson_tercio(float h, Vector fxv){
         
     }
 
-    
-}
 
 
 
