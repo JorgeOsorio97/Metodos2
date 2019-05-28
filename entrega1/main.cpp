@@ -393,7 +393,7 @@ int main(){
 					x3.print_vector();
 					cout<<"nuevo punto"<<endl;
 					xn3.print_vector();//de prueba
-					Vector::normaEspectral(xn3,x3, &to);
+					Vector1::normaEspectral(xn3,x3, &to);
 					cout<<"norma: "<<to<<endl;
 					x3.vector[0]=xn3.vector[0];
 					x3.vector[1]=xn3.vector[1];

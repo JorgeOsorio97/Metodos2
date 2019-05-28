@@ -1,19 +1,19 @@
 #include "../libraries.h"
 #include "matrix.cpp"
 
-void sistEcu1(float x, float y, Vector &vec){
+void sistEcu1(float x, float y, Vector1 &vec){
 vec.vector[0] = (x*x) + (x*y) - 10;
 vec.vector[1] = y + (3*x*y*y) - 50;
 
 }
 
-void sistEcu2(float x, float y, Vector &vec){
+void sistEcu2(float x, float y, Vector1 &vec){
     vec.vector[0] = (x*x) + (y*y) - 9;
     vec.vector[1] = -(exp(x)) - (2*y) - 3;
 
 }
 
-void sistEcu3(float x, float y, float z, Vector &vec){
+void sistEcu3(float x, float y, float z, Vector1 &vec){
     vec.vector[0] = (2*x*x) - (4*x) +(y*y) +(3*z*z) + (6*z) + 2;
     vec.vector[1] = (x*x) + (y*y) - (2*y) + (2*z*z) - 5;
     vec.vector[2] = (3*x*x) - (12*x) + (y*y) - (3*z*z) + 8;
@@ -21,7 +21,7 @@ void sistEcu3(float x, float y, float z, Vector &vec){
 }
 
 
-void sistEcu4(float x, float y, float z, Vector &vec){
+void sistEcu4(float x, float y, float z, Vector1 &vec){
     vec.vector[0] = (x*x) - (4*x) + (y*y);
     vec.vector[1] = (x*x) - x -(12*y) + 1;
     vec.vector[2] = (3*x*x) - (12*x) + (y*y) - (3*z*z) + 8;
@@ -67,7 +67,7 @@ void jacobiana4(float x, float y, float z, Matrix &jac){
 
 
 /* int main (){
-     Vector x =  Vector(2);
+     Vector1 x =  Vector1(2);
 	 sistEcu1(2,1, x);
 	 x.print_vector();
         

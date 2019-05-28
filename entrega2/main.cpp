@@ -132,7 +132,7 @@ int main(){
                                 goto Etiqueta_1;
                             }
                             else{
-                                vec1.~NewtonInterpolation();
+                                //vec1.~NewtonInterpolation();
                                 cout<< "Bueno, adios";
                             }
                         }
@@ -164,8 +164,8 @@ int main(){
                         }
                         else{
                             cout<< "Bueno, adios"<<endl;
-                            xv.~Vector();
-                            fxv.~Vector();
+                            // xv.~Vector();
+                            // fxv.~Vector();
                         }
                     }
 
