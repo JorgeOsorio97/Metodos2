@@ -1,5 +1,5 @@
 #include "../libraries.h"
-#include "../Vector.h"
+//#include "../Vector.h"
 #include "matrix_gauss.cpp"
 
 
@@ -167,20 +167,20 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     dd.Vector :: dif_s(dd,ss, sizp-2);
     cout<<"tabla"<<endl;
     cout<<"x"<<endl;
-    vx.print_vector();
+   // vx.print_vector();
     cout<<endl;
     cout<<"f(x)"<<endl;
-    vfx.print_vector();
+    //vfx.print_vector();
     cout<<endl;
     cout<<"h"<<endl;
-    h.print_vector();
+    //h.print_vector();
     cout<<endl;
     cout<<"Diferencias divididas"<<endl;
-    dd.print_vector();
+    //dd.print_vector();
     cout<<endl;
     cout<<"hola"<<endl;
     cout<<"S_i resultados del sistema de ecuaciones"<<endl;
-    ss.print_vector();  
+    //ss.print_vector();  
     cout<<endl;
     cout<<endl;
     cout<<endl;
@@ -190,7 +190,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     
     cout<<"Matriz"<<endl;
     pob_mat(mat, h, ss, msize);
-    mat.print_matrix();
+    //mat.print_matrix();
     // hasta aqui llena la tabla bien
     Matrix triangular = mat.gauss_elimination();
      cout<<"Matriz triangulada"<<endl;
@@ -211,7 +211,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
 
     }
     
-        res.print_vector();
+      //  res.print_vector();
 
     for (int i=0; i<sizp; i++){
         a.vector[i]=(res.vector[i+1]-res.vector[i])/(6*h.vector[i]);
@@ -220,6 +220,17 @@ void spline (Vector &vx,Vector &vfx, int sizp)
         d.vector[i]=vfx.vector[i];
     }
     a.vector[sizp-1]=0;
+    cout<<"x"<<endl;
+    vx.print_vector();
+    cout<<"y"<<endl;
+    vfx.print_vector();
+    cout<<"h"<<endl;
+    h.print_vector();
+    cout<<"Matriz"<<endl;
+    mat.print_matrix();
+    cout<<"s"<<endl;
+    res.print_vector();
+
     cout<<"a"<<endl;
     a.print_vector();
     cout<<"b"<<endl;
@@ -229,7 +240,7 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     cout<<"d"<<endl;
     d.print_vector();
 for (int i=0; i<sizp-1;i++){
-    cout<<"g"<<i<<"(x) =  ("<<a.vector[i]<<")(x-xi)^3+("<<b.vector[i]<<")(x-xi)^2+("<<c.vector[i]<<")(x-xi)+("<<d.vector[i]<<")              "<<vx.vector[i]<<" <=  x < "<<vx.vector[i+1];
+    cout<<"g"<<i<<"(x) =  ("<<a.vector[i]<<")(x-"<<vx.vector[i]<<")^3+("<<b.vector[i]<<")(x-"<<vx.vector[i]<<")^2+("<<c.vector[i]<<")(x-"<<vx.vector[i]<<")+("<<d.vector[i]<<")              "<<vx.vector[i]<<" <=  x < "<<vx.vector[i+1];
     cout<<endl;
     cout<<endl;
 }
