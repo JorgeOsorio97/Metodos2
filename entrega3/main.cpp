@@ -2,7 +2,7 @@
 #include "integracion.cpp"
 
 int main(){
-    int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
+    int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, indexin, indexfin;
     float *xp, *fxp, inter_point, new_val, step;
 
     system("cls");
@@ -68,7 +68,7 @@ int main(){
 
         case 1:
 
-
+            simpson_tercio(step, fxv);
 
 
          cout<< "Â¿Quieres hacer otro metodo con la misma tabla de valores?\n1.Si.\t2.No."<<endl;
@@ -98,7 +98,13 @@ int main(){
         break;
 
         case 2: 
+            cout<<"Para este metodo indique el intervalo que quiere integrar"<<endl;
+            cout<<"Indice Inicial"<<endl;
+            cin>> indexin;
+            cout<<"Indice Final"<<endl;
+            cin>> indexfin;
 
+            diferenciaCentrada(xv,fxv,indexin,indexfin);
 
             cout<< "Â¿Quieres hacer otro metodo con la misma tabla de valores?\n1.Si.\t2.No."<<endl;
                     cin>> dec4;
