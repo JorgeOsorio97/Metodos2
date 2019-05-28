@@ -166,20 +166,20 @@ void spline (Vector &vx,Vector &vfx, int sizp)
     vfx.Vector :: dif_div(vfx,h,dd);
     dd.Vector :: dif_s(dd,ss, sizp-2);
     cout<<"tabla"<<endl;
-    cout<<"x"<<endl;
+    //cout<<"x"<<endl;
    // vx.print_vector();
     cout<<endl;
-    cout<<"f(x)"<<endl;
+    //cout<<"f(x)"<<endl;
     //vfx.print_vector();
     cout<<endl;
-    cout<<"h"<<endl;
+    //cout<<"h"<<endl;
     //h.print_vector();
     cout<<endl;
-    cout<<"Diferencias divididas"<<endl;
+    //cout<<"Diferencias divididas"<<endl;
     //dd.print_vector();
     cout<<endl;
-    cout<<"hola"<<endl;
-    cout<<"S_i resultados del sistema de ecuaciones"<<endl;
+    //cout<<"hola"<<endl;
+    //cout<<"S_i resultados del sistema de ecuaciones"<<endl;
     //ss.print_vector();  
     cout<<endl;
     cout<<endl;
@@ -188,13 +188,13 @@ void spline (Vector &vx,Vector &vfx, int sizp)
 
     Matrix mat = Matrix(msize);
     
-    cout<<"Matriz"<<endl;
+    //cout<<"Matriz"<<endl;
     pob_mat(mat, h, ss, msize);
     //mat.print_matrix();
     // hasta aqui llena la tabla bien
     Matrix triangular = mat.gauss_elimination();
      cout<<"Matriz triangulada"<<endl;
-     triangular.print_matrix();
+     //triangular.print_matrix();
     float determinante = mat.determinant(triangular);
      cout<<"Determinante = "<< determinante<<endl;
     Vector res= Vector(sizp);
