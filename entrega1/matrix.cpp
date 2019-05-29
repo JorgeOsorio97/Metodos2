@@ -161,7 +161,7 @@ class Matrix1 {
         }
         Matrix1 cofactores(){
             Matrix1 cofactores = Matrix1(size);
-            Matrix1::copy_matrix(*this, cofactores);
+            //Matrix1::copy_matrix(*this, cofactores);
             int row, col;
             cofactores.mat[0][0] = (this->mat[1][1]) * (this->mat[2][2]) - (this->mat[1][2]) * (this->mat[2][1]);
             cofactores.mat[0][1] = (this->mat[1][0]) * (this->mat[2][2]) - (this->mat[1][2]) * (this->mat[2][0]);
