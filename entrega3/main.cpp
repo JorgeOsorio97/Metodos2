@@ -23,7 +23,7 @@ void entrega3 (){
     
     //fxv.user_poblate(fxv);
     for(int i=0; i<size;i++){
-            cout<<"Dame el valor en la posicion "<<i<<":"<<endl;
+            cout<<"Dame el valor en la posicion "<<i<<" de fx:"<<endl;
             cin>>fxv.vector[i];
             
     }
@@ -123,7 +123,6 @@ void entrega3 (){
                             goto Etiqueta_x;
                         }
                         else{
-                            cout<< "Bueno, adios"<<endl;
                             xv.~Vector();
                             fxv.~Vector();
                             }
