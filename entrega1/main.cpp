@@ -1,7 +1,7 @@
 #include "../libraries.h"
 #include "jacobiana.cpp"
 
-int main(){
+int entrega1(){
 	int ecu,ite, p, c,t, r;
 	
 	float tol,x,y,z;

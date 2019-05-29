@@ -1,7 +1,7 @@
 #include "../libraries.h"
 #include "integracion.cpp"
 
-int main(){
+int entrega3(){
     int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, indexin, indexfin;
     float *xp, *fxp, inter_point, new_val, step;
 
