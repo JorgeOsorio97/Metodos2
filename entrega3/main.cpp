@@ -1,7 +1,8 @@
 #include "../libraries.h"
 #include "integracion.cpp"
+#include "../Vector.h"
 
-void entrega3(){
+void entrega3 (){
     int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, indexin, indexfin;
     float *xp, *fxp, inter_point, new_val, step;
 
@@ -19,23 +20,26 @@ void entrega3(){
     generarVectorIE(firstp,size, step, xv);
     xv.print_vector();
     Vector fxv = Vector(size);
-    fxv.print_vector();
+    
     //fxv.user_poblate(fxv);
     for(int i=0; i<size;i++){
             cout<<"Dame el valor en la posicion "<<i<<":"<<endl;
             cin>>fxv.vector[i];
             
     }
-  
-    cout<<"El valor del vector x es: "<<endl;
-    xv.print_vector();
-    cout<<"El valor del vector fx es: "<<endl;
-    fxv.print_vector();
+    //fxv.print_vector();
+    
     Etiqueta_1:
       do{
+            Etiqueta_p:
+            cout<<"El valor del vector x es: "<<endl;
+            xv.print_vector();
+            cout<<"El valor del vector fx es: "<<endl;
+            fxv.print_vector();
             cout<< "Â¿Tus datos son correctos?\n1.Si.\t2.No"<<endl;
             cin>>dec1;
             if  (dec1 == 2){
+
                 
                         cout<< "Â¿Que posicion quieres cambiar?"<<endl;
                         Etiqueta_y:
@@ -49,6 +53,7 @@ void entrega3(){
                         cout<< "Dame el nuevo valor de la posicion "<<pos<<":"<<endl;
                         cin>> new_val;
                         fxv.modify_element(pos, new_val);
+                        goto Etiqueta_p;
                         
                         break;
                  }
@@ -131,7 +136,7 @@ void entrega3(){
 
 
 
-
+//return 0;
  }
  
    
