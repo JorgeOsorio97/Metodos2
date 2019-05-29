@@ -8,7 +8,7 @@ void entrega2(){
      Vector xv = NULL;
     Vector fxv = NULL;
 
-    system("cls");
+    system("clear");
         Etiqueta_1:
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;
@@ -126,9 +126,10 @@ void entrega2(){
                                 goto Etiqueta_1;
                             }
                             else{
-                                //vec1.~NewtonInterpolation();
-                                cout<< "Bueno, adios";
+                            xv.~Vector();
+                            fxv.~Vector();
                             }
+                            
                         }
 
                     }
@@ -157,10 +158,9 @@ void entrega2(){
                             goto Etiqueta_1;
                         }
                         else{
-                            cout<< "Bueno, adios"<<endl;
-                            // xv.~Vector();
-                            // fxv.~Vector();
-                        }
+                            xv.~Vector();
+                            fxv.~Vector();
+                            }
                     }
 
                 break;
