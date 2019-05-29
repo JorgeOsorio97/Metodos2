@@ -6,7 +6,7 @@ void entrega3 (){
     int size, firstp, suba, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, indexin, indexfin;
     float *xp, *fxp, inter_point, new_val, step;
 
-    system("cls");
+    system("clear");
         Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;

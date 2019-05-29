@@ -8,7 +8,7 @@ void entrega2(){
      Vector xv = NULL;
     Vector fxv = NULL;
 
-    system("cls");
+    system("clear");
         Etiqueta_1:
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;

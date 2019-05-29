@@ -24,7 +24,7 @@ void entrega1(){
 	int it=0;
 	float to=-1555;
 	int k=0;
-	system("cls");
+	system("clear");
 	cout << "Selecciona la ecuacion que quieras solucionar: "<<endl;
 	cout<<"1. f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0 "<<endl<<endl;
 	cout<<"2. f_1(x,y)=x^2+y^2-9=0 ; f_2(x,y)=-e^x-2y-3=0 "<<endl<<endl;
@@ -81,7 +81,7 @@ void entrega1(){
 				}
 			
 			}
-			system("cls");
+			system("clear");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
 			bool a = it<ite;
@@ -173,7 +173,7 @@ void entrega1(){
 				}
 			
 		}
-			system("cls");
+			system("clear");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+y^2-9=0 ; f_2(x,y)=-e^x-2y-3=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
 			bool a = it<ite;
@@ -269,7 +269,7 @@ void entrega1(){
 				}
 			
 		}
-			system("cls");
+			system("clear");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y,z)=2x^2-4x+y^2+3z^2+6z+2=0 ; f_2(x,y,z)=x^2+y^2-2y+2z^2-5=0 ; f_3(x,y,z)=3x^2-12x+y^2-3z^2+8=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<","<<z<<")"<<endl;
 					while (it<ite && (to>tol || to == -1555)){
@@ -365,7 +365,7 @@ void entrega1(){
 				}
 				
 		}
-			system("cls");
+			system("clear");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y,z)=x^2-4x+y^2=0 ; f_2(x,y,z)=x^2-x-12y+1=0 ; f_3(x,y,z)=3x^2-12x+y^2-3z^2+8=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<","<<z<<")"<<endl;
 				bool a = it<ite; 
@@ -421,7 +421,7 @@ void entrega1(){
 			break;
 		}
 		
-		default: {system("cls");
+		default: {system("clear");
 			cout<<"No escogio una opcion valida";
 			break;
 		}

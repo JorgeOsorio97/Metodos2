@@ -9,7 +9,7 @@ int main(){
     float *x, *fx, inter_point, new_val;
 
     cout<<"Bienvenido a la entrega final."<<endl;
-    system("cls");
+    system("clear");
 	cout<<"Programa por :"<<endl;
 	cout<<"Jorge Aurelio Valdez Osorio"<<endl;
 	cout<<"Baruc Isaac Osorio Davalos"<<endl;
