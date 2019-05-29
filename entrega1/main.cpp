@@ -1,3 +1,4 @@
+
 #include "../libraries.h"
 #include "jacobiana.cpp"
 
@@ -86,7 +87,7 @@ void entrega1(){
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
 			bool a = it<ite;
 			//cout<<"result ites: "<<a<<endl;
-			cout<<to<<endl;
+			//cout<<to<<endl;
 			while (a && (to>tol || to == -1555)){
 				cout<<"Iteracion #"<<k<<endl;
 				sistEcu1(x, y,s2); //evaluo la funcion
@@ -96,7 +97,7 @@ void entrega1(){
 				j2.print_matrix();    //imprime jacobiana
 				j2.get_determinant();//llamo a determinante
 				cout<<"determinante"<<endl<<j2.get_determinant()<<endl;//imprimo determinante
-				j2i=j2.invertir_matriz();//invierto la jacobiana
+				j2.invertir_matriz(j2i);//invierto la jacobiana
 				cout<<"inversa"<<endl;
 				j2i.print_matrix();   //imprimo inversa
 				j2i.multiplyByVector(s2,&res2);//multiplivco inversa por evaluada
@@ -187,7 +188,7 @@ void entrega1(){
 				j2.print_matrix();    //imprime jacobiana
 				j2.get_determinant();//llamo a determinante
 				cout<<"determinante"<<endl<<j2.get_determinant()<<endl;//imprimo determinante
-				j2i=j2.invertir_matriz();//invierto la jacobiana
+				j2.invertir_matriz(j2i);//invierto la jacobiana
 				cout<<"inversa"<<endl;
 				j2i.print_matrix();   //imprimo inversa
 				j2i.multiplyByVector(s2,&res2);//multiplivco inversa por evaluada
@@ -280,7 +281,7 @@ void entrega1(){
 				j3.print_matrix();
 				j3.get_determinant();
 				cout<<"determinante"<<endl<<j3.get_determinant()<<endl;
-				j3i=j3.invertir_matriz();//invierto la jacobiana
+				j3.invertir_matriz(j3i);//invierto la jacobiana
 				cout<<"inversa"<<endl;
 				j3i.print_matrix();//es print de prueba pero no me imprime numeros, desde aqui hay problemas
 				j3i.multiplyByVector(s3,&res3);//multiplivco inversa por evaluada
@@ -377,7 +378,7 @@ void entrega1(){
 					j3.print_matrix();
 					j3.get_determinant();
 					cout<<"determinante"<<endl<<j3.get_determinant()<<endl;
-					j3i=j3.invertir_matriz();//invierto la jacobiana
+					j3.invertir_matriz(j3i);//invierto la jacobiana
 					cout<<"inversa"<<endl;
 					j3i.print_matrix();//es print de prueba pero no me imprime numeros, desde aqui hay problemas
 					j3i.multiplyByVector(s3,&res3);//multiplivco inversa por evaluada

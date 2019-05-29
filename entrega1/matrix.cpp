@@ -175,8 +175,7 @@ class Matrix1 {
             return cofactores;
         }
 
-        Matrix1 invertir_matriz(){
-            Matrix1 inversa = Matrix1(size);
+        void invertir_matriz(Matrix1 &inversa){
             if(!this->determinant){
                 get_determinant();
             }
@@ -208,7 +207,6 @@ class Matrix1 {
             }
             //cout<<"Inversa"<<endl;
             //inversa.print_matrix();
-            return inversa;
         }
 };
 
