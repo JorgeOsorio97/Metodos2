@@ -1,7 +1,7 @@
 #include "../libraries.h"
 #include "jacobiana.cpp"
 
-int entrega1(){
+void entrega1(){
 	int ecu,ite, p, c,t, r;
 	
 	float tol,x,y,z;
@@ -435,6 +435,4 @@ int entrega1(){
 	}
 }
 	
-	
-	return 0;
 }
