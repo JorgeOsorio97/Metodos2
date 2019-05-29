@@ -1,7 +1,7 @@
 #include "../libraries.h"
 #include  "../entrega1/main.cpp"
-//#include "../entrega2/main.cpp"
-//#include "../entrega3/main.cpp"
+#include "../entrega2/main.cpp"
+#include "../entrega3/main.cpp"
 
 
 int main(){
@@ -18,7 +18,7 @@ int main(){
 
     Etiqueta_1:
     cout<<"Bienvenido a la entrega final."<<endl;
-    cout<<"¿Que deseas hacer?\n\n1.Sistemas de ecuaciones no lineales.\n\n2.Interpolacion y ajuste de curvas.\n\n3."<<endl;
+    cout<<"¿Que deseas hacer?\n\n1.Sistemas de ecuaciones no lineales.\n\n2.Interpolacion y ajuste de curvas.\n\n3.Diferenciacion e Integracion"<<endl;
     int entrega;
     cin>>entrega;
     switch (entrega)
@@ -28,12 +28,12 @@ int main(){
 
     }
     case 2:{
-        //entrega2();
+        entrega2();
 
     }
     case 3:{
-        //entrega3();
-    }    //
+        entrega3();
+    }   
         /* code */
         break;
     

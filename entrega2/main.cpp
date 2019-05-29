@@ -9,12 +9,6 @@ void entrega2(){
     Vector fxv = NULL;
 
     system("cls");
-	cout<<"Programa por :"<<endl;
-	cout<<"Jorge Aurelio Valdez Osorio"<<endl;
-	cout<<"Baruc Isaac Osorio Davalos"<<endl;
-	cout<<"Ulises Ramirez Calnacasco"<<endl;
-	cout<<"Abraham Hernandez Martinez"<<endl<<endl;
-
         Etiqueta_1:
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;

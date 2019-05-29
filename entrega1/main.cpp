@@ -12,26 +12,20 @@ void entrega1(){
 	Vector s3=Vector(3);
 	Vector xn2=Vector(2);
 	Vector xn3=Vector(3);
-	Matrix j2i=Matrix(2);
-	Matrix j3i=Matrix(3);
+	Matrix1 j2i=Matrix1(2);
+	Matrix1 j3i=Matrix1(3);
 	Vector res2=Vector(2);
 	Vector res3=Vector(3);
 	
-	Matrix j2=Matrix(2);
-	Matrix j3=Matrix(3);
+	Matrix1 j2=Matrix1(2);
+	Matrix1 j3=Matrix1(3);
 	t=1;
 	while(t==1){
 	int it=0;
 	float to=-1555;
 	int k=0;
 	system("cls");
-	cout<<"Programa por :"<<endl;
-	cout<<"Jorge Aurelio Valdez Osorio"<<endl;
-	cout<<"Baruc Isaac Osorio Davalos"<<endl;
-	cout<<"Ulises Ramirez Calnacasco"<<endl;
-	cout<<"Abraham Hernandez Martinez"<<endl;
-	cout<<"Seleccione el sistema de ecuaciones que desea resolver: (digite el numero que le corresponda)"<<endl<<endl;
-
+	cout << "Selecciona la ecuacion que quieras solucionar: "<<endl;
 	cout<<"1. f_1(x,y)=x^2+xy-10=0 ; f_2(x,y)= y+3xy^2-50=0 "<<endl<<endl;
 	cout<<"2. f_1(x,y)=x^2+y^2-9=0 ; f_2(x,y)=-e^x-2y-3=0 "<<endl<<endl;
 	cout<<"3. f_1(x,y,z)=2x^2-4x+y^2+3z^2+6z+2=0 ; f_2(x,y,z)=x^2+y^2-2y+2z^2-5=0 ; f_3(x,y,z)=3x^2-12x+y^2-3z^2+8=0"<<endl<<endl;

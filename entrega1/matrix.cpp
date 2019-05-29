@@ -1,7 +1,7 @@
 #include "../libraries.h"
 #include "../Vector.h"
 
-class Matrix {
+class Matrix1 {
     private:
         int size;
 
@@ -9,7 +9,7 @@ class Matrix {
         float **mat;
         float determinant = -2536847;
 
-        Matrix(int osize){
+        Matrix1(int osize){
             size = osize;
             mat = (float **) malloc(size * sizeof(float *));
             for(int i=0; i<size; i++){
@@ -17,7 +17,7 @@ class Matrix {
             }
         }
 
-        ~Matrix(){
+        ~Matrix1(){
             free(mat);
         }
 
@@ -46,7 +46,7 @@ class Matrix {
         }
 
 
-        void copy_matrix( Matrix &org){
+        void copy_matrix( Matrix1 &org){
             if(size != org.size){
                 cout<<"No cuadran los tamaños";
             }
@@ -59,8 +59,8 @@ class Matrix {
             }
         }
 
-        Matrix get_triangle_matrix(){
-            Matrix result = Matrix(size);
+        Matrix1 get_triangle_matrix(){
+            Matrix1 result = Matrix1(size);
             result.copy_matrix(*this);
             int pivot, row, col;
             for(pivot=0; pivot<size-1; pivot++){
@@ -91,7 +91,7 @@ class Matrix {
             // if(this->determinant != -2536847){
             //     return this->determinant;
             // }
-            // Matrix triangled = get_triangle_matrix();
+            // Matrix1 triangled = get_triangle_matrix();
             // float determinant = 1;
             // for(int i = 0; i<size; i++){
             //     determinant *= triangled.mat[i][i];
@@ -134,7 +134,7 @@ class Matrix {
             return val;
         }
 
-        friend Vector operator * (Matrix& mat, Vector& vec);
+        friend Vector operator * (Matrix1& mat, Vector& vec);
 
         void multiplyByVector(Vector& vector1, Vector *result){
             if(this->size != vector1.get_size()){
@@ -154,8 +154,8 @@ class Matrix {
                 //cout<<result->vector[row]<<endl;
             } 
         }
-        Matrix cofactores(){
-            Matrix cofactores = Matrix(size);
+        Matrix1 cofactores(){
+            Matrix1 cofactores = Matrix1(size);
             cofactores.copy_matrix(*this);
             int row, col;
             cofactores.mat[0][0] = (this->mat[1][1]) * (this->mat[2][2]) - (this->mat[1][2]) * (this->mat[2][1]);
@@ -175,8 +175,8 @@ class Matrix {
             return cofactores;
         }
 
-        Matrix invertir_matriz(){
-            Matrix inversa = Matrix(size);
+        Matrix1 invertir_matriz(){
+            Matrix1 inversa = Matrix1(size);
             if(!this->determinant){
                 get_determinant();
             }
@@ -188,8 +188,8 @@ class Matrix {
                 inversa.mat[1][1] = mat[0][0]/determinant;
             }
             else if(size==3){
-                Matrix cofactores = this->cofactores();
-                Matrix adjTranspuesta= Matrix(size);
+                Matrix1 cofactores = this->cofactores();
+                Matrix1 adjTranspuesta= Matrix1(size);
                 int row, col;
                 for(row=0; row<size; row++){
                     for(col=0; col<size; col++){
@@ -212,7 +212,7 @@ class Matrix {
         }
 };
 
-/*Vector operator * (Matrix& mat, Vector& vec){
+/*Vector operator * (Matrix1& mat, Vector& vec){
             if(mat.get_size() != vec.get_size()){
                 cout<<"Error: Los tamaños no coinciden"<<endl;
                 return NULL;
@@ -245,11 +245,11 @@ class Matrix {
 //     int tamanio;
 //     cout<<"De que tamaño"<<endl;
 //     cin>>tamanio;
-//     Matrix mat = Matrix(tamanio);
+//     Matrix1 mat = Matrix1(tamanio);
 //     mat.user_poblate();
 //     mat.print_matrix();
 //     mat.mat[0][0]= 0.01;
-//     //Matrix inv = mat.Jacobi();
+//     //Matrix1 inv = mat.Jacobi();
 //     Vector vector = Vector(tamanio);
 //     //vector.user_poblate();
 //     vector.print_vector();
@@ -264,7 +264,7 @@ class Matrix {
 //     // mult.restByVector(vector, &resta);
 //     // resta.print_vector();
 //     cout<<mat.get_determinant()<<endl;
-//     Matrix inversa = mat.invertir_matriz();
+//     Matrix1 inversa = mat.invertir_matriz();
 //     inversa.print_matrix();
 
 //     return 0;

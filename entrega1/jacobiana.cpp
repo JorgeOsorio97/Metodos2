@@ -28,20 +28,20 @@ void sistEcu4(float x, float y, float z, Vector &vec){
 
 }
 
-void jacobiana1(float x, float y, Matrix &jac){
+void jacobiana1(float x, float y, Matrix1 &jac){
     jac.mat[0][0] = (2*x) + y;
     jac.mat[0][1] = x;
     jac.mat[1][0] = 3*y*y;
     jac.mat[1][1] = 1 + (6*x*y);
 }
 
-void jacobiana2(float x, float y, Matrix &jac){
+void jacobiana2(float x, float y, Matrix1 &jac){
     jac.mat[0][0] = 2*x;
     jac.mat[0][1] = 2*y;
     jac.mat[1][0] = -(exp(x));
     jac.mat[1][1] = -2;
 }
-void jacobiana3(float x, float y, float z, Matrix &jac){
+void jacobiana3(float x, float y, float z, Matrix1 &jac){
     jac.mat[0][0] = 4*x - 4;
     jac.mat[0][1] = 2*y;
     jac.mat[0][2] = 6*z + 6;
@@ -53,7 +53,7 @@ void jacobiana3(float x, float y, float z, Matrix &jac){
     jac.mat[2][2] = -6*z;
 }
 
-void jacobiana4(float x, float y, float z, Matrix &jac){
+void jacobiana4(float x, float y, float z, Matrix1 &jac){
     jac.mat[0][0] = 2*x - 4;
     jac.mat[0][1] = 2*y;
     jac.mat[0][2] = 0;
@@ -73,7 +73,7 @@ void jacobiana4(float x, float y, float z, Matrix &jac){
         
 }*/
 // int main (){
-//     Matrix x =  Matrix(2);
+//     Matrix1 x =  Matrix1(2);
 //     jacobiana1(2,1,x);
 //     x.print_matrix();
 

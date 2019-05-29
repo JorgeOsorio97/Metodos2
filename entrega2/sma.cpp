@@ -1,5 +1,5 @@
 #include "sp.cpp" 
-//#include "../Vector.h"
+#include "../Vector.h"
 void llenar(Vector &xl, Vector &fxl){
     xl.vector[0]=426.690002;
     xl.vector[1]=483.299988;

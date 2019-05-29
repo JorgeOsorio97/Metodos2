@@ -6,18 +6,12 @@ void entrega3(){
     float *xp, *fxp, inter_point, new_val, step;
 
     system("cls");
-	cout<<"Programa por :"<<endl;
-	cout<<"Jorge Aurelio Valdez Osorio"<<endl;
-	cout<<"Baruc Isaac Osorio Davalos"<<endl;
-	cout<<"Ulises Ramirez Calnacasco"<<endl;
-	cout<<"Abraham Hernandez Martinez"<<endl<<endl;
-
         Etiqueta_x:
         cout<<"Dame el punto inicial de tu tabla: "<<endl;
         cin>>firstp;
         cout<<"Dame el tamaño de paso: "<<endl;
         cin>>step;
-        cout<<"Dime el numero de datos en la tabla?: "<<endl;
+        cout<<"Dime el numero de datos en la tabla: "<<endl;
         cin>>size;
         
         
