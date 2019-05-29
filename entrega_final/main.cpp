@@ -26,7 +26,7 @@ int main(){
     {
     case 1:{
         entrega1();
-        cout << "\n\n¿Quieres hacer otra accion?\n\n1.Si.\t2.No\n"<<endl;
+        cout << "\n¿Quieres hacer otra accion?\n\n1.Si.\t2.No\n"<<endl;
         cin >> dec1;
         if(dec1 == 1)
             goto Etiqueta_1;
@@ -36,7 +36,7 @@ int main(){
     }
     case 2:{
         entrega2();
-        cout << "\n\n¿Quieres hacer otra accion?\n\n1.Si.\t2.No\n"<<endl;
+        cout << "\n¿Quieres hacer otra accion?\n\n1.Si.\t2.No\n"<<endl;
         cin >> dec1;
         if(dec1 == 1)
             goto Etiqueta_1;
@@ -46,7 +46,7 @@ int main(){
     }
     case 3:{
         entrega3();
-        cout << "\n\n¿Quieres hacer otra accion?\n\n1.Si.\t2.No\n"<<endl;
+        cout << "\n¿Quieres hacer otra accion?\n\n1.Si.\t2.No\n"<<endl;
         cin >> dec1;
         if(dec1 == 1)
             goto Etiqueta_1;

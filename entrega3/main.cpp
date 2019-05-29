@@ -77,6 +77,7 @@ void entrega3 (){
                     }
                     else{ 
                         cout<<"¿Quieres modificar la tabla ya existente?\n1.Si.\t2.No."<<endl;
+                        cin >> dec5;
                         if (dec5==1){
                             goto Etiqueta_1;
                         }else{
