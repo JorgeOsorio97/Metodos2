@@ -5,15 +5,13 @@
 void entrega2(){
     int size, dec1, dec2, dec3, dec4, dec5, dec6, decx, degree, pos, index;
     float *x, *fx, inter_point, new_val;
-     Vector xv = NULL;
-    Vector fxv = NULL;
 
     system("clear");
         Etiqueta_1:
         cout<<"Dame la cantidad de datos de tu tabla: "<<endl;
         cin>>size;
-        xv = Vector(size);
-        fxv = Vector(size);
+        Vector xv = Vector(size);
+        Vector fxv = Vector(size);
         x = (float*) malloc(size * sizeof(float));
         fx = (float*) malloc(size * sizeof(float));
         Etiqueta_table:
