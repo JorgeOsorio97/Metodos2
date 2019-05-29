@@ -55,7 +55,9 @@ for (int j=0; j<size ; j++){
 
 void spline (Vector &vx,Vector &vfx, int sizp)
 {
-
+    vx.print_vector();
+    vfx.print_vector();
+    cout<<sizp<<endl;
     Vector h = Vector(sizp);
     Vector dd= Vector(sizp);
     Vector ss= Vector(sizp-2);
