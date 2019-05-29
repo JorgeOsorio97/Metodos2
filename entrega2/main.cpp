@@ -15,11 +15,16 @@ void entrega2(){
         x = (float*) malloc(size * sizeof(float));
         fx = (float*) malloc(size * sizeof(float));
         Etiqueta_table:
+        float temp;
         for(int i=0; i<size; i++){
             cout<< "Dame el valor de x en la posicion "<<i<<":"<<endl;
-            cin>>x[i], xv.vector[i];
+            cin>>temp;
+            x[i] = temp;
+            xv.vector[i] = temp;
             cout<< "Dame el valor de f(x) en la posicion "<<i<<":"<<endl;
-            cin>>fx[i], fxv.vector[i];
+            cin>>temp;
+            fx[i] = temp;
+            fxv.vector[i] = temp;
         }
         NewtonInterpolation vec1 = NewtonInterpolation(x, fx, size);
         vec1.print_values();
