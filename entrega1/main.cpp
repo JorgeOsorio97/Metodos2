@@ -1,6 +1,7 @@
 #include "../libraries.h"
 #include "jacobiana.cpp"
 
+
 void entrega1(){
 	int ecu,ite, p, c,t, r;
 	
