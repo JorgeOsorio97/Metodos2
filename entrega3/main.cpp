@@ -89,9 +89,9 @@ void entrega3 (){
                             goto Etiqueta_x;
                         }
                         else{
-                            cout<< "Bueno, adios"<<endl;
                             xv.~Vector();
                             fxv.~Vector();
+                            break;
                             }
                         }
                     }
