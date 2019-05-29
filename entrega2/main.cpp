@@ -134,7 +134,7 @@ void entrega2(){
 
                     }
 
-                
+           
                 break;
             }
 
