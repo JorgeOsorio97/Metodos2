@@ -9,7 +9,7 @@ int main(){
     int dec1;
 
     cout<<"Bienvenido a la entrega final."<<endl;
-    system("cls");
+    system("clear");
 	cout<<"Programa por :"<<endl;
 	cout<<"Jorge Aurelio Valdez Osorio"<<endl;
 	cout<<"Baruc Isaac Osorio Davalos"<<endl;
