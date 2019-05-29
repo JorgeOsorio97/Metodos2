@@ -173,7 +173,7 @@ void entrega1(){
 					}
 				}
 			
-		}
+			}
 			system("clear");
 			cout<<"Resolveremos el sistema de ecuaciones:"<<endl<<endl<<"f_1(x,y)=x^2+y^2-9=0 ; f_2(x,y)=-e^x-2y-3=0"
 			<<endl<<endl<<"Con una tolerancia de: "<<tol<<",  "<<ite<<" Iteraciones como maximo, "<<"Empezando en el punto inicial ("<<x<<","<<y<<")"<<endl;
@@ -284,8 +284,8 @@ void entrega1(){
 				j3.invertir_matriz(j3i);//invierto la jacobiana
 				cout<<"inversa"<<endl;
 				j3i.print_matrix();//es print de prueba pero no me imprime numeros, desde aqui hay problemas
-				j3i.multiplyByVector(s3,&res3);//multiplivco inversa por evaluada
-				cout<<"resta de matriz con vector"<<endl;
+				j3i.multiplyByVector(s3,&res3);//multiplico inversa por evaluada
+				cout<<"Multiplicacion de matriz con vector"<<endl;
 				res3.print_vector();
 				x3.restByVector(res3,&xn3);//resto punto inicial menos la multiplicacion anterior
 				cout<<"punto anterior"<<endl;

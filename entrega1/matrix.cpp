@@ -4,6 +4,8 @@
 class Matrix1 {
     private:
         int size;
+        int mat_col_size;
+        int mat_row_size;
 
     public:
         float **mat;
@@ -15,6 +17,8 @@ class Matrix1 {
             for(int i=0; i<size; i++){
                 mat[i] = (float *) malloc(size * sizeof(float));
             }
+            mat_col_size = sizeof(mat[0])/sizeof(float);
+            mat_row_size = sizeof(mat)/sizeof(float *);
         }
 
         ~Matrix1(){
@@ -46,14 +50,15 @@ class Matrix1 {
         }
 
 
-        void copy_matrix( Matrix1 &org){
-            if(size != org.size){
+        static void copy_matrix( Matrix1 &org, Matrix1 &res){
+            if(res.size != org.size){
                 cout<<"No cuadran los tamaños";
             }
             else{
-                for(int i=0; i<size; i++){
-                    for(int j=0; j<size; j++){
-                        this->mat[i][j]= org.mat[i][j];
+                for(int i=0; i<res.size; i++){
+                    for(int j=0; j<res.size; j++){
+                        float temp = org.mat[i][j];
+                        res.mat[i][j]= temp;
                     }
                 }
             }
@@ -61,7 +66,7 @@ class Matrix1 {
 
         Matrix1 get_triangle_matrix(){
             Matrix1 result = Matrix1(size);
-            result.copy_matrix(*this);
+            Matrix1::copy_matrix(*this,result);
             int pivot, row, col;
             for(pivot=0; pivot<size-1; pivot++){
                 for(row = pivot + 1; row<size; row++){
@@ -156,7 +161,7 @@ class Matrix1 {
         }
         Matrix1 cofactores(){
             Matrix1 cofactores = Matrix1(size);
-            cofactores.copy_matrix(*this);
+            Matrix1::copy_matrix(*this, cofactores);
             int row, col;
             cofactores.mat[0][0] = (this->mat[1][1]) * (this->mat[2][2]) - (this->mat[1][2]) * (this->mat[2][1]);
             cofactores.mat[0][1] = (this->mat[1][0]) * (this->mat[2][2]) - (this->mat[1][2]) * (this->mat[2][0]);
@@ -195,9 +200,9 @@ class Matrix1 {
                         adjTranspuesta.mat[row][col] = cofactores.mat[col][row];
                     }
                 }
-                cout<<"Cofactores"<<endl;
+                //cout<<"Cofactores"<<endl;
                 //cofactores.print_matrix();
-                cout<<"Adjunta"<<endl;
+                //cout<<"Adjunta"<<endl;
                 //adjTranspuesta.print_matrix();
                 for(row=0; row<size; row++){
                     for(col=0; col<size; col++){
