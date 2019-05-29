@@ -125,10 +125,7 @@ void entrega2(){
                                 vec1.~NewtonInterpolation();
                                 goto Etiqueta_1;
                             }
-                            else{
-                                //vec1.~NewtonInterpolation();
-                                cout<< "Bueno, adios";
-                            }
+                            
                         }
 
                     }
@@ -155,11 +152,6 @@ void entrega2(){
                             xv.~Vector();
                             fxv.~Vector();
                             goto Etiqueta_1;
-                        }
-                        else{
-                            cout<< "Bueno, adios"<<endl;
-                            // xv.~Vector();
-                            // fxv.~Vector();
                         }
                     }
 
