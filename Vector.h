@@ -88,7 +88,7 @@ class Vector{
 
         friend Vector operator * (Matrix& mat, Vector& vec);
 
-         static void normaEspectral(Vector a0, Vector a1, float *norma){
+         static void normaEspectral(Vector &a0, Vector &a1, float *norma){
             *norma = -1555;
             if(a0.get_size()!=a1.get_size()){
                 cout<<"el tamaño de los vectores no coincide"<<endl;
