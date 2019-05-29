@@ -6,16 +6,16 @@ void entrega1(){
 	int ecu,ite, p, c,t, r;
 	
 	float tol,x,y,z;
-	Vector1 x2=Vector1(2);
-	Vector1 x3=Vector1(3);
-	Vector1 s2=Vector1(2);
-	Vector1 s3=Vector1(3);
-	Vector1 xn2=Vector1(2);
-	Vector1 xn3=Vector1(3);
+	Vector x2=Vector(2);
+	Vector x3=Vector(3);
+	Vector s2=Vector(2);
+	Vector s3=Vector(3);
+	Vector xn2=Vector(2);
+	Vector xn3=Vector(3);
 	Matrix j2i=Matrix(2);
 	Matrix j3i=Matrix(3);
-	Vector1 res2=Vector1(2);
-	Vector1 res3=Vector1(3);
+	Vector res2=Vector(2);
+	Vector res3=Vector(3);
 	
 	Matrix j2=Matrix(2);
 	Matrix j3=Matrix(3);
@@ -113,7 +113,7 @@ void entrega1(){
 				x2.print_vector();
 				cout<<"nuevo punto"<<endl;
 				xn2.print_vector();//de prueba
-				Vector1::normaEspectral(xn2,x2, &to);
+				Vector::normaEspectral(xn2,x2, &to);
 				cout<<"norma: "<<to<<endl;
 				x2.vector[0]=xn2.vector[0];
 				x2.vector[1]=xn2.vector[1];
@@ -204,7 +204,7 @@ void entrega1(){
 				x2.print_vector();
 				cout<<"nuevo punto"<<endl;
 				xn2.print_vector();//de prueba
-				Vector1::normaEspectral(xn2,x2, &to);
+				Vector::normaEspectral(xn2,x2, &to);
 				cout<<"norma: "<<to<<endl;
 				x2.vector[0]=xn2.vector[0];
 				x2.vector[1]=xn2.vector[1];
@@ -297,7 +297,7 @@ void entrega1(){
 				x3.print_vector();
 				cout<<"nuevo punto"<<endl;
 				xn3.print_vector();//de prueba
-				Vector1::normaEspectral(xn3,x3, &to);
+				Vector::normaEspectral(xn3,x3, &to);
 				cout<<"norma: "<<to<<endl;
 				x3.vector[0]=xn3.vector[0];
 				x3.vector[1]=xn3.vector[1];
@@ -394,7 +394,7 @@ void entrega1(){
 					x3.print_vector();
 					cout<<"nuevo punto"<<endl;
 					xn3.print_vector();//de prueba
-					Vector1::normaEspectral(xn3,x3, &to);
+					Vector::normaEspectral(xn3,x3, &to);
 					cout<<"norma: "<<to<<endl;
 					x3.vector[0]=xn3.vector[0];
 					x3.vector[1]=xn3.vector[1];

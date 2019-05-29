@@ -1,7 +1,7 @@
 #include "../libraries.h"
 #include  "../entrega1/main.cpp"
-#include "../entrega2/main.cpp"
-#include "../entrega3/main.cpp"
+//#include "../entrega2/main.cpp"
+//#include "../entrega3/main.cpp"
 
 
 int main(){
@@ -28,12 +28,12 @@ int main(){
 
     }
     case 2:{
-        entrega2();
+        //entrega2();
 
     }
     case 3:{
-        entrega3();
-    }    
+        //entrega3();
+    }    //
         /* code */
         break;
     
