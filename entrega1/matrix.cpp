@@ -1,118 +1,5 @@
 #include "../libraries.h"
-using namespace std;
-
-class Matrix;
-
-class Vector1{
-    private:
-        int size;
-
-    public: 
-        float *vector;
-
-        Vector1(int oSize){
-            size = oSize;
-            vector =(float *) malloc(size * sizeof(float));
-        }
-
-        ~Vector1(){
-            free(vector);
-        }
-
-        int get_size(){
-            return size;
-        }
-
-        void print_vector(){
-            for(int i=0; i<this->size; i++){
-                cout<<this->vector[i]<<endl;
-            }
-        }
-
-        void user_poblate(){
-            for(int i=0; i<size; i++){
-                cout<<"Dame el valor de la posicion:  "<<i+1<<" en el vector: ";
-                    cin>>vector[i];
-            }
-        }
-
-        void modify_element(int idx, float newVal){
-            this->vector[idx] = newVal;
-        }
-
-       /* Vector1 operator - (Vector1 vec1){
-            if( this->size != vec1.size){
-                cout<<"Error: El tamaño de los vectores no es el mismo"<<endl;
-                return NULL;
-            }
-            Vector1 result = Vector1(this->size);
-            for(int i=0; i<this->size; i++){
-                result.vector[i] = this->vector[i]-vec1.vector[i];
-            }
-            return result;
-        }*/
-
-        void restByVector(Vector1 restar, Vector1 *result){
-            if( this->size != restar.get_size()){
-                cout<<"Error: El tamaño de los vectores no es el mismo"<<endl;
-            }
-            for(int i=0; i<this->size; i++){
-                result->vector[i] = this->vector[i]-restar.vector[i];
-            }
-        }
-
-        // Vector1 operator =(Vector1 original){
-        //     cout<<"overloading = operator"<<endl;
-        //     original.print_vector();
-        //     for(int i=0; i<this->size; i++){
-        //         this->vector[i]= original.vector[i];
-        //     }
-        //     return *this; 
-        // }
-
-        friend Vector1 operator * (Matrix& mat, Vector1& vec);
-
-        static void normaEspectral(Vector1 a0, Vector1 a1, float *norma){
-            *norma = -1555;
-            if(a0.get_size()!=a1.get_size()){
-                cout<<"el tamaño de los vectores no coincide"<<endl;
-            }
-            //a0.print_vector();
-            //a1.print_vector();
-            // Vector1 result = Vector1(a0.get_size());
-
-            // a1.restByVector(a0, &result);
-            // cout<<"Vector1 resultado"<<endl;
-            // result.print_vector();
-
-            float result[a1.get_size()];
-
-            for(int i=0; i<a1.get_size(); i++){
-                //cout<<a0.vector[i]<<"-"<<a1.vector[i]<<endl;
-                result[i] = a0.vector[i] - a1.vector[i];
-                //cout<<"="<<result[i]<<endl;
-            }
-
-
-            for(int i=0; i<a0.get_size(); i++){
-                float temp=0;
-                if(result[i]<0){
-                    temp = (-1)* result[i];
-                }
-                else{
-                    temp = result[i];
-                }
-                if(temp>*norma || *norma == -1555){
-                    //cout<<"Cambio de norma"<<*norma<<endl;
-                    *norma = temp;
-                    //cout<<"Cambio de norma"<<*norma<<endl;
-                }
-            }
-        }
-
-        //Esto es un mensaje para DUI
-
-};
+#include "../Vector.h"
 
 class Matrix {
     private:
@@ -247,9 +134,9 @@ class Matrix {
             return val;
         }
 
-        friend Vector1 operator * (Matrix& mat, Vector1& vec);
+        friend Vector operator * (Matrix& mat, Vector& vec);
 
-        void multiplyByVector(Vector1& vector1, Vector1 *result){
+        void multiplyByVector(Vector& vector1, Vector *result){
             if(this->size != vector1.get_size()){
                 cout<<"Error: Los tamaños no coinciden"<<endl;
             }
@@ -325,12 +212,12 @@ class Matrix {
         }
 };
 
-/*Vector1 operator * (Matrix& mat, Vector1& vec){
+/*Vector operator * (Matrix& mat, Vector& vec){
             if(mat.get_size() != vec.get_size()){
                 cout<<"Error: Los tamaños no coinciden"<<endl;
                 return NULL;
             }
-            Vector1 result = Vector1(mat.size);
+            Vector result = Vector(mat.size);
             float temp;
             int row, col;
             for(row=0; row<mat.size; row++){
@@ -363,17 +250,17 @@ class Matrix {
 //     mat.print_matrix();
 //     mat.mat[0][0]= 0.01;
 //     //Matrix inv = mat.Jacobi();
-//     Vector1 vector = Vector1(tamanio);
+//     Vector vector = Vector(tamanio);
 //     //vector.user_poblate();
 //     vector.print_vector();
 //     vector.vector[0] = 0.01;
-//     Vector1 mult = Vector1(tamanio);
+//     Vector mult = Vector(tamanio);
 //     //mult = mat * vector;
 //     mat.multiplyByVector(vector, &mult);
 //     // cout<<"El resultado de vec * mat = "<<endl;
 //     // mult.print_vector();
 //     // cout<<"El resultado de vec - vec = "<<endl;
-//     // Vector1 resta = Vector1(tamanio);
+//     // Vector resta = Vector(tamanio);
 //     // mult.restByVector(vector, &resta);
 //     // resta.print_vector();
 //     cout<<mat.get_determinant()<<endl;
@@ -384,10 +271,10 @@ class Matrix {
 // } 
  
 // int main(){
-//     Vector1 a0= Vector1(3);
-//     Vector1 a1 = Vector1(3);
+//     Vector a0= Vector(3);
+//     Vector a1 = Vector(3);
 //     a0.user_poblate(); 
 //     a1.user_poblate();
-//     float result = Vector1::normaEspectral(a0,a1);
+//     float result = Vector::normaEspectral(a0,a1);
 //     cout<<result<<endl;
 // }

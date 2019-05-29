@@ -1,7 +1,7 @@
 #ifndef FLAG
     #define FLAG "flag"
     #include "libraries.h"
-
+class Matrix;
 
 class Vector{
     private:
@@ -86,8 +86,45 @@ class Vector{
             }
         }
 
+        friend Vector operator * (Matrix& mat, Vector& vec);
+
+         static void normaEspectral(Vector a0, Vector a1, float *norma){
+            *norma = -1555;
+            if(a0.get_size()!=a1.get_size()){
+                cout<<"el tamaño de los vectores no coincide"<<endl;
+            }
+            //a0.print_vector();
+            //a1.print_vector();
+            // Vector result = Vector(a0.get_size());
+
+            // a1.restByVector(a0, &result);
+            // cout<<"Vector resultado"<<endl;
+            // result.print_vector();
+
+            float result[a1.get_size()];
+
+            for(int i=0; i<a1.get_size(); i++){
+                //cout<<a0.vector[i]<<"-"<<a1.vector[i]<<endl;
+                result[i] = a0.vector[i] - a1.vector[i];
+                //cout<<"="<<result[i]<<endl;
+            }
 
 
+            for(int i=0; i<a0.get_size(); i++){
+                float temp=0;
+                if(result[i]<0){
+                    temp = (-1)* result[i];
+                }
+                else{
+                    temp = result[i];
+                }
+                if(temp>*norma || *norma == -1555){
+                    //cout<<"Cambio de norma"<<*norma<<endl;
+                    *norma = temp;
+                    //cout<<"Cambio de norma"<<*norma<<endl;
+                }
+            }
+        }
         // Vector operator =(Vector original){
         //     cout<<"overloading = operator"<<endl;
         //     original.print_vector();
